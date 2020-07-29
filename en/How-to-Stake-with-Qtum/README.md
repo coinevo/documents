@@ -127,8 +127,6 @@ The flash sign at the bottom of wallet shows staking info :
 
 **Solid black flash means it is staking now**. For more information, you can put your mouse on the flash, e.g.:
 
-![staking info](staking.png)
-
 * `Staking`: if it is staking；
 * `Your weight is`: How many EVO are able to used for staking, unit is EVO;
 * `Network weight is`: How many EVO are staking in the network, unit is EVO；
@@ -140,17 +138,11 @@ Possible reasons for not staking：
 
 * 1.There is no coins of no mature coins (more than 500 confirmations(blocks)) -- Solution: send some EVO to the wallet and wait for 500 blocks (about 17 hours);
 
-![No mature coins](not-mature.png)
-
 * 2.Wallet is locked/encrypted -- Solution: unlock the wallet for staking. ([How to unlock?](../Encrypt-and-Unlock-Qtum-Wallet/README.md))
-
-![Not staking due to encryption](locked.jpg)
 
 **No flash sign means staking is disabled**
 
 * 3.Staking is disabled -- Solution: enable staking in the evo.conf (-staking=true)([How to set evo.conf？](../Guidance-of-Qtum-Deployment-and-RPC-Settings.md))
-
-![Staking disabled](staking-disabled.jpg)
 
 ## About block reward
 
