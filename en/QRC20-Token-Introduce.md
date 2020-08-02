@@ -2,7 +2,7 @@
 
 ## About QRC20
 
-QRC20 is the implementation of a standard API for tokens within smart contracts on Qtum，basically it is the same as [ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md).
+QRC20 is the implementation of a standard API for tokens within smart contracts on Evo，basically it is the same as [ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md).
 <br>
 Methods and Events：
 
@@ -22,17 +22,17 @@ event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 
 # Creating QRC20 Tokens
 
-You can use [QRC20Token](https://github.com/qtumproject/QRC20Token) code to create your own QRC20 token on Qtum. For this example, we will use Qtum testnet, first getting some testnet QTUM.
+You can use [QRC20Token](https://github.com/coinevo/QRC20Token) code to create your own QRC20 token on Evo. For this example, we will use Evo testnet, first getting some testnet EVO.
 
-After installing the Qtum Core wallet from https://qtumeco.io/wallet or https://github.com/qtumproject/qtum/releases, get the wallet receiving address by selecting **Window** - **Receiving addresses**, select and copy the wallet receiving address qXGdYmLypZRy8pTpj9EdTBHkqtv6cv99ky.
+After installing the Evo Core wallet from https://evoeco.io/wallet or https://github.com/coinevo/evo/releases, get the wallet receiving address by selecting **Window** - **Receiving addresses**, select and copy the wallet receiving address qXGdYmLypZRy8pTpj9EdTBHkqtv6cv99ky.
 
 ![1  Copy Receiving Address](https://user-images.githubusercontent.com/29760787/83460974-acf23d80-a435-11ea-9d5f-80b22249003e.jpg)
 
-We need some QTUM to pay for the smart contract gas and transaction fees and can get some testnet QTUM from the [Qtum Testnet Faucet](http://testnet-faucet.qtum.info/). Paste the receiving address into the faucet address field and press the blue checkmark button.
+We need some EVO to pay for the smart contract gas and transaction fees and can get some testnet EVO from the [Evo Testnet Faucet](http://testnet-faucet.coinevo.tech/). Paste the receiving address into the faucet address field and press the blue checkmark button.
 
 ![2  Testnet Faucet](https://user-images.githubusercontent.com/29760787/83460980-b11e5b00-a435-11ea-9892-2b344bdc2611.jpg)
 
-Next, copy the token code at [QRC20Token](https://github.com/qtumproject/QRC20Token). In the QRC20Token.sol file you can change `name`, `symbol`, and `totalSupply` to your preference. For this example, we will edit later to name the token "QRC TEST 527", the symbol "QT527" and have a total supply of 1,000,000,000 which is entered as "10 * * 9". We will leave `decimals` set for 8, to give 8 decimal places for each token, so for example, you should send a 1.12345678 token amount. 
+Next, copy the token code at [QRC20Token](https://github.com/coinevo/QRC20Token). In the QRC20Token.sol file you can change `name`, `symbol`, and `totalSupply` to your preference. For this example, we will edit later to name the token "QRC TEST 527", the symbol "QT527" and have a total supply of 1,000,000,000 which is entered as "10 * * 9". We will leave `decimals` set for 8, to give 8 decimal places for each token, so for example, you should send a 1.12345678 token amount. 
 
 ![3  Solidity](https://user-images.githubusercontent.com/29760787/83460987-b380b500-a435-11ea-8a10-c8a070180fc5.jpg)
 
@@ -56,7 +56,7 @@ Paste in the source code from the QRC20Token.sol file.
 
 Here you can see the code has been edited to name the token "QRC TEST 527", with the symbol "QT527", and a supply of 1 billion.
 
-Also, create a new file, enter the file name "SafeMath.sol" and paste in the code for [SafeMath.sol](https://github.com/qtumproject/QRC20Token/blob/master/SafeMath.sol).
+Also, create a new file, enter the file name "SafeMath.sol" and paste in the code for [SafeMath.sol](https://github.com/coinevo/QRC20Token/blob/master/SafeMath.sol).
  
 Select the compiler button on the left side.
  
@@ -88,15 +88,15 @@ The wallet will confirm the transaction on the "Result 1" tab. Copy the Contract
 
 ![14  Results](https://user-images.githubusercontent.com/29760787/83461083-d7dc9180-a435-11ea-80f1-f3dbe66de36a.jpg)
 
-The wallet Transactions page will show the transactions so far. First, the wallet received 90.0 QTUM sent from the Testnet faucet. Next, the contract create transaction sent the contract bytecode and fees of 1.01414 QTUM. Finally, the wallet received a gas refund of 0.623456 QTUM. Gas refunds are sent in the coinstake transaction, so they are show as "mined" in the wallet and must mature for 500 blocks before they can be used. 
+The wallet Transactions page will show the transactions so far. First, the wallet received 90.0 EVO sent from the Testnet faucet. Next, the contract create transaction sent the contract bytecode and fees of 1.01414 EVO. Finally, the wallet received a gas refund of 0.623456 EVO. Gas refunds are sent in the coinstake transaction, so they are show as "mined" in the wallet and must mature for 500 blocks before they can be used. 
 
 ![15  Transactions](https://user-images.githubusercontent.com/29760787/83461085-da3eeb80-a435-11ea-8259-e1a6165cd22b.jpg)
 
-You can also see the contract create transaction on [testnet.qtum.info](https://testnet.qtum.info/tx/0db7a5f38c1959d473405165bf842dcf726c9b79615b0b294514cb44e53fb801)
+You can also see the contract create transaction on [testnet.coinevo.tech](https://testnet.coinevo.tech/tx/0db7a5f38c1959d473405165bf842dcf726c9b79615b0b294514cb44e53fb801)
 
 ![16  Explorer](https://user-images.githubusercontent.com/29760787/83461088-dca14580-a435-11ea-94c6-f6fd9c3eaf01.jpg)
 
-The transaction was sent with 2,500,000 gas at price of 0.00000040 QTUM. The contract creation used 941,360 gas giving a gas refund of 2,500,000 - 941,360 = 1,558,640 at price of 0.00000040 or 0.623456 QTUM for the refund. 
+The transaction was sent with 2,500,000 gas at price of 0.00000040 EVO. The contract creation used 941,360 gas giving a gas refund of 2,500,000 - 941,360 = 1,558,640 at price of 0.00000040 or 0.623456 EVO for the refund. 
 
 # Adding Tokens
 
@@ -104,7 +104,7 @@ Smart contract transactions are sent to the smart contract address, not the wall
 
 ![17  Add Token](https://user-images.githubusercontent.com/29760787/83461094-e034cc80-a435-11ea-84f9-79e01860fc9f.jpg)
 
-Paste the contract address 137d046beb3cb66c0cdd389bf8bab4faeae16c0b into the "Contract Address" field, and rest of the form will be autofilled. At the bottom of the form click the drop-down arrow to the right of the Token address field and select qXGdYmLypZRy8pTpj9EdTBHkqtv6cv99ky and **Confirm**. If the wallet is using multiple addresses, chose the correct Qtum address that was used to create the token.
+Paste the contract address 137d046beb3cb66c0cdd389bf8bab4faeae16c0b into the "Contract Address" field, and rest of the form will be autofilled. At the bottom of the form click the drop-down arrow to the right of the Token address field and select qXGdYmLypZRy8pTpj9EdTBHkqtv6cv99ky and **Confirm**. If the wallet is using multiple addresses, chose the correct Evo address that was used to create the token.
 
 ![18  Paste Contract Address](https://user-images.githubusercontent.com/29760787/83461105-e3c85380-a435-11ea-8e0f-680bc1d8a175.jpg)
 
@@ -136,7 +136,7 @@ The wallet status will show "Reindexing blocks on disk..." and "Syncing headers"
 
 # Multiple Tokens in Wallet
 
-QRC20 token balances are managed by the smart contract for individual Qtum addresses, even if these Qtum addresses are for the same wallet.
+QRC20 token balances are managed by the smart contract for individual Evo addresses, even if these Evo addresses are for the same wallet.
 
 Continuing the example above, we sent 500 QT527 tokens to the wallet on a new receiving address qRdxBZSvUx1edUfygyHr35mVgmX9pAMLrZ. To show this new transaction of QT527 tokens in the wallet we must complete the Add Token step for this new address.
 

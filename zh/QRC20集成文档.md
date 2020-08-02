@@ -2,7 +2,7 @@
 
 ---
 
-> 本文档说明了怎么使用`qtumd`提供的命令完成基础的QRC20操作
+> 本文档说明了怎么使用`evod`提供的命令完成基础的QRC20操作
 
 ## 一、基础说明
 交易所使用一个主地址来存储所有用户的token，以下用`MAIN_QRC_ADDRESS`来指代。
@@ -30,35 +30,35 @@ function getNumberOfDecimals($amount){
 }
 ```
 
-请使用`-logevents -txindex`参数运行`qtumd`。
+请使用`-logevents -txindex`参数运行`evod`。
 命令行中出现`{}`的地方请带入前面定义的值进行替换。
 注意命令行中的空格。
 
 ## 二、获取账户金额
 账户地址为`$userAddress`。
 ```
-qtum-cli callcontract {TOKEN_CONTRACT_ADDRESS} 70a08231{to32bytesArg(addressToHash160($userAddress))}
+evo-cli callcontract {TOKEN_CONTRACT_ADDRESS} 70a08231{to32bytesArg(addressToHash160($userAddress))}
 ```
 输出结果为json，里面的`executionResult.output`即为账户余额。
 
 ## 三、提现
 提现地址为`$userAddress`, 提现金额为`$amount`（单位为1token）。
 ```
-qtum-cli sendtocontract {TOKEN_CONTRACT_ADDRESS} a9059cbb{to32bytesArg(addressToHash160($userAddress))}{to32bytesArg(addDecimals($amount)) 0 {DEFAULT_GAS_LIMIT} {DEFAULT_GAS_PRICE} {MAIN_QRC_ADDRESS}
+evo-cli sendtocontract {TOKEN_CONTRACT_ADDRESS} a9059cbb{to32bytesArg(addressToHash160($userAddress))}{to32bytesArg(addDecimals($amount)) 0 {DEFAULT_GAS_LIMIT} {DEFAULT_GAS_PRICE} {MAIN_QRC_ADDRESS}
 ```
 命令执行结果的txid即本次交易id，可以用来查询。
 
 ## 四、获取新充值地址
-`QTUM`的充值地址和QRC20代币的充值地址都是同样的格式，对于交易所来说，同一个用户下面的`QTUM`充值地址和QRC20代币的充值地址可以是同一个。
+`EVO`的充值地址和QRC20代币的充值地址都是同样的格式，对于交易所来说，同一个用户下面的`EVO`充值地址和QRC20代币的充值地址可以是同一个。
 也可以使用如下命令获取新的充值地址：
 ```
-qtum-cli getnewaddress
+evo-cli getnewaddress
 ```
 
 ## 五、获取充值\提现记录
 要查询的地址为`$depositAddress`。开始查询的区块高度为`$startingBlock`(含此区块，可以为0，为了提高效率建议从用户触发操作后区块开始查)
 ```
-qtum-cli searchlogs {$startingBlock} 999999999 '{"addresses": ["{TOKEN_CONTRACT_ADDRESS}"]}' '{"topics": ["ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}'
+evo-cli searchlogs {$startingBlock} 999999999 '{"addresses": ["{TOKEN_CONTRACT_ADDRESS}"]}' '{"topics": ["ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}'
 ```
 注意：参数里面有json，最外层的`{}`不需要去替换。
 
@@ -67,6 +67,6 @@ qtum-cli searchlogs {$startingBlock} 999999999 '{"addresses": ["{TOKEN_CONTRACT_
 ## 六、查询交易确认数
 交易id为`$txid`。
 ```
-qtum-cli gettransaction {$txid}
+evo-cli gettransaction {$txid}
 ```
 命令结果的`confirmations`字段即为确认数。

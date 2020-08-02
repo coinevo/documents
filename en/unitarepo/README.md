@@ -25,7 +25,7 @@ We've published our official Unita repository on [https://repo.unita.network](ht
 
 ### Archlinux
 
-[Get it from the AUR](https://aur.archlinux.org/packages/qtum-core/) 
+[Get it from the AUR](https://aur.archlinux.org/packages/evo-core/) 
 
 
 

@@ -1,10 +1,10 @@
 # SCAR：Scalable Consensus Algorithm -- 一种可伸缩共识算法
 
-[点击获取pdf版](https://cloud2.qtum.org/s/8rwT2NQWF3j3MQE)
+[点击获取pdf版](https://cloud2.coinevo.tech/s/8rwT2NQWF3j3MQE)
 
 # 背景介绍
 
-诸如PoW（Proof of Work）、PoS（Proof of Stake）等传统的区块链公式算法，为了减少分叉保证网络的稳定性，通常区块的间隔在10秒以上。例如Ethereum的区块间隔时间是15秒，Qtum是144秒，Bitcoin是10分钟。过高的区块间隔时间，导致了用户等待交易确认的时间较长，不利于实时支付等应用。
+诸如PoW（Proof of Work）、PoS（Proof of Stake）等传统的区块链公式算法，为了减少分叉保证网络的稳定性，通常区块的间隔在10秒以上。例如Ethereum的区块间隔时间是15秒，Evo是144秒，Bitcoin是10分钟。过高的区块间隔时间，导致了用户等待交易确认的时间较长，不利于实时支付等应用。
 
 而一些联盟链的共识算法，例如EOS的DPoS [1]（Delegated Proof of Stake）、Parity的Aura [2]（Authority Round）等，通过投票选出超级节点来执行共识算法，可以将区块间隔时间降到甚至1秒以内。但这样带来的问题就是block的数量过多，对网络带宽和数据存储都带来了很大的压力。运行一个全节点，甚至仅下载block header的轻节点，都对节点设备的性能有较高的要求。
 
@@ -16,7 +16,7 @@
 
 PoW，Bitcoin为代表。节点提供算力，通过大量的计算，产生新的block。算力越高，产生block的速度越快。计算难度每2016个block调整一次，保证在全网算力变化的情况下，block时间间隔保持在10分钟左右。由于block间隔时间长，且每个block的大小限制在 1 MB，所以当交易量大的时候，网络会发生严重拥堵。
 
-PoS，Qtum为代表。节点提供token，通过少量计算，产生新的block。token数额越大，产生block的速度越快。计算难度也会定期调整，保证block时间间隔在144秒左右。PoS相对PoW而言，降低了对算力的要求，节省了能源。但是由于block间隔和block大小限制仍然是固定的，网络的负载固定，无法避免交易量大时候的拥堵。虽然Qtum目前可以使用DGP [3]（Decentralized Governance Protocol）协议手动地去调整block大小限制，但是这种方式略微繁琐。
+PoS，Evo为代表。节点提供token，通过少量计算，产生新的block。token数额越大，产生block的速度越快。计算难度也会定期调整，保证block时间间隔在144秒左右。PoS相对PoW而言，降低了对算力的要求，节省了能源。但是由于block间隔和block大小限制仍然是固定的，网络的负载固定，无法避免交易量大时候的拥堵。虽然Evo目前可以使用DGP [3]（Decentralized Governance Protocol）协议手动地去调整block大小限制，但是这种方式略微繁琐。
 
 PoW和PoS中，全网的所有节点都会参与到共识的竞争中来，所以区块间隔不能设置得过小。如果过小，则很容易产生分叉。即，如果计算难度设置得过低，则很容易出现多个节点在同一时刻产出新的block的情况。
 
@@ -40,7 +40,7 @@ SCAR共识算法的优点在于：
 
 ## 节点投票
 
-投票选出超级节点可以有多种设计。比如EOS是所有用户都能参与投票，Aura是当前的超级节点可以投票选出下一轮的超级节点。这里我们提出一种基于Qtum DGP协议的投票策略。
+投票选出超级节点可以有多种设计。比如EOS是所有用户都能参与投票，Aura是当前的超级节点可以投票选出下一轮的超级节点。这里我们提出一种基于Evo DGP协议的投票策略。
 
 区块链初始化时在链上部署 DGP 的智能合约，在合约内初始化了管理席位 admin 和治理席位 gov，均以地址的形式存储。DGP 协议支持在链上通过管理席位 admin 和治理席位 gov的投票，来决定超级节点是否改变。
 
@@ -116,5 +116,5 @@ SCAR在保证区块链性能的同时，尽可能节省了带宽和硬盘的消�
 
 [2] Aura - Authority Round - Wiki. https://wiki.parity.io/Aura
 
-[3] Qtum区块链指南. https://docs.qtum.site/zh/Qtum-Blockchain-Guide.html
+[3] Evo区块链指南. https://docs.coinevo.tech/zh/Evo-Blockchain-Guide.html
 

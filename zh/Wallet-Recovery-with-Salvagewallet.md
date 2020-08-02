@@ -12,24 +12,24 @@
 
 以windows10为例，其他windows版本类似。
 
-首先我们找到启动*Qtum-Qt*的快捷方式(如果桌面上没有，那可以在开始菜单中找到)，然后复制一份到桌面上。
+首先我们找到启动*Evo-Qt*的快捷方式(如果桌面上没有，那可以在开始菜单中找到)，然后复制一份到桌面上。
 
-![](https://s.qtum.site/uploads/8c063738e99659bdd7107e4d18d11340.png)
-![](https://s.qtum.site/uploads/5722815f8ea76738222daa9bc295cce1.png)
+![](https://s.coinevo.tech/uploads/8c063738e99659bdd7107e4d18d11340.png)
+![](https://s.coinevo.tech/uploads/5722815f8ea76738222daa9bc295cce1.png)
 
 然后右键点击新的这个快捷方式，点选**属性**，然后选择**快捷方式**标签。在**目标**一栏的最后面加上`--salvagewallet`。
 
-![](https://s.qtum.site/uploads/04561479b811f843a7c4d277966c291e.png)
+![](https://s.coinevo.tech/uploads/04561479b811f843a7c4d277966c291e.png)
 
 点击**确定**，关闭属性对话框。
 
 双击这个快捷方式启动钱包，这时我们应该可以看到钱包在重新扫描区块。
 
-![](https://s.qtum.site/uploads/1206d81a66ec6284065773b47b7292bc.png)
+![](https://s.coinevo.tech/uploads/1206d81a66ec6284065773b47b7292bc.png)
 
-我们可以打开Qtum的数据目录来看一看发生了什么，在桌面左下角搜索框里输入`%APPDATA%\Qtum`来打开这个目录。**注意不要删除或修改这个目录里面的任何内容，除非你真的知道你在做什么。**
+我们可以打开Evo的数据目录来看一看发生了什么，在桌面左下角搜索框里输入`%APPDATA%\Evo`来打开这个目录。**注意不要删除或修改这个目录里面的任何内容，除非你真的知道你在做什么。**
 
-![](https://s.qtum.site/uploads/c5f68c974ac0076a09da14a5896776be.png)
+![](https://s.coinevo.tech/uploads/c5f68c974ac0076a09da14a5896776be.png)
 
 这时我们可以看到，旧的钱包已经被备份成为了`wallet.1516172743.bak`。现在我们的钱包使用的是新的`wallet.dat`文件，这个文件和原来的有一样的私钥，但是有一份全新的数据。
 

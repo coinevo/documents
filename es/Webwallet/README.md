@@ -1,25 +1,25 @@
 **¡IMPORTANTE!**  Cuando use una billetera web como esta, asegúrese de estar 100% seguro de que está ingresando la URL correcta que es
 
-[https://qtumwallet.org](https://qtumwallet.org/)
+[https://web.coinevo.tech](https://web.coinevo.tech/)
 
 No se utiliza ninguna otra URL para la billetera web, asegúrese de verificar el candado verde con "Seguro" en el campo URL que valida el sitio:
 
 ![0. Secure site EN](https://i.imgur.com/yaCSQSu.jpg)
 
-Bienvenido a la documentación del usuario de la billetera web Qtum que mostrará
+Bienvenido a la documentación del usuario de la billetera web Evo que mostrará
 
-- [Introducción a la billetera web](https://docs.qtum.site/en/QTUM-WebWallet-usage/#introduction-to-the-web-wallet)
-- [Cómo generar una nueva billetera o restaurar direcciones de otras billeteras](https://docs.qtum.site/en/QTUM-WebWallet-usage/#generate-new-wallet---restore-wallet)
-- [Cómo recibir y enviar monedas QTUM, envío con Ledger, envío seguro](https://docs.qtum.site/en/QTUM-WebWallet-usage/#receive-and-send-qtum-coins)
-- [Cómo recibir y enviar tokens QRC20](https://docs.qtum.site/en/QTUM-WebWallet-usage/#send-and-receive-qrc20-tokens)
-- [Cómo agregar un nuevo token QRC20 a la billetera](https://docs.qtum.site/en/QTUM-WebWallet-usage/#adding-a-qrc20-token)
-- [Cómo publicar contratos inteligentes](https://docs.qtum.site/en/QTUM-WebWallet-usage/#how-to-publish-smart-contracts)
+- [Introducción a la billetera web](https://docs.coinevo.tech/en/EVO-WebWallet-usage/#introduction-to-the-web-wallet)
+- [Cómo generar una nueva billetera o restaurar direcciones de otras billeteras](https://docs.coinevo.tech/en/EVO-WebWallet-usage/#generate-new-wallet---restore-wallet)
+- [Cómo recibir y enviar monedas EVO, envío con Ledger, envío seguro](https://docs.coinevo.tech/en/EVO-WebWallet-usage/#receive-and-send-evo-coins)
+- [Cómo recibir y enviar tokens QRC20](https://docs.coinevo.tech/en/EVO-WebWallet-usage/#send-and-receive-qrc20-tokens)
+- [Cómo agregar un nuevo token QRC20 a la billetera](https://docs.coinevo.tech/en/EVO-WebWallet-usage/#adding-a-qrc20-token)
+- [Cómo publicar contratos inteligentes](https://docs.coinevo.tech/en/EVO-WebWallet-usage/#how-to-publish-smart-contracts)
 
 ------
 
 # Introducción a la billetera web
 
-La billetera web Qtum se ejecuta en su navegador y se conecta a la red Qtum a través de una interfaz de nodo completo. La billetera web no almacena sus claves privadas, por lo que debe administrarlas con un archivo de claves descargado o palabras clave. Esto es completamente tu responsabilidad.
+La billetera web Evo se ejecuta en su navegador y se conecta a la red Evo a través de una interfaz de nodo completo. La billetera web no almacena sus claves privadas, por lo que debe administrarlas con un archivo de claves descargado o palabras clave. Esto es completamente tu responsabilidad.
 
 La billetera web se puede iniciar navegando al sitio mencionado anteriormente y haciendo clic en el botón ** `Web` **:
 
@@ -33,11 +33,11 @@ Al cargar la billetera web, recibimos esta advertencia muy importante, tómese u
 
 ![Warning](https://i.imgur.com/ZGBb9u6.jpg)
 
-¡Bienvenido a la billetera web Qtum! Como se muestra a continuación, el panel izquierdo ofrece un menú con varias opciones para crear o restaurar una billetera y otras acciones. La parte superior del menú ofrece siete opciones para crear o restaurar una billetera. La parte inferior del menú ofrece varias operaciones y opciones de configuración. La parte central de la página de billetera presenta formularios para la entrada de datos, visualización y administración de los activos de la billetera.
+¡Bienvenido a la billetera web Evo! Como se muestra a continuación, el panel izquierdo ofrece un menú con varias opciones para crear o restaurar una billetera y otras acciones. La parte superior del menú ofrece siete opciones para crear o restaurar una billetera. La parte inferior del menú ofrece varias operaciones y opciones de configuración. La parte central de la página de billetera presenta formularios para la entrada de datos, visualización y administración de los activos de la billetera.
 
 La opción de menú ** `Configuración` ** permitirá seleccionar el idioma y configurar la billetera para que funcione en Mainnet o Testnet. Seleccione la red deseada ** antes ** de restaurar una billetera o ingresar una contraseña.
 
-La billetera web Qtum funciona con direcciones estándar Qtum que comienzan con una "Q" (heredada) y no es compatible con las direcciones SegWit (Segregated Witness) que comienzan con una "M" (p2sh-segwit) o "qc1" (bech32) .
+La billetera web Evo funciona con direcciones estándar Evo que comienzan con una "Q" (heredada) y no es compatible con las direcciones SegWit (Segregated Witness) que comienzan con una "M" (p2sh-segwit) o "qc1" (bech32) .
 
 ------
 
@@ -45,13 +45,13 @@ La billetera web Qtum funciona con direcciones estándar Qtum que comienzan con 
 
 Hay 7 formas de generar o restaurar una billetera.
 
-1. [Generar nueva billetera](https://docs.qtum.site/en/QTUM-WebWallet-usage/#1-generate-new-wallet) crea una nueva dirección y descarga un archivo de clave
-2. [Crea desde Mnemonic](https://docs.qtum.site/en/QTUM-WebWallet-usage/#2-create-from-mnemonic) crea 12 palabras iniciales y una nueva dirección
-3. [Restaurar desde Mnemonic](https://docs.qtum.site/en/QTUM-WebWallet-usage/#3-restore-from-mnemonic) restaura una dirección usando 12 palabras iniciales de una billetera de escritorio
-4. [Restaurar desde WIF](https://docs.qtum.site/en/QTUM-WebWallet-usage/#4-restore-from-wif) restaura una dirección desde una clave privada
-5. [Restaurar desde la billetera móvil](https://docs.qtum.site/en/QTUM-WebWallet-usage/#5-restore-from-mobile-wallet) restaura una dirección de 12 palabras iniciales desde una billetera móvil compatible
-6. [Restaurar desde archivo de clave](https://docs.qtum.site/en/QTUM-WebWallet-usage/#6-restore-from-key-file) restaura una dirección de un archivo de clave creado por la billetera web
-7. [Restaurar desde Ledger](https://docs.qtum.site/en/QTUM-WebWallet-usage/#7-restore-from-ledger) utiliza una billetera de hardware Ledger para firmar y verificar transacciones
+1. [Generar nueva billetera](https://docs.coinevo.tech/en/EVO-WebWallet-usage/#1-generate-new-wallet) crea una nueva dirección y descarga un archivo de clave
+2. [Crea desde Mnemonic](https://docs.coinevo.tech/en/EVO-WebWallet-usage/#2-create-from-mnemonic) crea 12 palabras iniciales y una nueva dirección
+3. [Restaurar desde Mnemonic](https://docs.coinevo.tech/en/EVO-WebWallet-usage/#3-restore-from-mnemonic) restaura una dirección usando 12 palabras iniciales de una billetera de escritorio
+4. [Restaurar desde WIF](https://docs.coinevo.tech/en/EVO-WebWallet-usage/#4-restore-from-wif) restaura una dirección desde una clave privada
+5. [Restaurar desde la billetera móvil](https://docs.coinevo.tech/en/EVO-WebWallet-usage/#5-restore-from-mobile-wallet) restaura una dirección de 12 palabras iniciales desde una billetera móvil compatible
+6. [Restaurar desde archivo de clave](https://docs.coinevo.tech/en/EVO-WebWallet-usage/#6-restore-from-key-file) restaura una dirección de un archivo de clave creado por la billetera web
+7. [Restaurar desde Ledger](https://docs.coinevo.tech/en/EVO-WebWallet-usage/#7-restore-from-ledger) utiliza una billetera de hardware Ledger para firmar y verificar transacciones
 
 ![2. Generate New Wallet](https://i.imgur.com/5LdWl0r.jpg)
 
@@ -100,7 +100,7 @@ Después de ingresar una nueva contraseña, verá la página * Ver información 
 
 ### 4. Restaurar desde WIF
 
-Esta opción permite restaurar la billetera desde una clave privada de formato de entrada de billetera (WIF) como la billetera web, la billetera Qtum Core o la billetera Qtum Electrum. Una clave privada WIF tendrá una longitud de 52 caracteres y tendrá una comprobación y codificación de errores (para reducir el tamaño) en comparación con una clave privada original, que tendrá 64 caracteres hexadecimales.
+Esta opción permite restaurar la billetera desde una clave privada de formato de entrada de billetera (WIF) como la billetera web, la billetera Evo Core o la billetera Evo Electrum. Una clave privada WIF tendrá una longitud de 52 caracteres y tendrá una comprobación y codificación de errores (para reducir el tamaño) en comparación con una clave privada original, que tendrá 64 caracteres hexadecimales.
 
 Copie la clave privada WIF de otra billetera. Seleccione la opción de menú ** `Restaurar desde WIF` **, pegue la clave privada en el campo * WIF * y haga clic en el botón verde **` CONFIRM` **:
 
@@ -110,7 +110,7 @@ Se mostrará la página * Ver información de billetera *. Verifique que restaur
 
 ### 5. Restaurar desde la billetera móvil
 
-Restaurar desde Mobile Wallet permite restaurar una dirección de billetera desde una billetera móvil compatible, como la billetera móvil Qtum, la billetera Qbao o la billetera Qtum Electrum (si la billetera Qtum Electrum se inicializó para ser compatible con las billeteras móviles Qtum).
+Restaurar desde Mobile Wallet permite restaurar una dirección de billetera desde una billetera móvil compatible, como la billetera móvil Evo, la billetera Qbao o la billetera Evo Electrum (si la billetera Evo Electrum se inicializó para ser compatible con las billeteras móviles Evo).
 
 Seleccione la opción de menú ** `Restaurar desde billetera móvil` ** e ingrese las 12 palabras iniciales de su otra billetera. Ingrese las palabras cuidadosamente en minúsculas (nunca en MAYÚSCULAS) y asegúrese de que no haya espacios en blanco después de las palabras, y haga clic en el botón verde ** `CONFIRMAR` **:
 
@@ -130,11 +130,11 @@ Seleccione la opción de menú ** `Restaurar desde archivo de clave` **, **` CAR
 
 ### 7. Restaurar desde Ledger
 
-Para usar su Ledger Nano S o Ledger Blue con Qtum, primero deberá ejecutar el Ledger Manager e instalar la aplicación Qtum en su Ledger siguiendo estas instrucciones: https://support.ledgerwallet.com/hc/en-us/articles / 115003776913-Install-and-use-Qtum-QTUM- '
+Para usar su Ledger Nano S o Ledger Blue con Evo, primero deberá ejecutar el Ledger Manager e instalar la aplicación Evo en su Ledger siguiendo estas instrucciones: https://support.ledgerwallet.com/hc/en-us/articles / 115003776913-Install-and-use-Evo-EVO- '
 
-![13. Qtum App EN](https://i.imgur.com/th4IymV.jpg)
+![13. Evo App EN](https://i.imgur.com/th4IymV.jpg)
 
-En la billetera web, seleccione la opción de menú ** `Restaurar desde Ledger` **, conecte su Ledger, y en el Ledger ingrese el código PIN y abra la aplicación Qtum, luego en la página de la billetera web * Restaurar desde Ledger * haga clic en el rojo ** Botón `CONNECT` **:
+En la billetera web, seleccione la opción de menú ** `Restaurar desde Ledger` **, conecte su Ledger, y en el Ledger ingrese el código PIN y abra la aplicación Evo, luego en la página de la billetera web * Restaurar desde Ledger * haga clic en el rojo ** Botón `CONNECT` **:
 
 ![14. Restore from Ledger EN](https://i.imgur.com/1wSYpgR.jpg)
 
@@ -156,7 +156,7 @@ Puede enviar tokens QRC20 a una dirección administrada por la billetera Ledger,
 
 ------
 
-# Reciba y envíe monedas QTUM
+# Reciba y envíe monedas EVO
 
 ### Recibir
 
@@ -202,11 +202,11 @@ Verá el * que va a enviar ... Confirme tx en su pagina Ledger:
 
 ![L3 You are going to send](https://i.imgur.com/CbqxuWc.jpg)
 
-Siempre que haya conectado la billetera de hardware Ledger, ingrese el código PIN y seleccione la aplicación Qtum, en la pantalla Ledger verá detalles de desplazamiento de la transacción para que pueda confirmar la dirección y la cantidad:
+Siempre que haya conectado la billetera de hardware Ledger, ingrese el código PIN y seleccione la aplicación Evo, en la pantalla Ledger verá detalles de desplazamiento de la transacción para que pueda confirmar la dirección y la cantidad:
 
 ![L4 Address and amount](https://i.imgur.com/K8aYMas.jpg)
 
-En el Libro mayor, presione el botón derecho sobre la marca de verificación en la pantalla para confirmar la salida # 1, que es la transacción principal, en este caso enviando 2.0 QTUM. También deberá presionar este botón nuevamente para confirmar la salida # 2, que está enviando el cambio nuevamente a su billetera, y presionar el botón por tercera vez para confirmar la transacción general:
+En el Libro mayor, presione el botón derecho sobre la marca de verificación en la pantalla para confirmar la salida # 1, que es la transacción principal, en este caso enviando 2.0 EVO. También deberá presionar este botón nuevamente para confirmar la salida # 2, que está enviando el cambio nuevamente a su billetera, y presionar el botón por tercera vez para confirmar la transacción general:
 
 ![L5 Confirm output 1](https://i.imgur.com/3KDySJ0.jpg)
 
@@ -222,7 +222,7 @@ La página * Ver información de billetera * mostrará un * Saldo no confirmado 
 
 ### Envío seguro
 
-Una transacción básica de Qtum se compone de tres pasos:
+Una transacción básica de Evo se compone de tres pasos:
 
 1. Componga la transacción base: desde, hasta, monto, tarifa.
 2. Firme la transacción con la clave privada.
@@ -234,7 +234,7 @@ Una transacción básica de Qtum se compone de tres pasos:
 
 Para un envío seguro, primero configure la billetera fuera de línea obteniendo una copia de la billetera web y el software del navegador. Este ejemplo utilizará Google Chrome en Windows, y puede ajustarlo a su navegador y sistema operativo preferido.
 
-En la computadora en línea, usando el navegador Chrome, vaya a [https://qtumwallet.org] (https://qtumwallet.org/). En la esquina superior derecha del navegador, seleccione los tres puntos verticales para el menú, seleccione ** `Más herramientas` ** y luego **` Guardar página como ... `** para guardar el archivo HTML de Qtum Web Wallet. Este archivo contiene todo el código JavaScript para ejecutar la billetera web:
+En la computadora en línea, usando el navegador Chrome, vaya a [https://web.coinevo.tech] (https://web.coinevo.tech/). En la esquina superior derecha del navegador, seleccione los tres puntos verticales para el menú, seleccione ** `Más herramientas` ** y luego **` Guardar página como ... `** para guardar el archivo HTML de Evo Web Wallet. Este archivo contiene todo el código JavaScript para ejecutar la billetera web:
 
 ![1 The Web Wallet HTML File](https://i.imgur.com/ZdCBdhu.jpg) El archivo HTML de Web Wallet
 
@@ -254,9 +254,9 @@ En la computadora sin conexión, inicie el navegador Chrome: en la carpeta Chrom
 
 #### Inicie la billetera web sin conexión
 
-Con el cursor en la barra de direcciones URL de Chrome, presione Control - "O" (para Abrir) y luego navegue y abra el archivo Qtum Web Wallet.html:
+Con el cursor en la barra de direcciones URL de Chrome, presione Control - "O" (para Abrir) y luego navegue y abra el archivo Evo Web Wallet.html:
 
-![2019-44 Open Qtum Web Wallet.html](https://i.imgur.com/EyE4B1x.jpg)
+![2019-44 Open Evo Web Wallet.html](https://i.imgur.com/EyE4B1x.jpg)
 
 Usando el menú de la billetera web, seleccione Configuración y en el menú desplegable  seleccione ** `Fuera de línea` ** y **` CONFIRMAR ** **:
 
@@ -266,15 +266,15 @@ Tenga en cuenta el encabezado dorado de la billetera en modo fuera de línea. De
 
 ![2019-46 Request Payment page](https://i.imgur.com/ova1s8W.jpg)
 
-Copie la dirección de recepción en un archivo de texto y cópiela en la memoria USB para transferirla a la computadora en línea. Ahora puede enviar QTUM a esta dirección para financiar la billetera fuera de línea.
+Copie la dirección de recepción en un archivo de texto y cópiela en la memoria USB para transferirla a la computadora en línea. Ahora puede enviar EVO a esta dirección para financiar la billetera fuera de línea.
 
-Esto funciona para enviar QTUM a la dirección de la billetera fuera de línea porque las monedas QTUM en realidad se almacenan como transacciones no gastadas en la blockchain (nunca se almacenan monedas en ninguna billetera). Sin embargo, la billetera fuera de línea contiene la clave privada para su dirección, y solo la billetera fuera de línea puede firmar transacciones para enviar QTUM desde su dirección.
+Esto funciona para enviar EVO a la dirección de la billetera fuera de línea porque las monedas EVO en realidad se almacenan como transacciones no gastadas en la blockchain (nunca se almacenan monedas en ninguna billetera). Sin embargo, la billetera fuera de línea contiene la clave privada para su dirección, y solo la billetera fuera de línea puede firmar transacciones para enviar EVO desde su dirección.
 
 Ahora podemos usar los 3 pasos de transacción para un envío seguro.
 
 1. Componer la transaccion base con la billetera online
 
-En el menú de la billetera en línea, seleccione ** `Envío seguro` ** y para el paso 1 complete las direcciones y la cantidad. * From Address ** es la dirección de la billetera desconectada. La billetera en línea consultará a la blockchain para la "Dirección de origen" y seleccionará una transacción o transacciones anteriores que tengan QTUM suficiente para la cantidad que se envía. Use 0.01 para la tarifa a menos que sepa cómo elegir tarifas más bajas.
+En el menú de la billetera en línea, seleccione ** `Envío seguro` ** y para el paso 1 complete las direcciones y la cantidad. * From Address ** es la dirección de la billetera desconectada. La billetera en línea consultará a la blockchain para la "Dirección de origen" y seleccionará una transacción o transacciones anteriores que tengan EVO suficiente para la cantidad que se envía. Use 0.01 para la tarifa a menos que sepa cómo elegir tarifas más bajas.
 
 Después de completar todos los campos, presione ** `CONFIRM` **, vuelva a ingresar la * A la dirección **, presione **` CONFIRM` ** y ** `CONFIRM` ** nuevamente para crear el archivo de transacción sin procesar:
 
@@ -286,7 +286,7 @@ La billetera en línea creará un archivo de texto de transacción sin procesar,
 {"from":"","to":"","amount":"5.0","fee":"0.01", "utxo":[{"address":"","txid":"","confirmations":4, "isStake":false,"amount":10,"value":1000000000,"hash":"","pos":0}]}
 ```
 
-Aquí la billetera en línea ha seleccionado una transacción no gastada apropiada propiedad de la "Dirección de origen" que tiene 10.0 QTUM.
+Aquí la billetera en línea ha seleccionado una transacción no gastada apropiada propiedad de la "Dirección de origen" que tiene 10.0 EVO.
 
 Debe dejar la billetera en línea ejecutándose al final del paso 1 mientras completa el paso 2 con la computadora desconectada, luego regrese para el paso 3. Salir de la billetera en línea en este punto y volver a cargar para el paso 3 cancelará la secuencia.
 
@@ -330,7 +330,7 @@ Para recibir tokens QRC20, en la billetera web * Vea la página de Información 
 
 ### Enviar tokens QRC20
 
-Para enviar tokens QRC20 debe tener suficientes monedas QTUM en la dirección vinculada a ese token. La tarifa predeterminada de la billetera web para enviar tokens es 0.00000040 precio del gas x 250,000 gas = 0.1 QTUM más la tarifa de transacción predeterminada de 0.01 QTUM, para una tarifa total de 0.11 QTUM. Puede usar estos valores predeterminados a menos que comprenda cómo establecer valores más bajos, pero no se preocupe, cualquier exceso de gas se reembolsará como una cantidad extraída (la cantidad extraída debe madurar durante 500 bloques antes de que pueda enviarse o usarse para gas / matrícula).
+Para enviar tokens QRC20 debe tener suficientes monedas EVO en la dirección vinculada a ese token. La tarifa predeterminada de la billetera web para enviar tokens es 0.00000040 precio del gas x 250,000 gas = 0.1 EVO más la tarifa de transacción predeterminada de 0.01 EVO, para una tarifa total de 0.11 EVO. Puede usar estos valores predeterminados a menos que comprenda cómo establecer valores más bajos, pero no se preocupe, cualquier exceso de gas se reembolsará como una cantidad extraída (la cantidad extraída debe madurar durante 500 bloques antes de que pueda enviarse o usarse para gas / matrícula).
 
 ![25. Send QRC20 Token EN](https://i.imgur.com/ttRyUqK.jpg)
 
@@ -338,11 +338,11 @@ Para enviar tokens QRC20 debe tener suficientes monedas QTUM en la dirección vi
 
 # Agregar un token QRC20
 
-La billetera web tendrá capacidad incorporada para tokens QRC20 populares, y puede agregar tokens adicionales ingresando la información del contrato inteligente del token. Por ejemplo, si desea agregar el token XYZ, busque ese token en el Explorador qtum.info, copie el campo contrato * Dirección Hash *:
+La billetera web tendrá capacidad incorporada para tokens QRC20 populares, y puede agregar tokens adicionales ingresando la información del contrato inteligente del token. Por ejemplo, si desea agregar el token XYZ, busque ese token en el Explorador ex.coinevo.tech, copie el campo contrato * Dirección Hash *:
 
 ![26. Copy Address Hash EN](https://i.imgur.com/fW00puB.jpg)
 
-En la billetera web, seleccione la opción de menú ** `Enviar` **, haga clic en el menú desplegable junto a" QTUM ", desplácese hasta la parte inferior de la lista Moneda / Token y haga clic en el botón **` Más ... `** :
+En la billetera web, seleccione la opción de menú ** `Enviar` **, haga clic en el menú desplegable junto a" EVO ", desplácese hasta la parte inferior de la lista Moneda / Token y haga clic en el botón **` Más ... `** :
 
 ![27. Add QRC20 Token EN](https://i.imgur.com/PSCBSjP.jpg)
 
@@ -372,7 +372,7 @@ Deje * Decimales * establecido en el 8 recomendado a menos que tenga una buena r
 
 Ingrese el * Suministro total * de tokens para crear, 100 millones es un número típico.
 
-Deje el * Precio de la gasolina *, el * Límite de gasolina * y la * Tarifa * configurados como están, a menos que comprenda cómo hacer cambios. Si * Límite de gas * se establece demasiado bajo, la transacción de creación del contrato se quedará sin gas y fallará. Para la configuración predeterminada, la tarifa total para el contrato de creación de tokens será de 2,500,000 x 0.00000040 + 0.01 = 1.01 QTUM, por lo que la billetera debe tener al menos esta cantidad y se reembolsará el exceso de gas.
+Deje el * Precio de la gasolina *, el * Límite de gasolina * y la * Tarifa * configurados como están, a menos que comprenda cómo hacer cambios. Si * Límite de gas * se establece demasiado bajo, la transacción de creación del contrato se quedará sin gas y fallará. Para la configuración predeterminada, la tarifa total para el contrato de creación de tokens será de 2,500,000 x 0.00000040 + 0.01 = 1.01 EVO, por lo que la billetera debe tener al menos esta cantidad y se reembolsará el exceso de gas.
 
 Presione el botón verde ** `CONFIRM` **. En la pantalla * ¿Confirmas para crear este Token *, revisa la transacción sin procesar y presiona el botón azul ** `CONFIRMAR` **.
 
@@ -384,13 +384,13 @@ Verá la barra verde * Envío exitoso * en la parte inferior de la pantalla:
 
 Siga el enlace para ver la transacción de creación de contrato en la blockchain (después de que se publique el siguiente bloque).
 
-Tenga en cuenta que los contratos se referencian utilizando su hash de dirección, que es una dirección hexadecimal de 40 caracteres y solo otra forma de representar una dirección Qtum "Q".
+Tenga en cuenta que los contratos se referencian utilizando su hash de dirección, que es una dirección hexadecimal de 40 caracteres y solo otra forma de representar una dirección Evo "Q".
 
-Desde este punto, puede agregar el nuevo token a su billetera como se muestra arriba [Agregar un token QRC20] (https://github.com/qtumproject/documents/tree/master/en/QTUM-WebWallet-usage#adding-a -qrc20-token).
+Desde este punto, puede agregar el nuevo token a su billetera como se muestra arriba [Agregar un token QRC20] (https://github.com/coinevo/documents/tree/master/en/EVO-WebWallet-usage#adding-a -qrc20-token).
 
 ### Crear contrato
 
-** `Crear contrato` ** permite la publicación de cualquier tipo de contrato inteligente. Para crear el contrato, comience escribiendo el código de Solidity y compílelo a bytecode usando un IDE web (Entorno de desarrollo integrado) como [qmix] (https://qmix.blockchainspaceman.com/) o [remix] (http: // remix. ethereum.org/) o una herramienta de línea de comando como [solar] (https://github.com/qtumproject/solar).
+** `Crear contrato` ** permite la publicación de cualquier tipo de contrato inteligente. Para crear el contrato, comience escribiendo el código de Solidity y compílelo a bytecode usando un IDE web (Entorno de desarrollo integrado) como [qmix] (https://qmix.blockchainspaceman.com/) o [remix] (http: // remix. ethereum.org/) o una herramienta de línea de comando como [solar] (https://github.com/coinevo/solar).
 
 Aquí hay un ejemplo usando el sitio web remix en [http://remix.ethereum.org] (http://remix.ethereum.org/) para un contrato que rastrea el nombre y la edad:
 
@@ -436,7 +436,7 @@ El bytecode real (delineado en rojo a continuación) comienza con "6080" y tiene
 
 Además, presione el botón ** `ABI` ** para copiar el texto ABI en el portapapeles y guardar en el mismo archivo de texto con el código de bytes.
 
-Ahora podemos publicar el contrato. En el menú de la billetera web, seleccione ** `Crear contrato` **, copie y pegue el código de bytes (la cadena hexadecimal dada por" objeto "como se muestra arriba) en el campo * Código de bytes *. Deje los campos * Precio de gas *, * Límite de gas * y * Tarifa * configurados como predeterminados a menos que comprenda cómo cambiarlos. La configuración predeterminada dará una tarifa de 2,500,000 x 0.0000004 + 0.01 = 1.01 QTUM. Su billetera necesitará al menos esta cantidad de QTUM para publicar el contrato. Presione el botón verde ** `CONFIRM` ** para continuar:
+Ahora podemos publicar el contrato. En el menú de la billetera web, seleccione ** `Crear contrato` **, copie y pegue el código de bytes (la cadena hexadecimal dada por" objeto "como se muestra arriba) en el campo * Código de bytes *. Deje los campos * Precio de gas *, * Límite de gas * y * Tarifa * configurados como predeterminados a menos que comprenda cómo cambiarlos. La configuración predeterminada dará una tarifa de 2,500,000 x 0.0000004 + 0.01 = 1.01 EVO. Su billetera necesitará al menos esta cantidad de EVO para publicar el contrato. Presione el botón verde ** `CONFIRM` ** para continuar:
 
 ![2019-15 Create Contract](https://i.imgur.com/dJAyKga.jpg)
 
@@ -454,7 +454,7 @@ Desde la transacción de creación del contrato en el Explorador, copie la * Dir
 
 ### Enviar a contrato
 
-** `Enviar al contrato` ** se usa para cambiar los valores de memoria del contrato, por ejemplo, transfiriendo tokens o cambiando el almacenamiento de variables en la base de datos de estado del contrato. La transacción de envío a contrato requiere una tarifa y pago de gas, por lo que necesitará suficiente QTUM en la billetera. Continuando con el ejemplo anterior, lo enviaremos al contrato para establecer el nombre y la edad.
+** `Enviar al contrato` ** se usa para cambiar los valores de memoria del contrato, por ejemplo, transfiriendo tokens o cambiando el almacenamiento de variables en la base de datos de estado del contrato. La transacción de envío a contrato requiere una tarifa y pago de gas, por lo que necesitará suficiente EVO en la billetera. Continuando con el ejemplo anterior, lo enviaremos al contrato para establecer el nombre y la edad.
 
 En el menú, presione ** `Enviar al contrato` **. En la página * Enviar al contrato *, copie y pegue la * Dirección del contrato * y el * ABI * en sus campos (el ABI para este contrato es de aproximadamente 60 líneas de texto, las pocas líneas inferiores son visibles en la ventana de desplazamiento a continuación).
 
@@ -472,7 +472,7 @@ Utilice los mismos pasos ** `Enviar al contrato` ** para seleccionar el método 
 
 ### Llamada de contrato
 
-Al llamar al contrato, se leen las variables de estado en la copia local de la blockchain (en la base de datos de Qtum State) para el nodo del servidor de la billetera web (sin la necesidad de una transacción con gas) y se obtiene un resultado inmediato ya que no hay necesidad de esperar siguiente bloque para publicar. Para llamadas de contrato, ingrese la dirección del contrato y la interfaz ABI.
+Al llamar al contrato, se leen las variables de estado en la copia local de la blockchain (en la base de datos de Evo State) para el nodo del servidor de la billetera web (sin la necesidad de una transacción con gas) y se obtiene un resultado inmediato ya que no hay necesidad de esperar siguiente bloque para publicar. Para llamadas de contrato, ingrese la dirección del contrato y la interfaz ABI.
 
 En el menú de la billetera web, seleccione ** `Contrato de llamada` **. En la página * Contrato * pegue la dirección del contrato y ABI. En la fila * Método * (no se muestra a continuación) presione la flecha desplegable y seleccione el método * getName *. Tenga en cuenta que no hay campos para el gas o las tarifas, ya que ninguno es obligatorio. Presione el ** botón verde CONFIRMAR **:
 
@@ -491,4 +491,4 @@ Usando los mismos pasos de ** `Contrato de llamada` ** para seleccionar * getAge
 La conversión de hexadecimal 19 a decimal da 25 como se establece anteriormente.
 
 [
-](https://docs.qtum.site/en/How-to-use-Qtum-Android-Wallet/)
+](https://docs.coinevo.tech/en/How-to-use-Evo-Android-Wallet/)

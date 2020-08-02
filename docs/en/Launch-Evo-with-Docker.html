@@ -1,0 +1,872 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Launch Evo With Docker · Evo Documentation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Build-Evo-on-CentOS.html" />
+    
+    
+    <link rel="prev" href="Guidance-of-Evo-Deployment-and-RPC-Settings.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Using the Evo wallet</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="Evo-Wallet-Tutorial/">
+            
+                <a href="Evo-Wallet-Tutorial/">
+            
+                    
+                    Desktop wallet basic usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="EVO-wallet-usage-best-practices/">
+            
+                <a href="EVO-wallet-usage-best-practices/">
+            
+                    
+                    Best Practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="updateevo/">
+            
+                <a href="updateevo/">
+            
+                    
+                    How to Update your Evo wallet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="evo0182overview/">
+            
+                <a href="evo0182overview/">
+            
+                    
+                    Evo 0.18.2 Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="commands/">
+            
+                <a href="commands/">
+            
+                    
+                    Evo Core Wallet Commands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="Adding-Nodes/">
+            
+                <a href="Adding-Nodes/">
+            
+                    
+                    Adding Nodes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="Encrypt-and-Unlock-Evo-Wallet/">
+            
+                <a href="Encrypt-and-Unlock-Evo-Wallet/">
+            
+                    
+                    Encrypt and Unlock Evo Wallet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="Wallet-Recovery-with-Salvagewallet.html">
+            
+                <a href="Wallet-Recovery-with-Salvagewallet.html">
+            
+                    
+                    Wallet Recovery With Salvagewallet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="Testnet-user-guide/README.md">
+            
+                <span>
+            
+                    
+                    Testnet User Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="bech32/">
+            
+                <a href="bech32/">
+            
+                    
+                    bech32 support
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Staking</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="OfflineStaking.html">
+            
+                <a href="OfflineStaking.html">
+            
+                    
+                    Offline Staking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="evorepo/">
+            
+                <a href="evorepo/">
+            
+                    
+                    Repositories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="gcpgettingstarted/">
+            
+                <a href="gcpgettingstarted/">
+            
+                    
+                    EVO On Google Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Evo-AWS/">
+            
+                <a href="Evo-AWS/">
+            
+                    
+                    EVO On AWS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="How-to-Stake-EVO-using-a-Linux-Virtual-Private-Server/">
+            
+                <a href="How-to-Stake-EVO-using-a-Linux-Virtual-Private-Server/">
+            
+                    
+                    Stake With VPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="Evo-on-Raspberry-Pi/">
+            
+                <a href="Evo-on-Raspberry-Pi/">
+            
+                    
+                    Stake With Raspberry Pi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="How-to-Stake-with-Evo/">
+            
+                <a href="How-to-Stake-with-Evo/">
+            
+                    
+                    How to Stake With Evo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="freebsd/">
+            
+                <a href="freebsd/">
+            
+                    
+                    How to Stake on FreeBSD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Other Evo wallets</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="Evo-Electrum-User-Guide.html">
+            
+                <a href="Evo-Electrum-User-Guide.html">
+            
+                    
+                    Evo Electrum Wallet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="EVO-WebWallet-usage/">
+            
+                <a href="EVO-WebWallet-usage/">
+            
+                    
+                    Web Wallet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="How-to-use-Evo-Android-Wallet/">
+            
+                <a href="How-to-use-Evo-Android-Wallet/">
+            
+                    
+                    How to use Evo Android Wallet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="Evo-Exchange-Usage-Guide-and-Info.html">
+            
+                <a href="Evo-Exchange-Usage-Guide-and-Info.html">
+            
+                    
+                    Evo Exchange Usage Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="How-To-Add-Options/">
+            
+                <a href="How-To-Add-Options/">
+            
+                    
+                    How to Add Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="How-to-Use-Bootstrap/">
+            
+                <a href="How-to-Use-Bootstrap/">
+            
+                    
+                    How to Use bootstrap.dat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="Evo-RPC-API/">
+            
+                <a href="Evo-RPC-API/">
+            
+                    
+                    Evo RPC API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Evo Lightning Client</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="lightning/">
+            
+                <a href="lightning/">
+            
+                    
+                    Evo Lightning Client
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Deploy Evo</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="Guidance-of-Evo-Deployment-and-RPC-Settings.html">
+            
+                <a href="Guidance-of-Evo-Deployment-and-RPC-Settings.html">
+            
+                    
+                    Guidance of Evo Deployment and RPC Settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.2" data-path="Launch-Evo-with-Docker.html">
+            
+                <a href="Launch-Evo-with-Docker.html">
+            
+                    
+                    Launch Evo With Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="Build-Evo-on-CentOS.html">
+            
+                <a href="Build-Evo-on-CentOS.html">
+            
+                    
+                    How to Build Evo on CentOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="How-To-Build-Evo-On-Raspbian.html">
+            
+                <a href="How-To-Build-Evo-On-Raspbian.html">
+            
+                    
+                    How to Build Evo on Raspbian
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="How-to-Deploy-Star-Network/">
+            
+                <a href="How-to-Deploy-Star-Network/">
+            
+                    
+                    Deploy Evo Star Network
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Smart Contract and QRC20</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="QRC20-Token-Introduce.html">
+            
+                <a href="QRC20-Token-Introduce.html">
+            
+                    
+                    QRC20 Token Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="QRC20-integration.html">
+            
+                <a href="QRC20-integration.html">
+            
+                    
+                    QRC20 Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Unita</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="Technical-White-Paper-for-EvoX/">
+            
+                <a href="Technical-White-Paper-for-EvoX/">
+            
+                    
+                    Unita Technical White Paper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="unitarepo/">
+            
+                <a href="unitarepo/">
+            
+                    
+                    Install Unita from Linux repositories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="unitagettingstarted/">
+            
+                <a href="unitagettingstarted/">
+            
+                    
+                    Unita on Google Cloud Getting started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="One-Click-Launch-Chain/">
+            
+                <a href="One-Click-Launch-Chain/">
+            
+                    
+                    Unita One-Click-Launch-Chain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="SCAR-Consensus/">
+            
+                <a href="SCAR-Consensus/">
+            
+                    
+                    SCAR: Scalable Consensus Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="DDAO-Data-Management/">
+            
+                <a href="DDAO-Data-Management/">
+            
+                    
+                    DDAO: Decentralized Data Access Object
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Research</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="Confidential-Assets.html">
+            
+                <a href="Confidential-Assets.html">
+            
+                    
+                    Confidential Assets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="Data-Analytics.html">
+            
+                <a href="Data-Analytics.html">
+            
+                    
+                    Data Analytics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Launch Evo With Docker</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="how-to-run-evo-node-with-docker"><a name="how-to-run-evo-node-with-docker" class="plugin-anchor" href="#how-to-run-evo-node-with-docker"><i class="fa fa-link" aria-hidden="true"></i></a>How to run Evo node with docker</h1>
+<h2 id="quick-start"><a name="quick-start" class="plugin-anchor" href="#quick-start"><i class="fa fa-link" aria-hidden="true"></i></a>Quick start</h2>
+<p>This tutorial use Linux Ubuntu as example, OSX and windows platform are almost the same.</p>
+<p>Suppose the reader has basic command line knowledge, and also have docker correctly installed and configured. If not, please learn about command line and Docker first.</p>
+<p>For more details, please refer to <a href="https://github.com/coinevo/evo-docker.git" target="_blank">github</a></p>
+<h2 id="get-docker-image"><a name="get-docker-image" class="plugin-anchor" href="#get-docker-image"><i class="fa fa-link" aria-hidden="true"></i></a>Get docker image</h2>
+<p>You might take either way:</p>
+<h3 id="pull-a-image-from-public-docker-hub"><a name="pull-a-image-from-public-docker-hub" class="plugin-anchor" href="#pull-a-image-from-public-docker-hub"><i class="fa fa-link" aria-hidden="true"></i></a>Pull a image from Public Docker hub</h3>
+<pre><code>$ docker pull evo/evo
+</code></pre><h3 id="or-build-evo-image-with-provided-dockerfile"><a name="or-build-evo-image-with-provided-dockerfile" class="plugin-anchor" href="#or-build-evo-image-with-provided-dockerfile"><i class="fa fa-link" aria-hidden="true"></i></a>Or, build evo image with provided Dockerfile</h3>
+<p>The Dockerfile can be downloaded on github: <a href="https://github.com/coinevo/evo-docker/blob/master/release/Dockerfile" target="_blank">Dockerfile</a></p>
+<pre><code>$docker build --rm -t evo/evo .
+</code></pre><p>For historical versions, please visit <a href="https://hub.docker.com/r/evo/evo/" target="_blank">docker hub</a></p>
+<h2 id="prepare-data-path-and-evoconf"><a name="prepare-data-path-and-evoconf" class="plugin-anchor" href="#prepare-data-path-and-evoconf"><i class="fa fa-link" aria-hidden="true"></i></a>Prepare data path and evo.conf</h2>
+<p>In order to use user-defined config file, as well as save block chain data, -v option for docker is recommended.</p>
+<p>First chose a path to save evo block chain data:</p>
+<pre><code>sudo rm -rf /data/evo-data
+sudo mkdir -p /data/evo-data
+sudo chmod a+w /data/evo-data
+</code></pre><p>Create your config file, refer to the example [evo.conf]!(<a href="https://github.com/coinevo/evo/blob/1a926b980f03e97322c7dd787835bec1730f35d2/contrib/debian/examples/evo.conf" target="_blank">https://github.com/coinevo/evo/blob/1a926b980f03e97322c7dd787835bec1730f35d2/contrib/debian/examples/evo.conf</a>). Note rpcuser and rpcpassword to required for later <code>evo-cli</code> usage for docker, so it is better to set those two options. Then please create the file ${PWD}/evo.conf with content:</p>
+<pre><code>rpcuser=evo
+rpcpassword=evotest
+</code></pre><h2 id="launch-evod"><a name="launch-evod" class="plugin-anchor" href="#launch-evod"><i class="fa fa-link" aria-hidden="true"></i></a>Launch evod</h2>
+<p>To launch evo node:</p>
+<pre><code>## to launch evod
+$ docker run -d --rm --name evo_node \
+             -v ${PWD}/evo.conf:/root/.evo/evo.conf \
+             -v /data/evo-data/:/root/.evo/ \
+             evo/evo evod
+
+## check docker processed
+$ docker ps
+
+## to stop evod
+$ docker run -i --network container:evo_node \
+             -v ${PWD}/evo.conf:/root/.evo/evo.conf \
+             -v /data/evo-data/:/root/.evo/ \
+             evo/evo evo-cli stop
+</code></pre><p><code>${PWD}/evo.conf</code> will be used, and blockchain data saved under /data/evo-data/</p>
+<h2 id="interact-with-evod-using-evo-cli"><a name="interact-with-evod-using-evo-cli" class="plugin-anchor" href="#interact-with-evod-using-evo-cli"><i class="fa fa-link" aria-hidden="true"></i></a>Interact with <code>evod</code> using <code>evo-cli</code></h2>
+<p>Use following docker command to interact with your evo node with <code>evo-cli</code>:</p>
+<pre><code>$ docker run -i --network container:evo_node \
+             -v ${PWD}/evo.conf:/root/.evo/evo.conf \
+             -v /data/evo-data/:/root/.evo/ \
+             evo/evo evo-cli getinfo
+</code></pre><p>For more evo-cli commands, use:</p>
+<pre><code>$ docker run -i --network container:evo_node \
+             -v ${PWD}/evo.conf:/root/.evo/evo.conf \
+             -v /data/evo-data/:/root/.evo/ \
+             evo/evo evo-cli help
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Guidance-of-Evo-Deployment-and-RPC-Settings.html" class="navigation navigation-prev " aria-label="Previous page: Guidance of Evo Deployment and RPC Settings">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Build-Evo-on-CentOS.html" class="navigation navigation-next " aria-label="Next page: How to Build Evo on CentOS">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Launch Evo With Docker","level":"6.2","depth":1,"next":{"title":"How to Build Evo on CentOS","level":"6.3","depth":1,"path":"Build-Evo-on-CentOS.md","ref":"Build-Evo-on-CentOS.md","articles":[]},"previous":{"title":"Guidance of Evo Deployment and RPC Settings","level":"6.1","depth":1,"path":"Guidance-of-Evo-Deployment-and-RPC-Settings.md","ref":"Guidance-of-Evo-Deployment-and-RPC-Settings.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Evo Documentation","language":"en","gitbook":"*"},"file":{"path":"Launch-Evo-with-Docker.md","mtime":"2018-06-08T06:49:51.314Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-08T08:55:07.233Z"},"basePath":".","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

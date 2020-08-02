@@ -7,9 +7,9 @@
     "deploy": "npm run build && npm run publish"
   },
   "version": "1.0.0",
-  "description": "qtum documentation project",
+  "description": "evo documentation project",
   "main": "index.js",
-  "repository": "git@github.com:qtumproject/documents.git",
+  "repository": "git@github.com:coinevo/documents.git",
   "author": "Howard Yeh <howard@metacircus.com>",
   "license": "MIT"
 }

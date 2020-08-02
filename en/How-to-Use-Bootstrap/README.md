@@ -8,14 +8,14 @@ Instead of using peer to peer communication your wallet client can read blockcha
 
 ## How to generate bootstrap.dat?
 
-Construct a linear, no-fork, best version of the Qtum blockchain. The scripts run using Python 3 but are compatible with Python 2.
+Construct a linear, no-fork, best version of the Evo blockchain. The scripts run using Python 3 but are compatible with Python 2.
 
 ### Step 1: Download script files
 
-Clone the qtum official repo and enter `contrib/linearize` directory
+Clone the evo official repo and enter `contrib/linearize` directory
 
-    git clone https://github.com/qtumproject/qtum.git
-    cd qtum/contrib/linearize
+    git clone https://github.com/coinevo/evo.git
+    cd evo/contrib/linearize
 
 ### Step 2: Download hash list
 
@@ -31,7 +31,7 @@ Optional config file setting for linearize-hashes:
 * Blockchain: `min_height`, `max_height`
 * `rev_hash_bytes`: If true, the written block hash list will be byte-reversed. (In other words, the hash returned by getblockhash will have its bytes reversed.) False by default. Intended for generation of standalone hash lists but safe to use with linearize-data.py, which will output the same data no matter which byte format is chosen.
 
-The `linearize-hashes` script requires a connection, local or remote, to a JSON-RPC server. Running `qtumd` or `qtum-qt -server` will be sufficient.
+The `linearize-hashes` script requires a connection, local or remote, to a JSON-RPC server. Running `evod` or `evo-qt -server` will be sufficient.
 
 ### Step 3: Copy local block data
 
@@ -45,7 +45,7 @@ Optional config file setting for linearize-data:
 * `debug_output`: Some printouts may not always be desired. If true, such output will be printed.
 * `file_timestamp`: Set each file's last-accessed and last-modified times, respectively, to the current time and to the timestamp of the most recent block written to the script's blockchain.
 * `genesis`: The hash of the genesis block in the blockchain.
-* `input`: qtumd blocks/ directory containing blkNNNNN.dat
+* `input`: evod blocks/ directory containing blkNNNNN.dat
 * `hashlist`: text file containing list of block hashes created by linearize-hashes.py.
 * `max_out_sz`: Maximum size for files created by the `output_file` option. (Default: `1000*1000*1000` bytes)
 * `netmagic`: Network magic number.
@@ -55,9 +55,9 @@ Optional config file setting for linearize-data:
 
 ## How to use bootstrap.dat
 
-1. Download `bootstrap.dat` file from `https://s.qtum.site/bootstrap.dat`.
-2. Move `bootstrap.dat` into qtum data directory, the default datadir paths are different paths for different OS:
-   * Linux: `~/.qtum`
-   * OSX: `~/Library/Application Support/Qtum`
-   * Windows: `%APPDATA%\Qtum` (Please paste this path to your windows explorer, the path will be resolved automatically)
+1. Download `bootstrap.dat` file from `https://s.coinevo.tech/bootstrap.dat`.
+2. Move `bootstrap.dat` into evo data directory, the default datadir paths are different paths for different OS:
+   * Linux: `~/.evo`
+   * OSX: `~/Library/Application Support/Evo`
+   * Windows: `%APPDATA%\Evo` (Please paste this path to your windows explorer, the path will be resolved automatically)
 3. Restart wallet and wait for reindexing.

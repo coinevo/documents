@@ -1,36 +1,36 @@
 # Staking fuera de linea 
 
-* [Delegar dirección a Super Stacker](https://github.com/qtumproject/documents/tree/master/en/Qtum-Wallet-Tutorial/README.md#delegating-address-to-super-staker)
-* [Delegar operaciones de dirección](https://github.com/qtumproject/documents/tree/master/en/Qtum-Wallet-Tutorial/README.md#delegating-aAddress-operations)
-* [Configuración Super Stacker](https://github.com/qtumproject/documents/tree/master/en/Qtum-Wallet-Tutorial/README.md#super-staker-configuration)
-* [Lanzamiento de Qtum Core como Super Stacker](https://github.com/qtumproject/documents/tree/master/en/Qtum-Wallet-Tutorial/README.md#launching-qtum-core-as-a-super-staker)
-* [qtumd Super Staker](https://github.com/qtumproject/documents/tree/master/en/Qtum-Wallet-Tutorial/README.md#qtumd-super-staker)
-* [Operaciones Super Stacker ](https://github.com/qtumproject/documents/tree/master/en/Qtum-Wallet-Tutorial/README.md#super-staker-operations)
-* [Restaurar](https://github.com/qtumproject/documents/tree/master/en/Qtum-Wallet-Tutorial/README.md#restore)
+* [Delegar dirección a Super Stacker](https://github.com/coinevo/documents/tree/master/en/Evo-Wallet-Tutorial/README.md#delegating-address-to-super-staker)
+* [Delegar operaciones de dirección](https://github.com/coinevo/documents/tree/master/en/Evo-Wallet-Tutorial/README.md#delegating-aAddress-operations)
+* [Configuración Super Stacker](https://github.com/coinevo/documents/tree/master/en/Evo-Wallet-Tutorial/README.md#super-staker-configuration)
+* [Lanzamiento de Evo Core como Super Stacker](https://github.com/coinevo/documents/tree/master/en/Evo-Wallet-Tutorial/README.md#launching-evo-core-as-a-super-staker)
+* [evod Super Staker](https://github.com/coinevo/documents/tree/master/en/Evo-Wallet-Tutorial/README.md#evod-super-staker)
+* [Operaciones Super Stacker ](https://github.com/coinevo/documents/tree/master/en/Evo-Wallet-Tutorial/README.md#super-staker-operations)
+* [Restaurar](https://github.com/coinevo/documents/tree/master/en/Evo-Wallet-Tutorial/README.md#restore)
 
 # Dirección elegible para Super Stacker
 
-Qtum Staking Fuera de linea permite que se delegue la dirección de una billetera no-staking (capaz de realizar la transacción de asignación de delegación) a un Super Staker. El Staking fuera de linea no es de custodia: el usuario de la delegación mantiene el control total de sus monedas y claves privadas. La delegación de dirección se realiza a través de una transacción de contrato inteligente de la billetera del usuario de la delegación que identifica la dirección del delegador, la dirección de Super Staker y la tarifa que el delegador acepta pagar. Si el Super Staker acepta esta tarifa, comenzará a staking los UTXO de la dirección delegada.
+Evo Staking Fuera de linea permite que se delegue la dirección de una billetera no-staking (capaz de realizar la transacción de asignación de delegación) a un Super Staker. El Staking fuera de linea no es de custodia: el usuario de la delegación mantiene el control total de sus monedas y claves privadas. La delegación de dirección se realiza a través de una transacción de contrato inteligente de la billetera del usuario de la delegación que identifica la dirección del delegador, la dirección de Super Staker y la tarifa que el delegador acepta pagar. Si el Super Staker acepta esta tarifa, comenzará a staking los UTXO de la dirección delegada.
 
 Las reglas normales para staking UTXOs aplican a UTXOs delegadas:
 
 * Los UTXO solo se pueden usar para staking después de que maduren (500 confirmaciones)
-* El Super Staker establecerá un tamaño mínimo de UTXO para stake, por defecto a 100 QTUM. Los UTXO delegados por debajo de esta cantidad serán ignorados.
-* Es una buena práctica (para obtener rendimientos óptimos) dividir los UTXO en tamaños de 100 a 200 QTUM cada uno. Para los usuarios de la billetera Qtum Core, esto se puede lograr fácilmente con la versión de línea de comandos de `splitutxosforaddress`, que se describe a continuación.
+* El Super Staker establecerá un tamaño mínimo de UTXO para stake, por defecto a 100 EVO. Los UTXO delegados por debajo de esta cantidad serán ignorados.
+* Es una buena práctica (para obtener rendimientos óptimos) dividir los UTXO en tamaños de 100 a 200 EVO cada uno. Para los usuarios de la billetera Evo Core, esto se puede lograr fácilmente con la versión de línea de comandos de `splitutxosforaddress`, que se describe a continuación.
 
-Para realizar la asignación de delegación desde la billetera Qtum Core, seleccione Stake- Delegaciones, el botón Agregar delegación "+" en la esquina superior derecha, ingrese el nombre del Staker (solo para referencia local), la dirección del Staker, la tarifa que acepta pagar y Su dirección para ser delegada. Deje en paz la configuración predeterminada de Gas a menos que comprenda cómo configurarla. La transacción de delegación requerirá al menos 0,9 QTUM en tarifas y se reembolsará cualquier exceso.
+Para realizar la asignación de delegación desde la billetera Evo Core, seleccione Stake- Delegaciones, el botón Agregar delegación "+" en la esquina superior derecha, ingrese el nombre del Staker (solo para referencia local), la dirección del Staker, la tarifa que acepta pagar y Su dirección para ser delegada. Deje en paz la configuración predeterminada de Gas a menos que comprenda cómo configurarla. La transacción de delegación requerirá al menos 0,9 EVO en tarifas y se reembolsará cualquier exceso.
 
 ![1  Add Delegation Assignment](https://user-images.githubusercontent.com/29760787/85331894-f8cc5b80-b4a4-11ea-95d1-eb472a5454f1.jpg)
 
 Presione Confirmar y Sí para enviar la transacción de delegación.
 
-La delegación de direcciones también se puede lograr utilizando la billetera Qtum Electrum, que admite direcciones de billetera de hardware Ledger.
+La delegación de direcciones también se puede lograr utilizando la billetera Evo Electrum, que admite direcciones de billetera de hardware Ledger.
 
 # Delegar operaciones de dirección
 
-La transacción de la Dirección de delegado se envía a un contrato inteligente que mantiene las asignaciones de delegación y el Super Staker la recogerá allí. Puede ver las transacciones de recompensa de bloque de Dirección delegada en la billetera y también con el explorador [qtum.info] (https://qtum.info/).
+La transacción de la Dirección de delegado se envía a un contrato inteligente que mantiene las asignaciones de delegación y el Super Staker la recogerá allí. Puede ver las transacciones de recompensa de bloque de Dirección delegada en la billetera y también con el explorador [ex.coinevo.tech] (https://ex.coinevo.tech/).
 
-Si la billetera tiene QTUM en varias direcciones, la delegación debe hacerse por separado para cada dirección (y la tarifa de transacción pagada por cada dirección), por lo que puede tener sentido consolidar los UTXO en una sola dirección antes de dividir UTXO y delegar. En este caso, use la selección de monedas para seleccionar y consolidar las direcciones. Alternativamente, el comando `sendmanywithdupes` podría usarse para enviar todo el saldo de la billetera a una nueva dirección con UTXO de tamaño apropiado.
+Si la billetera tiene EVO en varias direcciones, la delegación debe hacerse por separado para cada dirección (y la tarifa de transacción pagada por cada dirección), por lo que puede tener sentido consolidar los UTXO en una sola dirección antes de dividir UTXO y delegar. En este caso, use la selección de monedas para seleccionar y consolidar las direcciones. Alternativamente, el comando `sendmanywithdupes` podría usarse para enviar todo el saldo de la billetera a una nueva dirección con UTXO de tamaño apropiado.
 
 Si el Super Staker acepta una delegación por una tarifa particular, y luego el Super Staker reduce esa tarifa (acepta asignaciones por una tarifa más baja), para aprovechar esa tarifa más baja, el usuario debe delegar su dirección nuevamente con la tarifa más baja establecida.
 
@@ -41,9 +41,9 @@ Haga una copia de seguridad de su billetera para guardar una copia del archivo w
 
 # Configuración Super Stacker
 
-La billetera Qtum Core proporciona Prueba de participación en línea y se puede iniciar y configurar para operar como Super Staker y recibir delegaciones de direcciones.
+La billetera Evo Core proporciona Prueba de participación en línea y se puede iniciar y configurar para operar como Super Staker y recibir delegaciones de direcciones.
 
-Para configurar la billetera Qtum-Qt para un Super Staker, seleccione Stake - Super Staking y el botón "+" para agregar un nuevo Super Staker. Ingrese el nombre del Staker (solo para referencia local, aquí usando la primera parte de la dirección y "10" para indicar una tarifa del 10%) y seleccione la dirección del Staker usando el menú desplegable.
+Para configurar la billetera Evo-Qt para un Super Staker, seleccione Stake - Super Staking y el botón "+" para agregar un nuevo Super Staker. Ingrese el nombre del Staker (solo para referencia local, aquí usando la primera parte de la dirección y "10" para indicar una tarifa del 10%) y seleccione la dirección del Staker usando el menú desplegable.
 
 ![2  Super Staker Setup](https://user-images.githubusercontent.com/29760787/85331902-fc5fe280-b4a4-11ea-9506-84bfc0ecd6d5.jpg)
 
@@ -51,7 +51,7 @@ Para operar como Super Staker, la billetera debe poder verificar direcciones arb
 
 A continuación, la billetera solicitará que se reinicie como Super Staker usando Configuración - Opciones - Habilitar la superestabilización y OK para reiniciar la billetera.
 
-![3  Qtum-Qt Enable Super Staker](https://user-images.githubusercontent.com/29760787/85331912-008c0000-b4a5-11ea-9901-c4b4433a8746.jpg)
+![3  Evo-Qt Enable Super Staker](https://user-images.githubusercontent.com/29760787/85331912-008c0000-b4a5-11ea-9901-c4b4433a8746.jpg)
 
 Al inicio, la billetera confirmará que desea escanear y reconstruir la base de datos.
 
@@ -72,7 +72,7 @@ Los ajustes de configuración son:
   * Permitir lista: solo acepta delegaciones de direcciones específicas. Use este modo si opera un Super Staker solo para direcciones específicas, como sus monedas.
   * Lista de exclusión: direcciones para excluir de ser aceptado para staking.
 
-A continuacion, separemos los UTXOs a cantidades validas para enviar Stakes por el Super Staker. Los UTXO deben tener una cantidad mínima de 100 QTUM. En la página Super staker, seleccione el botón de monedas divididas (icono de tridente) y use los valores predeterminados o realice ajustes, pero no se utilizarán UTXOs inferiores a 100 QTUM para el staking.
+A continuacion, separemos los UTXOs a cantidades validas para enviar Stakes por el Super Staker. Los UTXO deben tener una cantidad mínima de 100 EVO. En la página Super staker, seleccione el botón de monedas divididas (icono de tridente) y use los valores predeterminados o realice ajustes, pero no se utilizarán UTXOs inferiores a 100 EVO para el staking.
 
 ![6  Split UTXOs GUI](https://user-images.githubusercontent.com/29760787/85331934-0a156800-b4a5-11ea-9339-eed51b9bddf6.jpg)
 
@@ -80,7 +80,7 @@ También puede dividir UTXO con el comando `splitutxosforaddress`, que también 
 
 `splitutxosforaddress" dirección "minValue maxValue (maxOutputs)`
 
-Por ejemplo, si una billetera contenía UTXO de 40, 50, 60, 70 y 800 QTUM, para dividirlos en UTXO de un mínimo de 100 y un máximo de 200 usaría el comando:
+Por ejemplo, si una billetera contenía UTXO de 40, 50, 60, 70 y 800 EVO, para dividirlos en UTXO de un mínimo de 100 y un máximo de 200 usaría el comando:
 
 ```splitutxosforaddress
 {
@@ -90,63 +90,63 @@ Por ejemplo, si una billetera contenía UTXO de 40, 50, 60, 70 y 800 QTUM, para 
 }
 ```
 
-Para este ejemplo, la entrada total fue de 1.020 QTUM, y la división fue de 9 UTXO de 100.0 y uno de 119.99566, la billetera envió una "transacción a sí mismo" y pagó una tarifa de 0.00434 QTUM.
+Para este ejemplo, la entrada total fue de 1.020 EVO, y la división fue de 9 UTXO de 100.0 y uno de 119.99566, la billetera envió una "transacción a sí mismo" y pagó una tarifa de 0.00434 EVO.
 
 Anteriormente, podía usar el comando `sendmanywithdupes` pero eso requería un formato significativo y operacionalmente querría enviarlo a una nueva dirección. Por supuesto, después de cualquiera de estos comandos, los UTXO deben madurar para 500 confirmaciones antes de que puedan usarse para staking.
 
-# Lanzamiento de Qtum Core como Super Stacker
+# Lanzamiento de Evo Core como Super Stacker
 
-Los pasos anteriores muestran la transición de una billetera Qtum Core de instalación predeterminada a un Super Staker. La billetera también se puede lanzar inicialmente como un Super Staker para acortar los pasos. En este caso, la sincronización inicial de blockchain se acompaña de la construcción de la base de datos para el índice de direcciones y los eventos de registro (como se discutió anteriormente) para que la billetera esté lista para Super Staking.
+Los pasos anteriores muestran la transición de una billetera Evo Core de instalación predeterminada a un Super Staker. La billetera también se puede lanzar inicialmente como un Super Staker para acortar los pasos. En este caso, la sincronización inicial de blockchain se acompaña de la construcción de la base de datos para el índice de direcciones y los eventos de registro (como se discutió anteriormente) para que la billetera esté lista para Super Staking.
 
-La billetera Qtum Core puede iniciarse como un Super Staker con Qtum-Qt usando Configuración - Opciones - Principal - Habilite los pasos de superestabilización como se muestra arriba, o directamente a través de la línea de comando usando el parámetro `-superstaking` (testnet se muestra aquí) .
+La billetera Evo Core puede iniciarse como un Super Staker con Evo-Qt usando Configuración - Opciones - Principal - Habilite los pasos de superestabilización como se muestra arriba, o directamente a través de la línea de comando usando el parámetro `-superstaking` (testnet se muestra aquí) .
 
 ![7  Linux Launch](https://user-images.githubusercontent.com/29760787/85331947-0da8ef00-b4a5-11ea-961a-33fe19df19d9.png)
 
 Este comando para el directorio predeterminado del programa en Windows sería:
 
-`qtum-qt -testnet -superstaking`
+`evo-qt -testnet -superstaking`
 
 ![8  Windows Command Line Launch](https://user-images.githubusercontent.com/29760787/85331962-113c7600-b4a5-11ea-84e3-81e030c91ac5.jpg) 
 
 Cuando la billetera se inicia y sincroniza la blockchain (creando índice de direcciones y eventos de registro), todo está listo para agregar Super Stakers. Configure un Super Staker y luego habilite el super staking en Configuración - Opciones - Principal - configure "Habilitar el super staking" y el Super Staker estará listo.
 
-# Qtum Super Staker
+# Evo Super Staker
 
-Cualquier dirección en una billetera Qtum Core que se ejecute como Super Staker puede recibir direcciones delegadas y operar como un Super Staker individual. La billetera de escritorio GUI Qtum-Qt permite la configuración de múltiples direcciones de Super Staker con diferentes tarifas y tamaños mínimos UTXO. La billetera del demonio / servidor qtumd ejecuta todas sus direcciones de Super Staker con la misma tarifa y el tamaño mínimo UTXO. Si se necesita una variación en varias direcciones de Super Staker con qtumd, es posible configurarlas con la billetera Qtum-Qt y simplemente transferir el archivo wallet.dat a qtumd.
+Cualquier dirección en una billetera Evo Core que se ejecute como Super Staker puede recibir direcciones delegadas y operar como un Super Staker individual. La billetera de escritorio GUI Evo-Qt permite la configuración de múltiples direcciones de Super Staker con diferentes tarifas y tamaños mínimos UTXO. La billetera del demonio / servidor evod ejecuta todas sus direcciones de Super Staker con la misma tarifa y el tamaño mínimo UTXO. Si se necesita una variación en varias direcciones de Super Staker con evod, es posible configurarlas con la billetera Evo-Qt y simplemente transferir el archivo wallet.dat a evod.
 
-La siguiente configuración para qtumd muestra el uso de una sola dirección Super Staker.
+La siguiente configuración para evod muestra el uso de una sola dirección Super Staker.
 
-Después de instalar qtumd, inicie con los siguientes parámetros (se muestra testnet):
+Después de instalar evod, inicie con los siguientes parámetros (se muestra testnet):
 
-`./qtumd -testnet -superstaking`
+`./evod -testnet -superstaking`
 
-Se pueden agregar parámetros opcionales para cambiar la tarifa predeterminada (del 10%) y el valor mínimo de UTXO (de 100 QTUM), por ejemplo, como:
+Se pueden agregar parámetros opcionales para cambiar la tarifa predeterminada (del 10%) y el valor mínimo de UTXO (de 100 EVO), por ejemplo, como:
 
 `-stakingminfee=12  -stakingminutxovalue=120`
 
-Una vez que la billetera sincroniza la blockchain, obtenga una dirección para enviar algo de QTUM. Esta será la dirección de Super Staker. Usa el comando:
+Una vez que la billetera sincroniza la blockchain, obtenga una dirección para enviar algo de EVO. Esta será la dirección de Super Staker. Usa el comando:
 
-`./qtum-cli -testnet getnewaddress "legacy"`
+`./evo-cli -testnet getnewaddress "legacy"`
 
-Luego envíe 1,300 QTUM a esta dirección.
+Luego envíe 1,300 EVO a esta dirección.
 
 ![9  Getnewaddress Getbalance](https://user-images.githubusercontent.com/29760787/85331969-13063980-b4a5-11ea-8ccc-280092131d18.png)
 
-Este 1.300 QTUM llegará en un solo UTXO, que debe dividirse para la operación Super Staker. Utilice el comando `splitutxosforaddress` con el tamaño mínimo predeterminado de 100 y el tamaño máximo de 200:
+Este 1.300 EVO llegará en un solo UTXO, que debe dividirse para la operación Super Staker. Utilice el comando `splitutxosforaddress` con el tamaño mínimo predeterminado de 100 y el tamaño máximo de 200:
 
-`./qtum-cli -testnet splitutxosforaddress "qdMp2BNpwL6ZmMEQHfLV5wGNVgmPCuzd7d" 100 200`
+`./evo-cli -testnet splitutxosforaddress "qdMp2BNpwL6ZmMEQHfLV5wGNVgmPCuzd7d" 100 200`
 
-![10  Split UTXOs for Address qtumd](https://user-images.githubusercontent.com/29760787/85331976-15689380-b4a5-11ea-91dd-187b6875f3b2.png)
+![10  Split UTXOs for Address evod](https://user-images.githubusercontent.com/29760787/85331976-15689380-b4a5-11ea-91dd-187b6875f3b2.png)
 
-La respuesta del comando muestra que se seleccionaron 1.300 QTUM para dividir, en este caso dividir en 12 UTXO que se pueden ver con el txid en el Explorador.
+La respuesta del comando muestra que se seleccionaron 1.300 EVO para dividir, en este caso dividir en 12 UTXO que se pueden ver con el txid en el Explorador.
 
-En este punto, la billetera qtumd está lista para la operación Super Staker con la dirección qdMp2BNpwL6ZmMEQHfLV5wGNVgmPCuzd7d, y las delegaciones se pueden monitorear usando el comando:
+En este punto, la billetera evod está lista para la operación Super Staker con la dirección qdMp2BNpwL6ZmMEQHfLV5wGNVgmPCuzd7d, y las delegaciones se pueden monitorear usando el comando:
 
 `getdelegationsforstaker "qdMp2BNpwL6ZmMEQHfLV5wGNVgmPCuzd7d"`
 
 # Operaciones Super Stacker 
 
-El Super Staker debe tener UTXO para comprometerse con las stakes para los UTXO delegados que está staking. El número de UTXO (de tamaño mínimo 100 QTUM) se basa en el peso delegado como un porcentaje del peso total de la red, y los buenos valores son 30 UTXO para el 1% del peso de la red, 50 UTXO para el 2.0%, 100 UTXO para el 5% y 160 UTXO para representar el 10% del peso total de la red.
+El Super Staker debe tener UTXO para comprometerse con las stakes para los UTXO delegados que está staking. El número de UTXO (de tamaño mínimo 100 EVO) se basa en el peso delegado como un porcentaje del peso total de la red, y los buenos valores son 30 UTXO para el 1% del peso de la red, 50 UTXO para el 2.0%, 100 UTXO para el 5% y 160 UTXO para representar el 10% del peso total de la red.
 
 Los Super Stakers deben controlar su peso de Wallet (peso UTXO menos la cantidad que está actualmente staking) y agregar UTXO si cae por debajo de varios miles.
 

@@ -1,8 +1,8 @@
 # QRC20 Integration Technical Guide
 
-This document explains the basics of interacting with an QRC20 contract with the `qtumd` CLI command tool.
+This document explains the basics of interacting with an QRC20 contract with the `evod` CLI command tool.
 
-The full example in PHP: [Qrc20.php](https://github.com/qtumproject/qrc20-wrapper/blob/master/Qrc20.php) .
+The full example in PHP: [Qrc20.php](https://github.com/coinevo/qrc20-wrapper/blob/master/Qrc20.php) .
 
 # Intro
 
@@ -17,14 +17,14 @@ The address of the QRC20 token contract is `TOKEN_CONTRACT_ADDRESS`.
 
 We'll use the following utility functions:
 
-+ [addressToHash160](https://github.com/qtumproject/qrc20-wrapper/blob/480a34b38f0224967fe6ff521539ca7e321a826e/Qrc20.php#L190) - Convert base58 address to hash160 address.
-+ [to32bytesArg](https://github.com/qtumproject/qrc20-wrapper/blob/480a34b38f0224967fe6ff521539ca7e321a826e/Qrc20.php#L186) left-pad hex data to 32 bytes with 0.
-+ [addDecimals](https://github.com/qtumproject/qrc20-wrapper/blob/480a34b38f0224967fe6ff521539ca7e321a826e/Qrc20.php#L214:10) multiply the nominal token amount by the number of decimal places.
++ [addressToHash160](https://github.com/coinevo/qrc20-wrapper/blob/480a34b38f0224967fe6ff521539ca7e321a826e/Qrc20.php#L190) - Convert base58 address to hash160 address.
++ [to32bytesArg](https://github.com/coinevo/qrc20-wrapper/blob/480a34b38f0224967fe6ff521539ca7e321a826e/Qrc20.php#L186) left-pad hex data to 32 bytes with 0.
++ [addDecimals](https://github.com/coinevo/qrc20-wrapper/blob/480a34b38f0224967fe6ff521539ca7e321a826e/Qrc20.php#L214:10) multiply the nominal token amount by the number of decimal places.
 
 
-## Running QTUMD
+## Running EVOD
 
-You should remember to enable the indexing service when starting `qtumd`, using the flags `-logevents -txindex`.
+You should remember to enable the indexing service when starting `evod`, using the flags `-logevents -txindex`.
 
 # Interacting With QRC20
 
@@ -35,7 +35,7 @@ In the CLI examples below, please substitute `{}` with actual addresses and valu
 + `$userAddress` is the deposit address
 
 ```
-qtum-cli callcontract \
+evo-cli callcontract \
     {TOKEN_CONTRACT_ADDRESS} \
     70a08231{to32bytesArg(addressToHash160($userAddress))}
 ```
@@ -48,7 +48,7 @@ In the JSON output look for `executionResult.output`. This is the token balance.
 + `$amount` the withdraw amount in unit token
 
 ```
-qtum-cli sendtocontract \
+evo-cli sendtocontract \
     {TOKEN_CONTRACT_ADDRESS} \
     a9059cbb{to32bytesArg(addressToHash160($userAddress))}{to32bytesArg(addDecimals($amount)) \
     0 \
@@ -61,12 +61,12 @@ The command returns the `txid` of this transaction. You may use it to find infor
 
 ## Generate a deposit address
 
-For an exchange, a user may use the same address for both QTUM and other QRC20 tokens.
+For an exchange, a user may use the same address for both EVO and other QRC20 tokens.
 
 Use this command to generate a deposit address:
 
 ```
-qtum-cli getnewaddress
+evo-cli getnewaddress
 ```
 
 ## Deposit and Witdraw Logs
@@ -75,7 +75,7 @@ qtum-cli getnewaddress
   + You can start looking from 0, but for better efficiency, you should remember where to start looking.
 
 ```
-qtum-cli searchlogs \
+evo-cli searchlogs \
     STARTING_BLOCK \
     999999999 \
     '{ "addresses": ["TOKEN_CONTRACT_ADDRESS"]}' \
@@ -95,7 +95,7 @@ Look through the logs to filter by `to` or `from` addresses.
 Given a transaction id `$txid`:
 
 ```
-qtum-cli gettransaction $txid
+evo-cli gettransaction $txid
 ```
 
 Use the property `confirmations` from output.

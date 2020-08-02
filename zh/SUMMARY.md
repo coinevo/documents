@@ -4,47 +4,47 @@
 
 ## 钱包使用
 
-+ [Qtum PC 端钱包使用教程](Qtum-Wallet-Tutorial/README.md)
++ [Evo PC 端钱包使用教程](Evo-Wallet-Tutorial/README.md)
 + [Offline Staking](OfflineStaking.md)
-+ [Qtum Electrum 轻钱包使用说明](Qtum-Electrum-User-Guide.md)
-+ [Qtum 安卓钱包使用教程](How-to-use-Qtum-Android-Wallet/README.md)
++ [Evo Electrum 轻钱包使用说明](Evo-Electrum-User-Guide.md)
++ [Evo 安卓钱包使用教程](How-to-use-Evo-Android-Wallet/README.md)
 + [如何添加节点](Adding-Nodes.md)
-+ [锁定、解锁 Qtum 钱包](Encrypt-and-Unlock-Qtum-Wallet/README.md)
++ [锁定、解锁 Evo 钱包](Encrypt-and-Unlock-Evo-Wallet/README.md)
 + [使用salvagewallet修复钱包数据](Wallet-Recovery-with-Salvagewallet.md)
-+ [如何添加 Qtum 运行选项](How-To-Add-Options/README.md)
-+ [QTUM web钱包使用说明](Qtum-Web-Wallet-Tutorial/README.md)
++ [如何添加 Evo 运行选项](How-To-Add-Options/README.md)
++ [EVO web钱包使用说明](Evo-Web-Wallet-Tutorial/README.md)
 + [测试网络使用教程](Testnet-User-Guide.md)
 
 ## 节点部署
 
-+ [如何部署 Qtum 量子链节点](Guidance-of-Qtum-Deployment-and-RPC-Settings.md)
-+ [如何用 Docker 运行 Qtum 节点](Launch-Qtum-with-Docker.md)
-+ [如何搭建 Qtum 星形网络](How-to-Deploy-Star-Network/README.md)
++ [如何部署 Evo 量子链节点](Guidance-of-Evo-Deployment-and-RPC-Settings.md)
++ [如何用 Docker 运行 Evo 节点](Launch-Evo-with-Docker.md)
++ [如何搭建 Evo 星形网络](How-to-Deploy-Star-Network/README.md)
 
 ## Staking 教程（PoS 挖矿）
 
-+ [Qtum 量子链 Staking(PoS 挖矿) 教程](How-to-Stake-with-Qtum/README.md)
++ [Evo 量子链 Staking(PoS 挖矿) 教程](How-to-Stake-with-Evo/README.md)
 
 ## 智能合约和QRC20
 
-+ [Qtum 智能合约使用方法及说明](Qtum-Contract-Usage.md)
++ [Evo 智能合约使用方法及说明](Evo-Contract-Usage.md)
 + [QRC20 Token 指南](QRC20-Token-Introduce.md)
 + [QRC20 集成文档](QRC20集成文档.md)
-+ [手动构造Qtum合约交易的说明](手动构造Qtum合约交易的说明.md)
++ [手动构造Evo合约交易的说明](手动构造Evo合约交易的说明.md)
 
 ## 其他
 
-+ [Qtum 区块链指南](Qtum-Blockchain-Guide.md)
-+ [在 CentOS 7 上编译 Qtum](Build-Qtum-on-CentOS.md)
-+ [闪电网络客户端 Qtum Eclair 使用教程](Qtum-Eclair-Guide.md)
-+ [Qtum 钱包升级教程](Upgrade-Tutorial/README.md)
++ [Evo 区块链指南](Evo-Blockchain-Guide.md)
++ [在 CentOS 7 上编译 Evo](Build-Evo-on-CentOS.md)
++ [闪电网络客户端 Evo Eclair 使用教程](Evo-Eclair-Guide.md)
++ [Evo 钱包升级教程](Upgrade-Tutorial/README.md)
 
-## QtumX
+## EvoX
 
-+ [QtumX技术白皮书](Technical-White-Paper-for-QtumX/README.md)
-+ [QtumX使用教程（内测）](QtumX-Tutorial.md)
-+ [QtumX一键发链教程（公测）](One-Click-Launch-Chain/README.md)
-+ [基于QtumX搭建自己的Dapp](QtumX-Smart-Contract/README.md)
++ [EvoX技术白皮书](Technical-White-Paper-for-EvoX/README.md)
++ [EvoX使用教程（内测）](EvoX-Tutorial.md)
++ [EvoX一键发链教程（公测）](One-Click-Launch-Chain/README.md)
++ [基于EvoX搭建自己的Dapp](EvoX-Smart-Contract/README.md)
 + [SCAR：一种可伸缩共识算法](SCAR-Consensus/README.md)
 + [Canal: 一种跨链交易解决方案](Canal-Cross-Chain/README.md)
 + [DDAO：去中心化数据访问对象](DDAO-Data-Management/README.md)

@@ -1,4 +1,4 @@
-## Qtum 钱包升级教程
+## Evo 钱包升级教程
 
 1. **确认现在钱包版本**
 
@@ -13,12 +13,12 @@
 
 3. **保存wallet.dat文件**
 
-	找到Qtum所在安装目录保存wallet.dat文件，该文件默认路径根据操作系统不同以MAC为例位置如下：  
+	找到Evo所在安装目录保存wallet.dat文件，该文件默认路径根据操作系统不同以MAC为例位置如下：  
 	![2.png](2.png)
 
 4. **下载新版本钱包**
 
-	前往Qtum官方钱包下载路径：<https://qtumeco.io/wallet>  
+	前往Evo官方钱包下载路径：<https://evoeco.io/wallet>  
 	根据系统版本选择需要下载的钱包  
 	![3.png](3.png)
 

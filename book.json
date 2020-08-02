@@ -1,5 +1,5 @@
 {
-  "title": "Qtum Documentation",
+  "title": "Evo Documentation",
   "plugins": [
     "-lunr",
     "language-picker",

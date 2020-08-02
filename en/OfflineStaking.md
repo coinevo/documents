@@ -3,34 +3,34 @@
 * [Delegating Address to Super Staker](#delegating-address-to-super-staker)
 * [Delegating Address Operations](#delegating-Address-operations)
 * [Super Staker Configuration](#super-staker-configuration)
-* [Launching Qtum Core as a Super Staker](#launching-qtum-core-as-a-super-staker)
-* [qtumd Super Staker](#qtumd-super-staker)
+* [Launching Evo Core as a Super Staker](#launching-evo-core-as-a-super-staker)
+* [evod Super Staker](#evod-super-staker)
 * [Super Staker Operations](#super-staker-operations)
 * [Restore](#restore)
 
 # Delegating Address to Super Staker
 
-Qtum Offline Staking allows the address for a non-staking wallet (capable of making the delegation assignment transaction) to be delegated to a Super Staker. Offline Staking is non-custodial: the delegation user keeps full control of their coins and private keys. The address delegation is made via a smart contract transaction from the delegation user's wallet which identifies the delegator's address, the Super Staker address, and the fee the delegator agrees to pay. If the Super Staker accepts this fee, it will begin staking the delegated address UTXOs.
+Evo Offline Staking allows the address for a non-staking wallet (capable of making the delegation assignment transaction) to be delegated to a Super Staker. Offline Staking is non-custodial: the delegation user keeps full control of their coins and private keys. The address delegation is made via a smart contract transaction from the delegation user's wallet which identifies the delegator's address, the Super Staker address, and the fee the delegator agrees to pay. If the Super Staker accepts this fee, it will begin staking the delegated address UTXOs.
 
 The normal rules for staking UTXOs apply to delegated UTXOs:
 
 * UTXOs may only be used for staking after they mature (500 confirmations)
-* The Super Staker will set a minimum size of UTXOs to stake, defaulting to 100 QTUM. Delegated UTXOs below this amount will be ignored.
-* It is best practice (for optimum returns) to break UTXOs up into sizes of 100 to 200 QTUM each. For users of the Qtum Core wallet, this can be easily accomplished with the command line version of `splitutxosforaddress`, described below.
+* The Super Staker will set a minimum size of UTXOs to stake, defaulting to 100 EVO. Delegated UTXOs below this amount will be ignored.
+* It is best practice (for optimum returns) to break UTXOs up into sizes of 100 to 200 EVO each. For users of the Evo Core wallet, this can be easily accomplished with the command line version of `splitutxosforaddress`, described below.
 
-To make the delegation assignment from the Qtum Core wallet, select Stake – Delegations, the Add delegation "+" button in the upper right corner, enter the Staker name (for local reference only), Staker address, Fee you agree to pay, and your Address to be delegated. Leave the default Gas settings alone unless you understand how to set these. The delegation transaction will require at least 0.9 QTUM in fees and any excess will be refunded.
+To make the delegation assignment from the Evo Core wallet, select Stake – Delegations, the Add delegation "+" button in the upper right corner, enter the Staker name (for local reference only), Staker address, Fee you agree to pay, and your Address to be delegated. Leave the default Gas settings alone unless you understand how to set these. The delegation transaction will require at least 0.9 EVO in fees and any excess will be refunded.
 
 ![1  Add Delegation Assignment](https://user-images.githubusercontent.com/29760787/85331894-f8cc5b80-b4a4-11ea-95d1-eb472a5454f1.jpg)
 
 Press Confirm and Yes to send the delegation transaction.
 
-Delegation of addresses may also be accomplished using the Qtum Electrum wallet, which supports Ledger hardware wallet addresses.
+Delegation of addresses may also be accomplished using the Evo Electrum wallet, which supports Ledger hardware wallet addresses.
 
 # Delegating Address Operations
 
-The Delegate Address transaction is sent to a smart contract which keeps the delegation assignments and will be picked up by the Super Staker there. You can see Delegated Address block reward transactions in the wallet and also with the explorer [qtum.info](https://qtum.info/).
+The Delegate Address transaction is sent to a smart contract which keeps the delegation assignments and will be picked up by the Super Staker there. You can see Delegated Address block reward transactions in the wallet and also with the explorer [ex.coinevo.tech](https://ex.coinevo.tech/).
 
-If the wallet is holding QTUM on multiple addresses, the delegation must be made separately for each address (and the transaction fee paid for each address) so it may make sense to consolidate the UTXOs to a single address before splitting UTXOs and delegating. In this case, use coin selection to select and consolidate the addresses. Alternatively, the `sendmanywithdupes` command could be used to send the entire wallet balance to a new address with appropriately-sized UTXOs.
+If the wallet is holding EVO on multiple addresses, the delegation must be made separately for each address (and the transaction fee paid for each address) so it may make sense to consolidate the UTXOs to a single address before splitting UTXOs and delegating. In this case, use coin selection to select and consolidate the addresses. Alternatively, the `sendmanywithdupes` command could be used to send the entire wallet balance to a new address with appropriately-sized UTXOs.
 
 If the Super Staker accepts a delegation for a particular fee, and then the Super Staker reduces that fee (accepts assignments for a lower fee), to take advantage of that lower fee the user must delegate their address again with the lower fee set.
 
@@ -41,9 +41,9 @@ Backup your wallet to save a copy of the wallet.dat file.
 
 # Super Staker Configuration
 
-The Qtum Core wallet provides online Proof of Stake and can be launched and configured to operate as a Super Staker and receive address delegations.
+The Evo Core wallet provides online Proof of Stake and can be launched and configured to operate as a Super Staker and receive address delegations.
 
-To configure the Qtum-Qt wallet for a Super Staker, select Stake – Super Staking and the "+" button to add a new Super Staker. Enter the Staker name (for local reference only, here using the first part of the address and "10" to denote a 10% fee) and select the Staker address using the dropdown.
+To configure the Evo-Qt wallet for a Super Staker, select Stake – Super Staking and the "+" button to add a new Super Staker. Enter the Staker name (for local reference only, here using the first part of the address and "10" to denote a 10% fee) and select the Staker address using the dropdown.
 
 ![2  Super Staker Setup](https://user-images.githubusercontent.com/29760787/85331902-fc5fe280-b4a4-11ea-9506-84bfc0ecd6d5.jpg)
 
@@ -51,7 +51,7 @@ To operate as a Super Staker, the wallet must be able to check arbitrary address
 
 Next, the wallet will prompt to be restarted as a Super Staker using Settings – Options – Enable super staking and OK to restart the wallet.
 
-![3  Qtum-Qt Enable Super Staker](https://user-images.githubusercontent.com/29760787/85331912-008c0000-b4a5-11ea-9901-c4b4433a8746.jpg)
+![3  Evo-Qt Enable Super Staker](https://user-images.githubusercontent.com/29760787/85331912-008c0000-b4a5-11ea-9901-c4b4433a8746.jpg)
 
 On startup, the wallet will confirm that you want to scan and rebuild the database.
 
@@ -72,7 +72,7 @@ The configuration settings are:
   * Allow list – only accept delegations from specific addresses. Use this mode if operating a Super Staker only for specific addresses, such as for your coins.
   * Exclude list – addresses to exclude from being accepted for staking.
 
-Next, split the UTXOs to valid amounts for committing stakes by the Super Staker. The UTXOs must be a minimum amount of 100 QTUM. On the Super staker page select the split coins button (trident icon) and use the default values or make adjustments, but no UTXOs under 100 QTUM will be used for staking.
+Next, split the UTXOs to valid amounts for committing stakes by the Super Staker. The UTXOs must be a minimum amount of 100 EVO. On the Super staker page select the split coins button (trident icon) and use the default values or make adjustments, but no UTXOs under 100 EVO will be used for staking.
 
 ![6  Split UTXOs GUI](https://user-images.githubusercontent.com/29760787/85331934-0a156800-b4a5-11ea-9339-eed51b9bddf6.jpg)
 
@@ -80,7 +80,7 @@ You can also split UTXOs with the `splitutxosforaddress` command, which can be u
 
 `splitutxosforaddress "address" minValue maxValue ( maxOutputs )`
 
-For example, if a wallet held UTXOs of 40, 50, 60, 70, and 800 QTUM, to split these into UTXOs of a minimum 100 and maximum 200 would use the command:
+For example, if a wallet held UTXOs of 40, 50, 60, 70, and 800 EVO, to split these into UTXOs of a minimum 100 and maximum 200 would use the command:
 
 ```splitutxosforaddress
 {
@@ -90,63 +90,63 @@ For example, if a wallet held UTXOs of 40, 50, 60, 70, and 800 QTUM, to split th
 }
 ```
 
-For this example, the total input was 1,020 QTUM, and the split was 9 UTXOs of 100.0 and one of 119.99566, the wallet sending a "transaction to self" and paying a fee of 0.00434 QTUM.
+For this example, the total input was 1,020 EVO, and the split was 9 UTXOs of 100.0 and one of 119.99566, the wallet sending a "transaction to self" and paying a fee of 0.00434 EVO.
 
 Previously you could use the `sendmanywithdupes` command but that took significant formatting and operationally you would want to send to a new address. Of course, after either of these commands, the UTXOs must mature for 500 confirmations before they can be used for staking.
 
-# Launching Qtum Core as a Super Staker
+# Launching Evo Core as a Super Staker
 
-The above steps show the transition from a default installation Qtum Core wallet to a Super Staker. The wallet may also be initially launched as a Super Staker to shorten the steps. In this case, the initial blockchain sync is accompanied by building the database for address index and log events (as discussed above) so the wallet is all ready for Super Staking.
+The above steps show the transition from a default installation Evo Core wallet to a Super Staker. The wallet may also be initially launched as a Super Staker to shorten the steps. In this case, the initial blockchain sync is accompanied by building the database for address index and log events (as discussed above) so the wallet is all ready for Super Staking.
 
-The Qtum Core wallet may be launched as a Super Staker with Qtum-Qt using Settings - Options – Main – Enable super staking steps as shown above, or directly through the command line using the `-superstaking` parameter (testnet shown here).
+The Evo Core wallet may be launched as a Super Staker with Evo-Qt using Settings - Options – Main – Enable super staking steps as shown above, or directly through the command line using the `-superstaking` parameter (testnet shown here).
 
 ![7  Linux Launch](https://user-images.githubusercontent.com/29760787/85331947-0da8ef00-b4a5-11ea-961a-33fe19df19d9.png)
 
 This command for the default program directory on Windows would be:
 
-`qtum-qt -testnet -superstaking`
+`evo-qt -testnet -superstaking`
 
 ![8  Windows Command Line Launch](https://user-images.githubusercontent.com/29760787/85331962-113c7600-b4a5-11ea-84e3-81e030c91ac5.jpg) 
 
 When the wallet launches and syncs the blockchain (creating address index and log events) it is all ready to add Super Stakers. Configure a Super Staker and then enable super staking on Settings – Options – Main – set "Enable super staking" and the Super Staker will be ready.
 
-# qtumd Super Staker
+# evod Super Staker
 
-Any address in a Qtum Core wallet running as a Super Staker may receive delegated addresses and operate as an individual Super Staker. The Desktop GUI wallet Qtum-Qt allows configuration of multiple Super Staker addresses with different fees and minimum UTXO sizes. The daemon/server wallet qtumd runs all its Super Staker addresses using the same fee and minimum UTXO size. If a variation is needed across multiple Super Staker addresses with qtumd, it is possible to set these up with the Qtum-Qt wallet and simply transfer the wallet.dat file to qtumd. 
+Any address in a Evo Core wallet running as a Super Staker may receive delegated addresses and operate as an individual Super Staker. The Desktop GUI wallet Evo-Qt allows configuration of multiple Super Staker addresses with different fees and minimum UTXO sizes. The daemon/server wallet evod runs all its Super Staker addresses using the same fee and minimum UTXO size. If a variation is needed across multiple Super Staker addresses with evod, it is possible to set these up with the Evo-Qt wallet and simply transfer the wallet.dat file to evod. 
 
-The following setup for qtumd shows the use of a single Super Staker address.
+The following setup for evod shows the use of a single Super Staker address.
 
-After installing qtumd, launch with the following parameters (testnet shown):
+After installing evod, launch with the following parameters (testnet shown):
 
-`./qtumd -testnet -superstaking`
+`./evod -testnet -superstaking`
 
-Optional parameters may be added to change the default fee (of 10%) and minimum UTXO value (of 100 QTUM), for example as:
+Optional parameters may be added to change the default fee (of 10%) and minimum UTXO value (of 100 EVO), for example as:
 
 `-stakingminfee=12  -stakingminutxovalue=120`
 
-Once the wallet syncs the blockchain, get an address to send some QTUM. This will be the Super Staker address. Use the command:
+Once the wallet syncs the blockchain, get an address to send some EVO. This will be the Super Staker address. Use the command:
 
-`./qtum-cli -testnet getnewaddress "legacy"`
+`./evo-cli -testnet getnewaddress "legacy"`
 
-Then send 1,300 QTUM to this address.
+Then send 1,300 EVO to this address.
 
 ![9  Getnewaddress Getbalance](https://user-images.githubusercontent.com/29760787/85331969-13063980-b4a5-11ea-8ccc-280092131d18.png)
 
-This 1,300 QTUM will arrive in a single UTXO, which must be split for the Super Staker operation. Use the `splitutxosforaddress` command with the default 100 minimum size and 200 maximum size:
+This 1,300 EVO will arrive in a single UTXO, which must be split for the Super Staker operation. Use the `splitutxosforaddress` command with the default 100 minimum size and 200 maximum size:
 
-`./qtum-cli -testnet splitutxosforaddress "qdMp2BNpwL6ZmMEQHfLV5wGNVgmPCuzd7d" 100 200`
+`./evo-cli -testnet splitutxosforaddress "qdMp2BNpwL6ZmMEQHfLV5wGNVgmPCuzd7d" 100 200`
 
-![10  Split UTXOs for Address qtumd](https://user-images.githubusercontent.com/29760787/85331976-15689380-b4a5-11ea-91dd-187b6875f3b2.png)
+![10  Split UTXOs for Address evod](https://user-images.githubusercontent.com/29760787/85331976-15689380-b4a5-11ea-91dd-187b6875f3b2.png)
 
-The command response shows that 1,300 QTUM were selected for splitting, in this case splitting into 12 UTXOs which can be seen with the txid on the Explorer.
+The command response shows that 1,300 EVO were selected for splitting, in this case splitting into 12 UTXOs which can be seen with the txid on the Explorer.
 
-At this point, the qtumd wallet is ready for Super Staker operation with address qdMp2BNpwL6ZmMEQHfLV5wGNVgmPCuzd7d, and delegations can be monitored using the command:
+At this point, the evod wallet is ready for Super Staker operation with address qdMp2BNpwL6ZmMEQHfLV5wGNVgmPCuzd7d, and delegations can be monitored using the command:
 
 `getdelegationsforstaker "qdMp2BNpwL6ZmMEQHfLV5wGNVgmPCuzd7d"`
 
 # Super Staker Operations
 
-The Super Staker must hold UTXOs to commit to stakes for the delegated UTXOs it is staking. The number of UTXOs (of minimum size 100 QTUM) is based on Delegated Weight as a percent of overall Network Weight, and good values are 30 UTXOs for staking 1% of Network Weight, 50 UTXOs for 2.0%, 100 UTXOs for 5% and 160 UTXOs for staking 10% of overall Network Weight. 
+The Super Staker must hold UTXOs to commit to stakes for the delegated UTXOs it is staking. The number of UTXOs (of minimum size 100 EVO) is based on Delegated Weight as a percent of overall Network Weight, and good values are 30 UTXOs for staking 1% of Network Weight, 50 UTXOs for 2.0%, 100 UTXOs for 5% and 160 UTXOs for staking 10% of overall Network Weight. 
 
 Super Stakers should monitor their Wallet weight (UTXO weight minus amount currently staking) and add UTXOs if it drops below several thousand.
 

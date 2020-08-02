@@ -1,19 +1,19 @@
 # Comandos
 
-La billetera de Qtum Core tiene una rica lista comandos, los cuales otorgan un control avanzado y completo de la billetera y transacciones de blockchain. Hay dos grupos de comandos que pueden ser usados con las billeteras de Qtum Core:
+La billetera de Evo Core tiene una rica lista comandos, los cuales otorgan un control avanzado y completo de la billetera y transacciones de blockchain. Hay dos grupos de comandos que pueden ser usados con las billeteras de Evo Core:
 
 * Comandos de consola se ingresan en una billetera que esta abierta y funcionando.
 * Los comandos iniciales se usan cuando se abre la billetera.
 
-Este proceso manual se enfoca en los comandos de consola, los cuales se ingresan en una billetera que esta funcionando y pueden ser enviados usando RPC (Remote Procedure Calls) o en la linea de comandos a la billetera de servidor de qtumd o ingresados en la linea de comando al servidor qtumd o en la billetera de escritorio con interfaz grafica **qtum-qt** por medio de la ventana de depuracion de consola (ver Imagen 1).
+Este proceso manual se enfoca en los comandos de consola, los cuales se ingresan en una billetera que esta funcionando y pueden ser enviados usando RPC (Remote Procedure Calls) o en la linea de comandos a la billetera de servidor de evod o ingresados en la linea de comando al servidor evod o en la billetera de escritorio con interfaz grafica **evo-qt** por medio de la ventana de depuracion de consola (ver Imagen 1).
 
 ![2019-1 Mac Debug Window with Prompt](https://i.imgur.com/K0uCLVr.jpg)
-Imagen 1. La Consola de qtum-qt
+Imagen 1. La Consola de evo-qt
 
 Observen el mensaje de advertencia en rojo en la imagen 1 y tengan cuidado al usar los comandos que manejan la llaves privadas (`dumpprivkey` y `dumpwallet`) con billeteras en mainnet.
 
 
-Para la billetera servidor qtumd, los comandos de consola se ingresan utilizando la interfaz de aplicacion qtum-cli (ver Imagen 2).
+Para la billetera servidor evod, los comandos de consola se ingresan utilizando la interfaz de aplicacion evo-cli (ver Imagen 2).
 
 ![2019-2 Command Line Win](https://i.imgur.com/m1xp3ng.jpg)
 Figure 2. Linea de comandos del sistema
@@ -25,18 +25,18 @@ Figure 3. el comando help
 
 ## Comandos de Consola :hammer_and_wrench:
 
-Los Comandos de Consola se le ingresan a una billetera activa de Qtum Core y provee informacion adicional y control. Estos comandos son necesarios para operar la billetera de servidor qtumd, ya que no usa interfaz grafica.
+Los Comandos de Consola se le ingresan a una billetera activa de Evo Core y provee informacion adicional y control. Estos comandos son necesarios para operar la billetera de servidor evod, ya que no usa interfaz grafica.
 
 Existen 136 comandos de consola con lagunas buenas referencias para las 112 heredadas de Bitcoin. Hay 13 comandos escondidos, los cuales son utilizados por desarrolladores y no saldran en la lista de ayuda.
 
 Los comandos pueden tener parametros opcionales o requeridos, los parametros mas numerosos y completos son ingresados en JSON (Javascript Object notation) con dobles comillas tal como se muestra debajo.
 
-Parametros comunes para estos comandos son direcciones de Qtum, hash de bloques, direcciones de conrtratos, etc. Algunos de los comandos tendran un parametro opcional "minconf" (confirmaciones minimas) lo cual te permite tener una respuesta para una transaccion o un bloque que tiene al menos esa cantidad de confirmaciones.
+Parametros comunes para estos comandos son direcciones de Evo, hash de bloques, direcciones de conrtratos, etc. Algunos de los comandos tendran un parametro opcional "minconf" (confirmaciones minimas) lo cual te permite tener una respuesta para una transaccion o un bloque que tiene al menos esa cantidad de confirmaciones.
 
-La refernciaThe chain query bitcoin API reference http://chainquery.com/bitcoin-api explains the parameters and gives examples with responses for the commands inherited from bitcoin. The bitcoin chain query API reverence gives 67 commands, of which 2 are not in Qtum (`estimatepriority`, `getgenerate`) and two (`gettransaction`, `walletpassphrase`) have an additional parameter for Qtum. See also https://bitcoin.org/en/developer-reference#remote-procedure-calls-rpcs.
+La refernciaThe chain query bitcoin API reference http://chainquery.com/bitcoin-api explains the parameters and gives examples with responses for the commands inherited from bitcoin. The bitcoin chain query API reverence gives 67 commands, of which 2 are not in Evo (`estimatepriority`, `getgenerate`) and two (`gettransaction`, `walletpassphrase`) have an additional parameter for Evo. See also https://bitcoin.org/en/developer-reference#remote-procedure-calls-rpcs.
 
 
-Advanced interfaces to the Qtum Core wallet (full node) can use these ìconsole commandsî as RPCs (Remote Procedure Calls) over a dedicated port connection to the node. To build an exchange hot wallet or server node for a mobile DAPP (Distributed Application) you can use RPCs, which follow these same console commands. The client node offers a JSON-RPC interface over HTTP sockets to perform various operational functions and to manage the local node.
+Advanced interfaces to the Evo Core wallet (full node) can use these ìconsole commandsî as RPCs (Remote Procedure Calls) over a dedicated port connection to the node. To build an exchange hot wallet or server node for a mobile DAPP (Distributed Application) you can use RPCs, which follow these same console commands. The client node offers a JSON-RPC interface over HTTP sockets to perform various operational functions and to manage the local node.
 
 A quick comment on ìaccountsî. Accounts was an ill-fated way from bitcoin to track balances for what are really UTXO transaction-based values, and ìaccountsî are deprecated and will be phased out by version 0.18.
 
@@ -52,12 +52,12 @@ Here are some command groupings that are useful for various tasks:
 
 Startup commands give additional control and recovery options when launching the wallet. For example, you can use startup commands for various kinds of blockchain recovery techniques, additional debug logging or additional controls. If you are going to use these startup commands, make sure you have a good backup of the wallet.dat file.
 
-See the startup commands on the qtum-qt wallet with Help ñ Command line options:
+See the startup commands on the evo-qt wallet with Help ñ Command line options:
 
 ![2019-4 Startup Commands Win](https://i.imgur.com/CryGF13.jpg)
 Figure 4. Startup commands
 
-and on the command line itself with ìqtumd -?î:
+and on the command line itself with ìevod -?î:
 
 ![2019-5 Startup Commands Command Line Win](https://i.imgur.com/KCmxFaC.jpg)
 Figure 5. Startup commands from the command line
@@ -65,9 +65,9 @@ Figure 5. Startup commands from the command line
 
 ## Console Commands A - Z
 
-For these console commands documented below, responses are given for default parameters (Qtum version 0.16 ñ winter 2018/2019). Commands marked DEPRECATED should not be used because they will be removed and replaced in future versions of the wallet, for example, commands using ìaccountî will be removed in version 0.18.
+For these console commands documented below, responses are given for default parameters (Evo version 0.16 ñ winter 2018/2019). Commands marked DEPRECATED should not be used because they will be removed and replaced in future versions of the wallet, for example, commands using ìaccountî will be removed in version 0.18.
 
-Using the command ìhelp \<command name\>î will give complete information about the command and relevant parameters, formatted in a way you can copy and paste (replacing the addresses, transactions IDs, etc., as required). The format below shows the command with parameters followed by the response, in some cases, parameters or responses are truncated with the term ì\<snip\>î. Where noted, some commands only work with the regtest (Regression Test) network. Many commands will return ìnullî for qtum-qt and return nothing for command line systems.
+Using the command ìhelp \<command name\>î will give complete information about the command and relevant parameters, formatted in a way you can copy and paste (replacing the addresses, transactions IDs, etc., as required). The format below shows the command with parameters followed by the response, in some cases, parameters or responses are truncated with the term ì\<snip\>î. Where noted, some commands only work with the regtest (Regression Test) network. Many commands will return ìnullî for evo-qt and return nothing for command line systems.
 
 ### abandontransaction "txid"
 
@@ -85,14 +85,14 @@ Stops a wallet rescan triggered by a command such as `importprivkey`. This comma
 
 
 ```
-qtum-cli abortrescan
+evo-cli abortrescan
 
 true
 ```
 
 ### addmultisigaddress nrequired ["key",...] ( "account" "address_type" )
 
-Add a multisignature address to the wallet so you can receive and send from that address. Run the command on each machine that will be signing and backup the wallet.dat file. The address can be a Qtum address or hex-encoded public key. Use `importaddress` to add the multisig address on each signing wallet.
+Add a multisignature address to the wallet so you can receive and send from that address. Run the command on each machine that will be signing and backup the wallet.dat file. The address can be a Evo address or hex-encoded public key. Use `importaddress` to add the multisig address on each signing wallet.
 
 This functionality is only intended for use with non-watchonly addresses. See `importaddress` for watchonly p2sh address support. Use of account is DEPRECATED). See also `validateaddress`.
 
@@ -108,7 +108,7 @@ addmultisigaddress 2 "[\"QgdaD9b3ppKowoC45EZMtepjjBfnvEe6m\",\"QFmr8vY29reHj73XS
 
 ### addnode "node" "add|remove|onetry"
 
-Attempts to add a node with a known IP address. This command is useful for new wallets that are having trouble making peer connections. Here are some good IP addresses to add, you can put these commands in one after another, then the wallet will try for a few minutes to make a peer connection with each. Qtumd returns nothing:
+Attempts to add a node with a known IP address. This command is useful for new wallets that are having trouble making peer connections. Here are some good IP addresses to add, you can put these commands in one after another, then the wallet will try for a few minutes to make a peer connection with each. Evod returns nothing:
 
 ```
 addnode 35.200.159.68:3888 add
@@ -119,7 +119,7 @@ addnode 35.192.54.161:3888 add
 ```
 
 
-Qtum-qt returns ìnullî after each (see Figure 6).
+Evo-qt returns ìnullî after each (see Figure 6).
 
 ![2019-6 addnode Mac](https://i.imgur.com/RjRkiP8.jpg)
 Figure 6. Entering the addnode command
@@ -128,7 +128,7 @@ Figure 6. Entering the addnode command
 
 Hidden command. DEPRECATED. This command was a way to generate a SegWit address from an existing legacy address, usually a P2SH-P2WPKH addresses - Pay-to-Witness-Public-Key-Hash (P2WPKH) script embedded in a Pay-to-Script-Hash (P2SH) address. This command is mostly disabled in version 0.16 and will be removed in version 0.17. Instead, use the `getnewaddress` command with address type "p2sh-segwit" or "bech32".
 
-Launch v 0.16 qtumd with `-deprecatedrpc=addwitnessaddress` to run the command:
+Launch v 0.16 evod with `-deprecatedrpc=addwitnessaddress` to run the command:
      
 
 ```
@@ -139,7 +139,7 @@ MHa57hGwD48SZQjh23MZbq24tFwTu7Q3c
 
 ### backupwallet "destination"
 
-The destination can be a filename or path with a filename. The wallet must be fully decrypted (not just for staking only) for this command to work. qtum-qt will returns ìnullî, qtumd returns nothing. On Windows:
+The destination can be a filename or path with a filename. The wallet must be fully decrypted (not just for staking only) for this command to work. evo-qt will returns ìnullî, evod returns nothing. On Windows:
 
 ```
 backupwallet "C:\Users\<username>\Desktop\Backups\backup2018-10-21.dat"
@@ -176,7 +176,7 @@ TO COME
 
 ### clearbanned
 
-Clear all banned nodes IPs. Qtum-qt returns ìnullî, qtumd gives no response.
+Clear all banned nodes IPs. Evo-qt returns ìnullî, evod gives no response.
 
 ```
 clearbanned
@@ -280,7 +280,7 @@ decodescript 52460396bc49812bad50949fbc0bbd44e95bf32a5695519b3ff267a5d93cba3bd16
 
 ### disconnectnode "[address]" [nodeid]
 
-Disconnects a peer (node) using either the IP address or node number. Qtum-qt will return ìnullî, qtumd will return nothing.
+Disconnects a peer (node) using either the IP address or node number. Evo-qt will return ìnullî, evod will return nothing.
 
 ```
 disconnectnode "35.198.0.76:3888"
@@ -316,7 +316,7 @@ dumpwallet "C:\Users\<username>\Desktop\Backups\dump 2018-10-30.txt"
 File:
      
 ```
-  Wallet dump created by Qtum v0.16.1.0-0806c12c4-dirty
+  Wallet dump created by Evo v0.16.1.0-0806c12c4-dirty
   * Created on 2018-10-31T01:56:32Z
   * Best block at time of backup was 241161 (b11d5169d66d39cbcd848e2ea3f9adfcee1c22af945f100aec9e762d88609e2e),
     mined on 2018-10-31T01:55:28Z
@@ -339,7 +339,7 @@ dumpwallet /Users/<USERNAME>/Desktop/dump_2018-12-15.txt
 File:
         
 ```
-  Wallet dump created by Qtum v0.16.2.0-47a30461d-dirty
+  Wallet dump created by Evo v0.16.2.0-47a30461d-dirty
   * Created on 2018-12-16T02:22:59Z
   * Best block at time of backup was 148510 
 (ca8a9457a69882b395bf56671e3661e148d3aca4a7b6c77398804229e7fb58f4),
@@ -362,7 +362,7 @@ encryptwallet "you should always use a long and strong passphrase"
 
 Hidden command. Simply echo back the input arguments. This command is for testing.
 
-The difference between `echo` and `echojson` is that `echojson` has argument conversion enabled in the client-side table in qtum-cli and the GUI. There is no server-side difference. Here we echo the parameters used to setup a multisig address.
+The difference between `echo` and `echojson` is that `echojson` has argument conversion enabled in the client-side table in evo-cli and the GUI. There is no server-side difference. Here we echo the parameters used to setup a multisig address.
      
      
 ```
@@ -377,7 +377,7 @@ echo "[\"qghwDvb1pyJoqoAD2ESMTevvvjUfNvReDn\",\"qfKr7vXdmroHi61XUUHedXvgV2mDx9Ku
 
 Hidden command. Simply echo back the input arguments. This command is for testing.
 
-The difference between `echo` and `echojson` is that `echojson` has argument conversion enabled in the client-side table in qtum-cli and the GUI. There is no server-side difference. Here we echo the parameters used to setup a multisig address.
+The difference between `echo` and `echojson` is that `echojson` has argument conversion enabled in the client-side table in evo-cli and the GUI. There is no server-side difference. Here we echo the parameters used to setup a multisig address.
      
      
 ```
@@ -539,7 +539,7 @@ docker exec myapp qcli generate 600
 
 ### generatetoaddress nblocks address (maxtries)
 
-Mine up to nblocks immediately to a specified address. Used with the regression test "regtest" private test blockchain. Here we generate 10 genesis blocks on regtest with 20,000 Test QTUM each, plus an initial block, and `listaddressgroupings` shows the result:
+Mine up to nblocks immediately to a specified address. Used with the regression test "regtest" private test blockchain. Here we generate 10 genesis blocks on regtest with 20,000 Test EVO each, plus an initial block, and `listaddressgroupings` shows the result:
       
 
 ```
@@ -581,7 +581,7 @@ My trading Acct 101
 
 ### getaccountaddress "account"
 
-DEPRECATED. Returns the current Qtum address for an account. Use the null account "" for the default address.
+DEPRECATED. Returns the current Evo address for an account. Use the null account "" for the default address.
 
 ```
 getaccountaddress "My trading Acct 101"
@@ -664,7 +664,7 @@ getaddressesbyaccount "MyAccount1"
 
 ### getbalance ( "account" minconf include_watchonly )
 
-Get the balance in QTUM for a wallet.
+Get the balance in EVO for a wallet.
 
 ```
 getbalance
@@ -724,7 +724,7 @@ getblock a18adc4fb204fe1818c30e3003fa8c8bf1833692d6df7dbb66d1569d27b18f8e
 
 ### getblockchaininfo
 
-Returns information about the blockchain. Here ìblocksî equals ìheadersî, so this wallet is synced to the latest blocks. ìmoneysupplyî gives the total QTUM created (genesis blocks + all block rewards). ìsize_on_diskî gives the local storage size for blocks.
+Returns information about the blockchain. Here ìblocksî equals ìheadersî, so this wallet is synced to the latest blocks. ìmoneysupplyî gives the total EVO created (genesis blocks + all block rewards). ìsize_on_diskî gives the local storage size for blocks.
 
 ```
 getblockchaininfo
@@ -986,11 +986,11 @@ See `fromhexaddress` to convert a hex address to base58 pubkeyhash.
 
 ### getinfo
 
-Hidden command. DEPERCATED. Command line interfaces (but not the qtum-qt GUI wallet) may invoke this command using `-getinfo`. The wallet below has a computer clock in sync with Qtum network time (timeoffset = 0), has 8 peer connections, and is unlocked for a long time (ìunlocked untilî is Unix epoch time in seconds).
+Hidden command. DEPERCATED. Command line interfaces (but not the evo-qt GUI wallet) may invoke this command using `-getinfo`. The wallet below has a computer clock in sync with Evo network time (timeoffset = 0), has 8 peer connections, and is unlocked for a long time (ìunlocked untilî is Unix epoch time in seconds).
      
 
 ```
-qtum-cli -getinfo
+evo-cli -getinfo
 
 {
   "version": 160200,
@@ -1164,7 +1164,7 @@ getnettotals
 
 ### getnetworkhashps ( nblocks height )
 
-DEPRECATED. Returns a network hash value related to block mining difficulty, which is not relevant to Qtum Proof of Stake, for which the network hashes per second is the total number of nodes divided by 16 seconds.
+DEPRECATED. Returns a network hash value related to block mining difficulty, which is not relevant to Evo Proof of Stake, for which the network hashes per second is the total number of nodes divided by 16 seconds.
 
 ```
 getnetworkhashps
@@ -1221,7 +1221,7 @@ getnetworkinfo
 
 ### getnewaddress ( "account" "address_type" )
 
-Get a new receiving address, with types ìlegacyî, ìp2sh-segwitî or ìbech32î. Qtum Mainnet legacy addresses start with a ìQî, and SegWit addresses will start with an "M" for p2sh-segwit and "qc1" for bech32. Qtum Testnet legacy addresses start with a ìqî, and SegWit addresses will start with an "m" for p2sh-segwit and "tq1" for bech32. Here we get a new Mainnet SegWit bech32 address:
+Get a new receiving address, with types ìlegacyî, ìp2sh-segwitî or ìbech32î. Evo Mainnet legacy addresses start with a ìQî, and SegWit addresses will start with an "M" for p2sh-segwit and "qc1" for bech32. Evo Testnet legacy addresses start with a ìqî, and SegWit addresses will start with an "m" for p2sh-segwit and "tq1" for bech32. Here we get a new Mainnet SegWit bech32 address:
 
 ```
 getnewaddress "" "bech32"
@@ -1445,7 +1445,7 @@ getrawtransaction cbd113e947d5c1b3fccae149d0d16c82e3bfe05c4f2c204c8bc65ae0697bbd
 ```
      
 
-The transaction above has one ìvinî UTXO input which provides the previous transaction to be spent and two outputs ìvoutî. The first output ìvoutî sends 300.685401 to a receiving address, the second sends 11769.78668720 QTUM to a change address. The difference in value between the inputs and outputs is the transaction fee.
+The transaction above has one ìvinî UTXO input which provides the previous transaction to be spent and two outputs ìvoutî. The first output ìvoutî sends 300.685401 to a receiving address, the second sends 11769.78668720 EVO to a change address. The difference in value between the inputs and outputs is the transaction fee.
 
 ### getreceivedbyaccount "account" ( minconf )
 
@@ -1478,7 +1478,7 @@ Returns staking-related information.
 * ìpooledtxî gives the number of transactions waiting in the mempool
 * ìdifficultyî gives the PoS target difficulty for the current block
 * ìsearch-intervalî gives either the time in seconds since the wallet began staking or the time since the walletís most recent block reward, here one day and one minute
-* ìweightî gives the wallet weight in Satoshis, move the decimal point eight digits to the left to give these weights in units, here wallet weight is 148 QTUM and the network weight is 12.23 million
+* ìweightî gives the wallet weight in Satoshis, move the decimal point eight digits to the left to give these weights in units, here wallet weight is 148 EVO and the network weight is 12.23 million
 * ìnetstakeweightî gives the estimated network weight
 * ìexpected timeî gives an estimate of the average expected time to a block reward in seconds, here 4.59 months
 
@@ -1523,7 +1523,7 @@ getstorage 6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7
 
 ### getsubsidy [nTarget]
 
-Returns subsidy (block reward) for the specified block height. Here we see the first block which will have a block reward of 2.0 QTUM.
+Returns subsidy (block reward) for the specified block height. Here we see the first block which will have a block reward of 2.0 EVO.
 
 ```
 getsubsidy 990501
@@ -1678,7 +1678,7 @@ gettxoutsetinfo
 
 ### getunconfirmedbalance
 
-Get the unconfirmed balance for the wallet, which is the amount in transactions received by the wallet that havenít yet been published in blocks. Here the wallet has received 7.0 QTUM that haven't been confirmed in a block:
+Get the unconfirmed balance for the wallet, which is the amount in transactions received by the wallet that havenít yet been published in blocks. Here the wallet has received 7.0 EVO that haven't been confirmed in a block:
      
      
 ```
@@ -1693,7 +1693,7 @@ Returns information about the wallet:
 
 * ìwalletname" ñ the name of the wallet.dat file currently loaded
 * "walletversion" ñ not the software client version, use `getnetworkinfo` to check this
-* "balance" ñ balance in QTUM
+* "balance" ñ balance in EVO
 * "stake" ñ any balance currently committed to a stake
 * "unconfirmed_balance" ñ any balance that hasnít been published in the next blocks
 * "immature_balance" ñ any coinbase (Proof of Work) balance that does not have 500 confirmations, seen only for regtest.
@@ -1702,7 +1702,7 @@ Returns information about the wallet:
 * "keypoolsize" - how many new keys are pre-generated
 * "keypoolsize_hd_internal" - how many new keys are pre-generated for internal use (used for change addresses)
 * "unlocked_until" ñ the Unix epoch time in seconds that the wallet is unlocked, or 0 if the wallet is locked, this field is omitted for unencrypted wallets.
-* "paytxfee" ñ the transaction fee in QTUM per 1,000 bytes
+* "paytxfee" ñ the transaction fee in EVO per 1,000 bytes
 * "hdmasterkeyid" ñ a Hash 160 of the hierarchical deterministic (HD) master public key, this field is omitted if HD is not enabled
 
 ```
@@ -1742,7 +1742,7 @@ getblockcount
 
 ### importaddress "address" ( "label" rescan p2sh )
 
-Adds a 34-character Qtum address or 66 hex character public key address that can be watched as if it were in your wallet but cannot be used to spend. The wallet will rescan after entering this command and should be backed up after adding addresses. Qtum-qt returns ìnullî and displays the ìWatch-onlyî balance, qtumd returns nothing.
+Adds a 34-character Evo address or 66 hex character public key address that can be watched as if it were in your wallet but cannot be used to spend. The wallet will rescan after entering this command and should be backed up after adding addresses. Evo-qt returns ìnullî and displays the ìWatch-onlyî balance, evod returns nothing.
 
 ```
 importaddress QaL29jcCZ39pWcA334dA4BN3peVhnc42D
@@ -1771,9 +1771,9 @@ importmulti(Ö)
 ]
 ```
 
-### importprivkey "qtumprivkey" ( "label" ) ( rescan )
+### importprivkey "evoprivkey" ( "label" ) ( rescan )
 
-Adds a WIF private key to your wallet, for example as returned by dumpprivkey or from another Qtum wallet. The wallet must be unlocked and requires a new wallet backup afterwards. The wallet will rescan for a few minutes to add any balance from the new address, and return ìnullî if successful.
+Adds a WIF private key to your wallet, for example as returned by dumpprivkey or from another Evo wallet. The wallet must be unlocked and requires a new wallet backup afterwards. The wallet will rescan for a few minutes to add any balance from the new address, and return ìnullî if successful.
 
 ```
 importprivkey cThA5YBGQggmpjSsBFLT1NXR18Fk16YBNd1kCVoERjbQ4d4TRMFf
@@ -1789,7 +1789,7 @@ Example TO COME.
 
 ### importpubkey "pubkey" ( "label" rescan )
 
-Adds a public key that can be watched as if it were in your wallet but cannot be used to spend. The public key is 66 characters hex, and can be obtained using the `validateaddress` command. After entering this command, the wallet will rescan for a few minutes, qtum-qt returns ìnullî and qtumd returns nothing. The wallet should be backed up after importing a public key.
+Adds a public key that can be watched as if it were in your wallet but cannot be used to spend. The public key is 66 characters hex, and can be obtained using the `validateaddress` command. After entering this command, the wallet will rescan for a few minutes, evo-qt returns ìnullî and evod returns nothing. The wallet should be backed up after importing a public key.
 
 ```
 importpubkey 0381dc63bc14d32743a7741dc6a2993b8384dc3aa848332194bc851ff2a371b827
@@ -1799,7 +1799,7 @@ null
 
 ### importwallet "filename"
 
-Imports keys from a wallet dump file (see `dumpwallet`). Requires a new wallet backup after this command. Use the full path to the dump file. Qtum-qt will show a status of ìImportingÖî for a while, then ìScanningî as it rescans the blockchain. This command may take five minutes or more to return, and the wallet may appear to freeze during this time.
+Imports keys from a wallet dump file (see `dumpwallet`). Requires a new wallet backup after this command. Use the full path to the dump file. Evo-qt will show a status of ìImportingÖî for a while, then ìScanningî as it rescans the blockchain. This command may take five minutes or more to return, and the wallet may appear to freeze during this time.
 
 On a PC with the dump file in a folder ìBackupsî on the Desktop:
 
@@ -1822,7 +1822,7 @@ null
 
 ### keypoolrefill ( newsize )
 
-Refills the key pool with new private keys, with a default size of 100. The normal size of the keypool is 1,000 and the wallet opportunistically fills the keypool as addresses are used, so this command should use a 1,100 size, etc., to be meaningful. The wallet must be unlocked. qtum-qt returns ìnullî, qtumd returns nothing.
+Refills the key pool with new private keys, with a default size of 100. The normal size of the keypool is 1,000 and the wallet opportunistically fills the keypool as addresses are used, so this command should use a 1,100 size, etc., to be meaningful. The wallet must be unlocked. evo-qt returns ìnullî, evod returns nothing.
 
 ```
 keypoolrefill 1100
@@ -1832,7 +1832,7 @@ null
 
 ### listaccounts ( minconf include_watchonly)
 
-DEPRECATED. Returns information about account names and account balances. Gives the balance in Satoshis (QTUM x 0.00000001), including the default undefined account.
+DEPRECATED. Returns information about account names and account balances. Gives the balance in Satoshis (EVO x 0.00000001), including the default undefined account.
 
 This ìaccountî was an attempt to manually track balances from bitcoin which will be removed by version 0.17, because it doesnít work well, for example, returning negative values:
 
@@ -2137,7 +2137,7 @@ listwallets
 
 Updates list of temporarily unspendable outputs. Temporarily lock (unlock=false as shown below) or unlock (unlock=true) the specified transaction outputs. If no transactions are specified when unlocking then all current locked transactions are unlocked.
 
-A locked transaction output will not be chosen by automatic coin selection when spending QTUM.
+A locked transaction output will not be chosen by automatic coin selection when spending EVO.
 
 Locks are stored in memory only. Wallets launch with zero locked outputs and the locked output list is always cleared (by virtue of process exit) when a wallet stops or fails. Also see the `listunspent` call.
      
@@ -2209,7 +2209,7 @@ null
 
 ### preciousblock "blockhash"
 
-Prioritizes a block with an earlier time for blocks at the same height. Used in hard fork situations. See also `invalidateblock`. qtum-qt returns ìnullî if successful, qtumd returns nothing if successful.
+Prioritizes a block with an earlier time for blocks at the same height. Used in hard fork situations. See also `invalidateblock`. evo-qt returns ìnullî if successful, evod returns nothing if successful.
 
 ```
 preciousblock 854d57da75ba7550aebe83c1cdf539ac685d735684b7c40cfd639582abf43b
@@ -2219,7 +2219,7 @@ null
 
 ### prioritisetransaction <txid> <dummy value> <fee delta>
 
-Accepts the transaction into mined blocks at a higher (or lower) priority. A higher fee is not actually paid, the algorithm for selecting transactions into a block (which is trying to maximize fees) considers the transaction as having paid a higher fee. Qtum-qt and qtumd return ìtrueî:
+Accepts the transaction into mined blocks at a higher (or lower) priority. A higher fee is not actually paid, the algorithm for selecting transactions into a block (which is trying to maximize fees) considers the transaction as having paid a higher fee. Evo-qt and evod return ìtrueî:
 
 ```
 prioritisetransaction "01b347eb32bca5cde81444f6a6d4311f02ae3f3da25394e0f144fca525218dd" 0.0 10000
@@ -2233,7 +2233,7 @@ Prune the blockchain up to a given block. Pruning removes spent transactions to 
       
 
 ```
-qtum-qt.exe -prune=2000
+evo-qt.exe -prune=2000
 ```
      
 
@@ -2261,7 +2261,7 @@ null
 
 ### removeprunedfunds "txid"
 
-Deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to `importprunedfunds`. This will affect wallet balances. Qtum-cli returns ìnullî.
+Deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to `importprunedfunds`. This will affect wallet balances. Evo-cli returns ìnullî.
 
 ```
 removeprunedfunds "535e2bf90fda10c8c8186c4c73ac2861cb19312507b9e4552e78a6148030f19f"
@@ -2310,7 +2310,7 @@ reservebalance true 50
 
 ### savemempool
 
-Writes the memory pool to disk in the mempool.dat file. Qtum-qt returns ìnullî, qtumd has no response.
+Writes the memory pool to disk in the mempool.dat file. Evo-qt returns ìnullî, evod has no response.
 
 ```
 savemempool
@@ -2378,7 +2378,7 @@ searchlogs 274690 274700
 
 ### sendfrom "fromaccount" "toaddress" amount ( minconf "comment" "comment_to" )
 
-DEPRECATED (use `sendtoaddress`). Send an amount to a Qtum address, requires the wallet to be unlocked. The ìaccountî is for notation, it does not control the source of UTXOs. If successful, returns the transaction ID.
+DEPRECATED (use `sendtoaddress`). Send an amount to a Evo address, requires the wallet to be unlocked. The ìaccountî is for notation, it does not control the source of UTXOs. If successful, returns the transaction ID.
       
 
 ```
@@ -2389,7 +2389,7 @@ sendfrom "" QcEz4erq5gH6sa3ujWsqpZW4869MwrQf5 1.0
 
 ### sendmany "fromaccount" {"address":amount,...} ( minconf "comment" ["address",...] replaceable conf_target "estimate_mode")
 
-Send to multiple addresses, requires the wallet to unlocked. Amounts are floating point in QTUM. Donít put blank spaces betweeen the parameters. If successful, returns a single transaction ID containing all the outputs. Here we send to two different addresses:
+Send to multiple addresses, requires the wallet to unlocked. Amounts are floating point in EVO. Donít put blank spaces betweeen the parameters. If successful, returns a single transaction ID containing all the outputs. Here we send to two different addresses:
 
 ```
 sendmany "" "{\"QcEz4erq5gH6sa3ujWsqpZW4869MwrQf5\":0.5,\"QM5yJs3v3u9vAVE5XseFa9g63ke6Ld9Wp\":0.77}"
@@ -2400,7 +2400,7 @@ sendmany "" "{\"QcEz4erq5gH6sa3ujWsqpZW4869MwrQf5\":0.5,\"QM5yJs3v3u9vAVE5XseFa9
 
 ### sendmanywithdupes "fromaccount" {"address":amount,...} ( minconf "comment" ["address",...] )
 
-Send to multiple addresses, requires the wallet to be unlocked. Amounts are floating point in QTUM. Can send to duplicate addresses which `sendmany` canít do. If successful, returns a single transaction ID containing all the outputs. Here we send two transactions to the same address:
+Send to multiple addresses, requires the wallet to be unlocked. Amounts are floating point in EVO. Can send to duplicate addresses which `sendmany` canít do. If successful, returns a single transaction ID containing all the outputs. Here we send two transactions to the same address:
       
 
 ```
@@ -2437,10 +2437,10 @@ Send funds and data to a contract.
 Arguments:
 1. "contractaddress" (string, required) The contract address that will receive the funds and data
 2. "datahex"  (string, required) data to send
-3. "amount"      (numeric or string, optional) The amount in QTUM to send, default: 0
+3. "amount"      (numeric or string, optional) The amount in EVO to send, default: 0
 4. gasLimit  (numeric or string, optional) gasLimit, default: 250000, max: 40000000
-5. gasPrice  (numeric or string, optional) gasPrice QTUM price per gas unit, default: 0.0000004, min:0.0000004
-6. "senderaddress" (string, optional) The Qtum address that will be used as sender
+5. gasPrice  (numeric or string, optional) gasPrice EVO price per gas unit, default: 0.0000004, min:0.0000004
+6. "senderaddress" (string, optional) The Evo address that will be used as sender
 7. "broadcast" (bool, optional, default=true) Whether to broadcast the transaction or not
 8. "changeToSender" (bool, optional, default=true) Return the change to the sender
 
@@ -2458,7 +2458,7 @@ sendtocontract "0bf3bca874ddf209dae6863743d749d83bfded4" "53e62baf"
 
 ### setaccount "address" "account"
 
-DEPRECATED. Assigns and account name to the given address. Qtum-qt will return ìnullî if successful.
+DEPRECATED. Assigns and account name to the given address. Evo-qt will return ìnullî if successful.
 
 ```
 setaccount "QJv3YhWxG6EC2cpqZM5E3fjGzXYgakezm" "My New Account"
@@ -2509,7 +2509,7 @@ false
 
 ### settxfee amount
 
-Set the transaction fee per kilobyte of the transaction message. Overwrites the paytxfee parameter seen in `getwalletinfo`. The default minimum fee per 1,000 bytes is 0.004 QTUM. Returns true if successful.
+Set the transaction fee per kilobyte of the transaction message. Overwrites the paytxfee parameter seen in `getwalletinfo`. The default minimum fee per 1,000 bytes is 0.004 EVO. Returns true if successful.
 
 ```
 settxfee 0.01
@@ -2583,7 +2583,7 @@ Example TO COME.
 
 ### syncwithvalidationinterfacequeue
 
-Hidden command. Waits for all the asynchronous validation queues (for the blockchain, mempool, etc.) to complete. For use by developers. Qtum-qt returns ìnullî, qtumd returns nothing.
+Hidden command. Waits for all the asynchronous validation queues (for the blockchain, mempool, etc.) to complete. For use by developers. Evo-qt returns ìnullî, evod returns nothing.
 
 ```
 syncwithvalidationinterfacequeue
@@ -2670,10 +2670,10 @@ verifytxoutproof 00000020a8/<snip/>d38abf491d
 
 ### waitforblock <blockhash> (timeout)
 
-Hidden command. Used to monitor when blockchain reloading has reached a given block. For command line interfaces like qtumd (not for the qtum-qt GUI wallet), the command returns after the given block is loaded. This example waits for Mainnet block 150,000:
+Hidden command. Used to monitor when blockchain reloading has reached a given block. For command line interfaces like evod (not for the evo-qt GUI wallet), the command returns after the given block is loaded. This example waits for Mainnet block 150,000:
 
 ```
-qtum-cli waitforblock ae4699ac0a8f4d1170767167fd3b0639312850ce33dcb55a0afd0f5c1a88406f
+evo-cli waitforblock ae4699ac0a8f4d1170767167fd3b0639312850ce33dcb55a0afd0f5c1a88406f
 
 {
   "hash": "ae4699ac0a8f4d1170767167fd3b0639312850ce33dcb55a0afd0f5c1a88406f",
@@ -2683,7 +2683,7 @@ qtum-cli waitforblock ae4699ac0a8f4d1170767167fd3b0639312850ce33dcb55a0afd0f5c1a
 
 ### waitforblockheight <height> (timeout)
 
-Hidden command. Waits for (at least) block height and returns the height and blockhash of the current tip (highest block). Returns the current block on timeout or exit. Timeout is given in milliseconds, 0 or default is no timeout. This command only works from the command line (not with the qtum-qt GUI wallet) and is used for development.
+Hidden command. Waits for (at least) block height and returns the height and blockhash of the current tip (highest block). Returns the current block on timeout or exit. Timeout is given in milliseconds, 0 or default is no timeout. This command only works from the command line (not with the evo-qt GUI wallet) and is used for development.
 
 On Docker regtest:
 
@@ -2697,10 +2697,10 @@ docker exec myapp qcli waitforblockheight 7210
 ```
      
 
-On Mainnet with qtumd:
+On Mainnet with evod:
 
 ```
-qtum-cli waitforblockheight 281985
+evo-cli waitforblockheight 281985
 
 {
   "hash": "44f6a6909b255f9932e28322174c6eec201790d84e7d4f9c201c92594914d240",
@@ -2726,7 +2726,7 @@ Example TO COME.
 
 ### waitfornewblock (timeout)
 
-Hidden command. Waits for a new block and returns the blockhash and height. Returns the current block on timeout or exit. This command works on command line only (not with the qtum-qt GUI wallet) and is used for development. The timeout parameter is given in milliseconds and 0 indicates no timeout.
+Hidden command. Waits for a new block and returns the blockhash and height. Returns the current block on timeout or exit. This command works on command line only (not with the evo-qt GUI wallet) and is used for development. The timeout parameter is given in milliseconds and 0 indicates no timeout.
 
 On Docker with regtest:
 
@@ -2740,10 +2740,10 @@ waitfornewblock
 ```
      
 
-On Mainnet with qtumd:
+On Mainnet with evod:
 
 ```
-qtum-cli waitfornewblock
+evo-cli waitfornewblock
 
 {
   "hash": "b4caac261c4f5386076bbb07e0dc94b92fb67ca740b8a5d7b49cddcaffd6f103",
@@ -2762,7 +2762,7 @@ null
 ```
      
 
-qtum-cli returns no response, but you can check with `getwalletinfo` for "unlocked_until": 0 and check the padlock icon on qtum-qt.
+evo-cli returns no response, but you can check with `getwalletinfo` for "unlocked_until": 0 and check the padlock icon on evo-qt.
 
 ### walletpassphrase "passphrase" timeout ( true )
 
@@ -2782,11 +2782,11 @@ walletpassphrase "you should always use a long and strong passphrase" 99999999 t
 ```
      
 
-The qtum-qt wallet will show lock status with the padlock icon and the Console returns ìnullî. qtum-cli returns no status but you can check the unlock status with `getwalletinfo` for ìunlocked_untilî: <Unix timestamp>
+The evo-qt wallet will show lock status with the padlock icon and the Console returns ìnullî. evo-cli returns no status but you can check the unlock status with `getwalletinfo` for ìunlocked_untilî: <Unix timestamp>
 
 ### walletpassphrasechange "oldpassphrase" "newpassphrase"
 
-Changes the wallet passphrase from "oldpassphrase" to "newpassphrase", qtum-qt returns ìnullî, qtumd returns nothing.
+Changes the wallet passphrase from "oldpassphrase" to "newpassphrase", evo-qt returns ìnullî, evod returns nothing.
 
 ```
 walletpassphrasechange "you should always use a long and strong passphrase" "please use a strong and long passphrase"

@@ -8,15 +8,15 @@ En lugar de utilizar la comunicación entre pares, su cliente de billetera puede
 
 ## ¿Cómo generar bootstrap.dat?
 
-Construya una mejor versión lineal, sin fork, de la blockchain Qtum. Los scripts se ejecutan con Python 3 pero son compatibles con Python 2.
+Construya una mejor versión lineal, sin fork, de la blockchain Evo. Los scripts se ejecutan con Python 3 pero son compatibles con Python 2.
 
 ### Paso 1: descargar archivos de script
 
-Clone el repositorio oficial qtum e ingrese al directorio `contrib / linearize`
+Clone el repositorio oficial evo e ingrese al directorio `contrib / linearize`
 
 ```
-git clone https://github.com/qtumproject/qtum.git
-cd qtum/contrib/linearize
+git clone https://github.com/coinevo/evo.git
+cd evo/contrib/linearize
 ```
 
 ### Paso 2: descargue la lista hash
@@ -37,7 +37,7 @@ Configuración opcional del archivo de configuración para linearize-hashes:
 - Blockchain: `min_height`,` max_height`
 - `rev_hash_bytes`: si es verdadero, la lista de hash de bloque escrita se revertirá en bytes. (En otras palabras, el hash devuelto por getblockhash tendrá sus bytes invertidos). Falso por defecto. Destinado a la generación de listas de hash independientes, pero seguro de usar con linearize-data.py, que generará los mismos datos sin importar qué formato de byte se elija.
 
-El script `linearize-hashes` requiere una conexión, local o remota, a un servidor JSON-RPC. Ejecutar `qtumd` o` qtum-qt -server` será suficiente.
+El script `linearize-hashes` requiere una conexión, local o remota, a un servidor JSON-RPC. Ejecutar `evod` o` evo-qt -server` será suficiente.
 
 ### Paso 3: copie los datos del bloque local
 
@@ -55,7 +55,7 @@ Configuración opcional del archivo de configuración para linealizar datos:
 - `debug_output`: algunas impresiones pueden no ser siempre deseadas. Si es verdadero, se imprimirá dicha salida.
 - `file_timestamp`: establece las horas de último acceso y última modificación de cada archivo, respectivamente, a la hora actual y a la marca de tiempo del bloque más reciente escrito en la blockchain del script.
 - `génesis`: el hash del bloque génesis en la blockchain
-- `input`: qtumd blocks / directorio que contiene blkNNNNN.dat
+- `input`: evod blocks / directorio que contiene blkNNNNN.dat
 - `hashlist`: archivo de texto que contiene la lista de hashes de bloque creados por linearize-hashes.py.
 - `max_out_sz`: Tamaño máximo para archivos creados por la opción` output_file`. (Predeterminado: `1000 * 1000 * 1000` bytes)
 - `netmagic`: número mágico de la red.
@@ -65,7 +65,7 @@ Configuración opcional del archivo de configuración para linealizar datos:
 
 ## Cómo usar bootstrap.dat
 
-1. Descargue el archivo `bootstrap.dat` de` https: // s.qtum.site / bootstrap.dat`.
+1. Descargue el archivo `bootstrap.dat` de` https: // s.coinevo.tech / bootstrap.dat`.
 
 2. Moverse
 
@@ -77,13 +77,13 @@ Configuración opcional del archivo de configuración para linealizar datos:
 
     
 
-   en el directorio de datos qtum, las rutas predeterminadas de datadir son diferentes para diferentes sistemas operativos:
+   en el directorio de datos evo, las rutas predeterminadas de datadir son diferentes para diferentes sistemas operativos:
 
-   - Linux: `~/.qtum`
-   - OSX: `~/Library/Application Support/Qtum`
-   - Windows: `% APPDATA% \ Qtum` (pegue esta ruta en su explorador de Windows, la ruta se resolverá automáticamente)
+   - Linux: `~/.evo`
+   - OSX: `~/Library/Application Support/Evo`
+   - Windows: `% APPDATA% \ Evo` (pegue esta ruta en su explorador de Windows, la ruta se resolverá automáticamente)
 
 3. Reinicie la billetera y espere a reindexar.
 
 [
-](https://docs.qtum.site/en/Qtum-RPC-API/)
+](https://docs.coinevo.tech/en/Evo-RPC-API/)

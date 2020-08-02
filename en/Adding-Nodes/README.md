@@ -2,7 +2,7 @@
 
 
 
-Adding nodes on Qtum is easy. First let's go to **Help -> Debug Window**
+Adding nodes on Evo is easy. First let's go to **Help -> Debug Window**
 
 
 
@@ -27,4 +27,4 @@ You can always list all nodes your wallet is connected to by typing getpeerinfo 
 <img src="addnode8.png" width="800">
 
 
-[How to Add Nodes](https://github.com/qtumproject/qtum/wiki/Adding-nodes)
+[How to Add Nodes](https://github.com/coinevo/evo/wiki/Adding-nodes)

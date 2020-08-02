@@ -1,10 +1,10 @@
-# Staking Qtum on FreeBSD
+# Staking Evo on FreeBSD
 
-FreeBSD is a very powerful operating system, it has a great history of reliability, security and stability. Here we show how it can be used to stake Qtum in a secure way.
+FreeBSD is a very powerful operating system, it has a great history of reliability, security and stability. Here we show how it can be used to stake Evo in a secure way.
 
-## Isolating Qtumd in a FreeBSD jail
+## Isolating Evod in a FreeBSD jail
 
-FreeBSD jails are a very powerful feature, in summary, your jail instance is more protected as it's like having a separate OS just for Qtum with reduced privileges. 
+FreeBSD jails are a very powerful feature, in summary, your jail instance is more protected as it's like having a separate OS just for Evo with reduced privileges. 
 
 Here's a good read on Jails:  https://www.freebsd.org/doc/handbook/jails.html
 
@@ -58,7 +58,7 @@ Please remember to do all these commands as root
 
 ![rcconf.png](rcconf.png)
 
-Notice that we've added some settings for firewall, these will enable IPFW and basic settings to secure our Jail, allowing only ports 22(ssh) and 3888(Qtum) to be accessed.
+Notice that we've added some settings for firewall, these will enable IPFW and basic settings to secure our Jail, allowing only ports 22(ssh) and 3888(Evo) to be accessed.
 
 ### Resource limits for Jails
 
@@ -76,33 +76,33 @@ Notice that we've added some settings for firewall, these will enable IPFW and b
 
 **(Change zroot for whatever name you chose for your zfs pool)**  
 
-`zfs create -o mountpoint=/jail/qtum  zroot/jail/qtum`
+`zfs create -o mountpoint=/jail/evo  zroot/jail/evo`
 
-![createqtumjail.png](createqtumjail.png)
+![createevojail.png](createevojail.png)
 
-### Now we've created our jail for staking Qtum, let's fetch and install FreeBSD on it!
+### Now we've created our jail for staking Evo, let's fetch and install FreeBSD on it!
 
-`cd /jail/qtum/ && fetch -o  - http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/11.2-RELEASE/base.txz | tar --unlink -xpJf - -C /jail/qtum `
+`cd /jail/evo/ && fetch -o  - http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/11.2-RELEASE/base.txz | tar --unlink -xpJf - -C /jail/evo `
 
 ![fetch.png](fetch.png)
 
-#### We've now installed FreeBSD into /jail/qtum
+#### We've now installed FreeBSD into /jail/evo
 
-Typing ls /jail/qtum/ should show the filesystem of our Qtum FreeBSD Jail
+Typing ls /jail/evo/ should show the filesystem of our Evo FreeBSD Jail
 
 Now, let's create the jail configuration file:
 
 ### /etc/jail.conf
 
-`qtum {`
+`evo {`
 
-`  host.hostname = qtum.local;`
+`  host.hostname = evo.local;`
 
 `  ip4.addr = 192.168.0.99;`
 
 `  interface = em0;`
 
-`  path = /jail/qtum;`
+`  path = /jail/evo;`
 
 `  exec.start = "/bin/sh /etc/rc";`
 
@@ -122,18 +122,18 @@ Now, let's create the jail configuration file:
 
 Ok now it's time to launch our jail!
 
-` service jail start qtum `
+` service jail start evo `
 
-#### We've just started our Qtum jail, We can now get into our Qtum jail to finish configuration, install Qtum and launch the wallet.
+#### We've just started our Evo jail, We can now get into our Evo jail to finish configuration, install Evo and launch the wallet.
 
-` jexec qtum /bin/csh`
+` jexec evo /bin/csh`
 
 ` cp /usr/share/zoneinfo/YOURTIMEZONE/ /etc/localtime  `
 This is very important, if the time info is incorrect, we'll produce orphan blocks or will be unable to sync
 
-Create our basic /etc/rc.conf for our Qtum Jail
+Create our basic /etc/rc.conf for our Evo Jail
 
-## Qtum Jail:
+## Evo Jail:
 
 ### /etc/rc.conf
 
@@ -166,35 +166,35 @@ Create our basic /etc/rc.conf for our Qtum Jail
 
 `echo "nameserver 8.8.4.4" >> /etc/resolv.conf`
 
-## Installing Qtum
+## Installing Evo
 
-Now that we've got our jail up and running, we need to install Qtum.
+Now that we've got our jail up and running, we need to install Evo.
 There's 2 options on doing this, we can use the pkg repository or the powerful FreeBSD ports which are usually updated faster:
 
 #### pkg repository
 
 `pkg update -f`
-`pkg install -y qtum`
+`pkg install -y evo`
 
-![pkginstallqtum.png](pkginstallqtum.png)
+![pkginstallevo.png](pkginstallevo.png)
 
 #### FreeBSD ports
 
 `portsnap fetch extract`
-`cd /usr/ports/net-p2p/qtum && make install clean`
+`cd /usr/ports/net-p2p/evo && make install clean`
 
 ![portsnapfetchextract.png](portsnapfetchextract.png)The above will ask for a lot of configuration options, it might be better to use make config-recursive to set all options before compiling.
-If you want to use default settings just type `cd /usr/ports/net-p2p/qtum && make install clean BATCH="YES"`
+If you want to use default settings just type `cd /usr/ports/net-p2p/evo && make install clean BATCH="YES"`
 
-### Running Qtum
+### Running Evo
 
-Launching Qtum is just like in any other *NIX operating system, however there's a minor difference here due to how FreeBSD jails work. First, we need to create a qtum.conf file with the following contents:
+Launching Evo is just like in any other *NIX operating system, however there's a minor difference here due to how FreeBSD jails work. First, we need to create a evo.conf file with the following contents:
 
-![qtumconf.png](qtumconf.png)
+![evoconf.png](evoconf.png)
 
 This config is necessary, otherwise calling the daemon will return errors.
 
-Then we can launch with`qtumd -daemon`
+Then we can launch with`evod -daemon`
 
 ## Security tips
 

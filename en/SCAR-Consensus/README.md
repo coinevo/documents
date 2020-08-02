@@ -2,7 +2,7 @@
 
 # Background
 
-In order to reduce the fork attack and ensure the reliability of the blockchain network, the block intervals of some well-kown blockchain consensus algorithms, like PoS and PoW, are more than 10 seconds. For example: the  block time interval of Ethereum is 15 seconds, the Qtum is 144 seconds and the Bitcoin is 10 minutes. Howerver, the longer the block interval is, the longer the user will be waiting for the transaction confirmation. It is not good for real-time payment and some other applications.
+In order to reduce the fork attack and ensure the reliability of the blockchain network, the block intervals of some well-kown blockchain consensus algorithms, like PoS and PoW, are more than 10 seconds. For example: the  block time interval of Ethereum is 15 seconds, the Evo is 144 seconds and the Bitcoin is 10 minutes. Howerver, the longer the block interval is, the longer the user will be waiting for the transaction confirmation. It is not good for real-time payment and some other applications.
 
 Some consensus algorithms of the consortium blockchain, such as DPoS(Delegated Proof of Stake) [1] and Aura (Authority Round) [2] ,  reduce the block interval to less than 1 second by voting for the super node to execute the consensus algorithm. But the problem with this is that the number of blocks is too large, which puts a lot of pressure on network and storage. Running a full node, or even a light node that only downloads the block header, has high requirements on the performance of the node device.
 
@@ -14,7 +14,7 @@ Therefore, we propose the SCAR (Scalable Consensus Algorithm). The idea of SCAR 
 
 PoW is represented by Bitcoin. The node provides computational power to generate new blocks through a large number of calculations. The higher the power is provided, the faster the block is generated. The calculation difficulty is adjusted every 2016 blocks, ensuring that the block time interval is kept at around 10 minutes in the case of a change in the overall network computing power. Since the block interval is long and the size of each block is limited to 1 MB. Therefore, the network will be seriously congested when the transaction volume is large.
 
-PoS is represented by Qtum. The node provides a token and generates a new block with a small amount of calculation. The larger the token amount is, the faster the block is generated. The calculation difficulty will also be adjusted periodically to ensure that the block time interval is around 144 seconds. Compared with PoW, PoS is more energy efficient since it reduces the computational power requirements. However, since the block interval and the block size limit are still fixed, the load on the network is fixed, and it is impossible to avoid congestion when the transaction volume is large. Although Qtum can manually adjust the block size limit using the DGP(Decentralized Governance Protocol)[3] protocol, this approach is not easy enough.
+PoS is represented by Evo. The node provides a token and generates a new block with a small amount of calculation. The larger the token amount is, the faster the block is generated. The calculation difficulty will also be adjusted periodically to ensure that the block time interval is around 144 seconds. Compared with PoW, PoS is more energy efficient since it reduces the computational power requirements. However, since the block interval and the block size limit are still fixed, the load on the network is fixed, and it is impossible to avoid congestion when the transaction volume is large. Although Evo can manually adjust the block size limit using the DGP(Decentralized Governance Protocol)[3] protocol, this approach is not easy enough.
 
 In PoW and PoS, all nodes of the whole network will participate in the consensus competition, so the block interval cannot be set too small. If it is too small, it is easy to produce a fork. In other words, if the calculation difficulty is set too low, it is easy for a plurality of nodes to generate a new block at the same time.
 
@@ -38,7 +38,7 @@ The detail of three steps of the SCAR algorithm will be described separately bel
 
 ## Vote for super nodes
 
-There are many ways to vote for super nodes. For example, in EOS all users can vote,  and in Aura current super nodes can vote for super nodes of next round. Here we propose a voting strategy based on the Qtum DGP protocol.
+There are many ways to vote for super nodes. For example, in EOS all users can vote,  and in Aura current super nodes can vote for super nodes of next round. Here we propose a voting strategy based on the Evo DGP protocol.
 
 When a new blockchain is initialized, the DGP's smart contract is deployed on the chain, and all admins (administrators) and govs (governors) are initialized in the contract. They are stored in the form of addresses. The DGP protocol supports on-chain voting by these admins and govs to determine if the super nodes should be updated.
 
@@ -115,5 +115,5 @@ While ensuring the performance of the blockchain, SCAR saves network bandwidth a
 
 [2] Aura - Authority Round - Wiki. https://wiki.parity.io/Aura
 
-[3] Qtum区块链指南. https://docs.qtum.site/zh/Qtum-Blockchain-Guide.html
+[3] Evo区块链指南. https://docs.coinevo.tech/zh/Evo-Blockchain-Guide.html
 

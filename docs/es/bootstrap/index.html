@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Como usar el bootstrap.dat · Qtum Documentation</title>
+        <title>Como usar el bootstrap.dat · Evo Documentation</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -113,16 +113,16 @@
 
     
         
-        <li class="header">Usando Qtum</li>
+        <li class="header">Usando Evo</li>
         
         
     
-        <li class="chapter " data-level="2.1" data-path="../Tutorial de uso de billetera QTUM/">
+        <li class="chapter " data-level="2.1" data-path="../Tutorial de uso de billetera EVO/">
             
-                <a href="../Tutorial de uso de billetera QTUM/">
+                <a href="../Tutorial de uso de billetera EVO/">
             
                     
-                    Tutorial de uso de billetera Qtum
+                    Tutorial de uso de billetera Evo
             
                 </a>
             
@@ -131,9 +131,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.1" data-path="../Qtum Mejores Practicas/">
+        <li class="chapter " data-level="2.1.1" data-path="../Evo Mejores Practicas/">
             
-                <a href="../Qtum Mejores Practicas/">
+                <a href="../Evo Mejores Practicas/">
             
                     
                     Mejores Practicas
@@ -144,12 +144,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.2" data-path="../ActualizaQtum/">
+        <li class="chapter " data-level="2.1.2" data-path="../ActualizaEvo/">
             
-                <a href="../ActualizaQtum/">
+                <a href="../ActualizaEvo/">
             
                     
-                    Como Actualizar la billetera de Qtum
+                    Como Actualizar la billetera de Evo
             
                 </a>
             
@@ -188,7 +188,7 @@
                 <a href="../actualizar/">
             
                     
-                    Como actualizar Qtum
+                    Como actualizar Evo
             
                 </a>
             
@@ -247,9 +247,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="../qtumrepo/">
+        <li class="chapter " data-level="3.2" data-path="../evorepo/">
             
-                <a href="../qtumrepo/">
+                <a href="../evorepo/">
             
                     
                     Repositorios de Linux
@@ -260,12 +260,12 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="../Qtum-AWS/">
+        <li class="chapter " data-level="3.3" data-path="../Evo-AWS/">
             
-                <a href="../Qtum-AWS/">
+                <a href="../Evo-AWS/">
             
                     
-                    Qtum en AWS
+                    Evo en AWS
             
                 </a>
             
@@ -273,9 +273,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.4" data-path="../Qtum en Raspberry Pi/">
+        <li class="chapter " data-level="3.4" data-path="../Evo en Raspberry Pi/">
             
-                <a href="../Qtum en Raspberry Pi/">
+                <a href="../Evo en Raspberry Pi/">
             
                     
                     Staking con Raspberry Pi
@@ -306,9 +306,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../Qtum Billetera Movil/">
+        <li class="chapter " data-level="4.1" data-path="../Evo Billetera Movil/">
             
-                <a href="../Qtum Billetera Movil/">
+                <a href="../Evo Billetera Movil/">
             
                     
                     Como usar la billetera movil
@@ -322,7 +322,7 @@
 
     
         
-        <li class="header">Qtum en la nube</li>
+        <li class="header">Evo en la nube</li>
         
         
     
@@ -331,7 +331,7 @@
                 <a href="../gcp/">
             
                     
-                    Qtum en Google Cloud
+                    Evo en Google Cloud
             
                 </a>
             
@@ -389,11 +389,11 @@
 <p><code>bootstrap.dat</code> es un archivo que contiene la copia de blockchain del bloque g&#xE9;nesis a un cierto punto de tiempo. Este archivo comprimido <code>bootstrap.dat</code> se usa para acelerar los tiempos iniciales de descarga de blockchain. Su cliente de billetera descarga y verifica cada bloque de la red P2P. Esto suele ser lento y, especialmente, si est&#xE1; utilizando la billetera por primera vez, entonces el proceso de sincronizaci&#xF3;n puede llevar bastante tiempo.</p>
 <p>En lugar de utilizar la comunicaci&#xF3;n entre pares, su cliente de billetera puede leer datos de blockchain de este archivo de arranque comprimido que contiene la copia de datos de blockchain hasta una cierta altura de bloque. Una vez que el cliente de billetera completa la lectura de datos del archivo de arranque, utilizar&#xE1; la conexi&#xF3;n P2P para descargar los bloques restantes. Este m&#xE9;todo es m&#xE1;s r&#xE1;pido y adem&#xE1;s consume menos ancho de banda en comparaci&#xF3;n con el proceso de sincronizaci&#xF3;n est&#xE1;ndar. Sin embargo, el m&#xE9;todo de arranque todav&#xED;a lleva alg&#xFA;n tiempo, ya que su cliente de billetera necesita validar cada bloque individual.</p>
 <h2 id="&#xBF;c&#xF3;mo-generar-bootstrapdat"><a name="&#xBF;c&#xF3;mo-generar-bootstrapdat" class="plugin-anchor" href="#&#xBF;c&#xF3;mo-generar-bootstrapdat"><i class="fa fa-link" aria-hidden="true"></i></a>&#xBF;C&#xF3;mo generar bootstrap.dat?</h2>
-<p>Construya una mejor versi&#xF3;n lineal, sin fork, de la blockchain Qtum. Los scripts se ejecutan con Python 3 pero son compatibles con Python 2.</p>
+<p>Construya una mejor versi&#xF3;n lineal, sin fork, de la blockchain Evo. Los scripts se ejecutan con Python 3 pero son compatibles con Python 2.</p>
 <h3 id="paso-1-descargar-archivos-de-script"><a name="paso-1-descargar-archivos-de-script" class="plugin-anchor" href="#paso-1-descargar-archivos-de-script"><i class="fa fa-link" aria-hidden="true"></i></a>Paso 1: descargar archivos de script</h3>
-<p>Clone el repositorio oficial qtum e ingrese al directorio <code>contrib / linearize</code></p>
-<pre><code>git clone https://github.com/qtumproject/qtum.git
-cd qtum/contrib/linearize
+<p>Clone el repositorio oficial evo e ingrese al directorio <code>contrib / linearize</code></p>
+<pre><code>git clone https://github.com/coinevo/evo.git
+cd evo/contrib/linearize
 </code></pre><h3 id="paso-2-descargue-la-lista-hash"><a name="paso-2-descargue-la-lista-hash" class="plugin-anchor" href="#paso-2-descargue-la-lista-hash"><i class="fa fa-link" aria-hidden="true"></i></a>Paso 2: descargue la lista hash</h3>
 <pre><code>./linearize-hashes.py linearize.cfg &gt; hashlist.txt
 </code></pre><p>Configuraci&#xF3;n de archivo de configuraci&#xF3;n requerida para linearize-hashes:</p>
@@ -408,7 +408,7 @@ cd qtum/contrib/linearize
 <li>Blockchain: <code>min_height</code>,<code>max_height</code></li>
 <li><code>rev_hash_bytes</code>: si es verdadero, la lista de hash de bloque escrita se revertir&#xE1; en bytes. (En otras palabras, el hash devuelto por getblockhash tendr&#xE1; sus bytes invertidos). Falso por defecto. Destinado a la generaci&#xF3;n de listas de hash independientes, pero seguro de usar con linearize-data.py, que generar&#xE1; los mismos datos sin importar qu&#xE9; formato de byte se elija.</li>
 </ul>
-<p>El script <code>linearize-hashes</code> requiere una conexi&#xF3;n, local o remota, a un servidor JSON-RPC. Ejecutar <code>qtumd</code> o<code>qtum-qt -server</code> ser&#xE1; suficiente.</p>
+<p>El script <code>linearize-hashes</code> requiere una conexi&#xF3;n, local o remota, a un servidor JSON-RPC. Ejecutar <code>evod</code> o<code>evo-qt -server</code> ser&#xE1; suficiente.</p>
 <h3 id="paso-3-copie-los-datos-del-bloque-local"><a name="paso-3-copie-los-datos-del-bloque-local" class="plugin-anchor" href="#paso-3-copie-los-datos-del-bloque-local"><i class="fa fa-link" aria-hidden="true"></i></a>Paso 3: copie los datos del bloque local</h3>
 <pre><code>./linearize-data.py linearize.cfg
 </code></pre><p>Configuraci&#xF3;n de archivo requerida:</p>
@@ -421,7 +421,7 @@ cd qtum/contrib/linearize
 <li><code>debug_output</code>: algunas impresiones pueden no ser siempre deseadas. Si es verdadero, se imprimir&#xE1; dicha salida.</li>
 <li><code>file_timestamp</code>: establece las horas de &#xFA;ltimo acceso y &#xFA;ltima modificaci&#xF3;n de cada archivo, respectivamente, a la hora actual y a la marca de tiempo del bloque m&#xE1;s reciente escrito en la blockchain del script.</li>
 <li><code>g&#xE9;nesis</code>: el hash del bloque g&#xE9;nesis en la blockchain</li>
-<li><code>input</code>: qtumd blocks / directorio que contiene blkNNNNN.dat</li>
+<li><code>input</code>: evod blocks / directorio que contiene blkNNNNN.dat</li>
 <li><code>hashlist</code>: archivo de texto que contiene la lista de hashes de bloque creados por linearize-hashes.py.</li>
 <li><code>max_out_sz</code>: Tama&#xF1;o m&#xE1;ximo para archivos creados por la opci&#xF3;n<code>output_file</code>. (Predeterminado: <code>1000 * 1000 * 1000</code> bytes)</li>
 <li><code>netmagic</code>: n&#xFA;mero m&#xE1;gico de la red.</li>
@@ -431,22 +431,22 @@ cd qtum/contrib/linearize
 </ul>
 <h2 id="c&#xF3;mo-usar-bootstrapdat"><a name="c&#xF3;mo-usar-bootstrapdat" class="plugin-anchor" href="#c&#xF3;mo-usar-bootstrapdat"><i class="fa fa-link" aria-hidden="true"></i></a>C&#xF3;mo usar bootstrap.dat</h2>
 <ol>
-<li><p>Descargue el archivo <code>bootstrap.dat</code> de<code>https: // s.qtum.site / bootstrap.dat</code>.</p>
+<li><p>Descargue el archivo <code>bootstrap.dat</code> de<code>https: // s.coinevo.tech / bootstrap.dat</code>.</p>
 </li>
 <li><p>Moverse</p>
 </li>
 </ol>
 <pre><code>   bootstrap.dat
-</code></pre><p>   en el directorio de datos qtum, las rutas predeterminadas de datadir son diferentes para diferentes sistemas operativos:</p>
+</code></pre><p>   en el directorio de datos evo, las rutas predeterminadas de datadir son diferentes para diferentes sistemas operativos:</p>
 <ul>
-<li>Linux: <code>~/.qtum</code></li>
-<li>OSX: <code>~/Library/Application Support/Qtum</code></li>
-<li>Windows: <code>% APPDATA% \ Qtum</code> (pegue esta ruta en su explorador de Windows, la ruta se resolver&#xE1; autom&#xE1;ticamente)</li>
+<li>Linux: <code>~/.evo</code></li>
+<li>OSX: <code>~/Library/Application Support/Evo</code></li>
+<li>Windows: <code>% APPDATA% \ Evo</code> (pegue esta ruta en su explorador de Windows, la ruta se resolver&#xE1; autom&#xE1;ticamente)</li>
 </ul>
 <ol>
 <li>Reinicie la billetera y espere a reindexar.</li>
 </ol>
-<p><a href="https://docs.qtum.site/en/Qtum-RPC-API/" target="_blank">
+<p><a href="https://docs.coinevo.tech/en/Evo-RPC-API/" target="_blank">
 </a></p>
 
                                 
@@ -480,7 +480,7 @@ cd qtum/contrib/linearize
                 </a>
                 
                 
-                <a href="../actualizar/" class="navigation navigation-next " aria-label="Next page: Como actualizar Qtum">
+                <a href="../actualizar/" class="navigation navigation-next " aria-label="Next page: Como actualizar Evo">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -491,7 +491,7 @@ cd qtum/contrib/linearize
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Como usar el bootstrap.dat","level":"2.1.4","depth":2,"next":{"title":"Como actualizar Qtum","level":"2.1.5","depth":2,"path":"actualizar/README.md","ref":"actualizar/README.md","articles":[]},"previous":{"title":"Comandos","level":"2.1.3","depth":2,"path":"comandos/README.md","ref":"comandos/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Qtum Documentation","language":"es","gitbook":"*"},"file":{"path":"bootstrap/README.md","mtime":"2020-06-30T02:14:44.160Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-08T08:55:07.233Z"},"basePath":"..","book":{"language":"es"}});
+            gitbook.page.hasChanged({"page":{"title":"Como usar el bootstrap.dat","level":"2.1.4","depth":2,"next":{"title":"Como actualizar Evo","level":"2.1.5","depth":2,"path":"actualizar/README.md","ref":"actualizar/README.md","articles":[]},"previous":{"title":"Comandos","level":"2.1.3","depth":2,"path":"comandos/README.md","ref":"comandos/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","language-picker","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"language-picker":{"grid-columns":3},"anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Evo Documentation","language":"es","gitbook":"*"},"file":{"path":"bootstrap/README.md","mtime":"2020-06-30T02:14:44.160Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-08T08:55:07.233Z"},"basePath":"..","book":{"language":"es"}});
         });
     </script>
 </div>

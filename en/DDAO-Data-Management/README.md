@@ -36,7 +36,7 @@ Decentralized systems have a variety of implementations, leading to high learnin
 The system can be separated into three layers, namely DDMI (Decentralized Data Management Infrastructure), DDAO and DApp (Decentralized Application), which will be introduced as follows.
 
 ## DDMI
-The DDMI layer contains a variety of decentralized systems, including blockchains, decentralized databases, decentralized file systems, and more. These decentralized systems can be launched locally by the developer or deployed on a remote server, and then connected through a descriptor with uniform format. For example, the format of *name://user:password@ip:port*, that is, connecting to a local Qtum node with port 13889 by *qtum://admin:123456@127.0.0.1:13889*, or connecting to an IPFS node in LAN with 8080 port by *ipfs://myname:mypasswd@192.168.1.2:8080*.
+The DDMI layer contains a variety of decentralized systems, including blockchains, decentralized databases, decentralized file systems, and more. These decentralized systems can be launched locally by the developer or deployed on a remote server, and then connected through a descriptor with uniform format. For example, the format of *name://user:password@ip:port*, that is, connecting to a local Evo node with port 13889 by *evo://admin:123456@127.0.0.1:13889*, or connecting to an IPFS node in LAN with 8080 port by *ipfs://myname:mypasswd@192.168.1.2:8080*.
 
 ## DDAO
 The DDAO layer is the core module proposed in this paper. Its main functions include (1) establishing connections to various decentralized systems, (2) abstracting to get compatible CRUD interfaces. For different types of decentralized systems, abstract interfaces are different:

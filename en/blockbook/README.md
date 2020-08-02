@@ -1,4 +1,4 @@
-# How to Set up blockbook for Qtum
+# How to Set up blockbook for Evo
 
 
 
@@ -12,7 +12,7 @@ However, there's some specific topics not mentioned in this tutorial:
 
 1. Blockbook uses a lot of disk space, the minimum disk size on the server should be around 30GB, 60GB recommended for long term growth.
 
-2. Blockbook, along with qtum-core, requires at least 4GB ram to function, 8GB and higher is recommended (our deployment server has 3GB ram plus a 5GB swap file)
+2. Blockbook, along with evo-core, requires at least 4GB ram to function, 8GB and higher is recommended (our deployment server has 3GB ram plus a 5GB swap file)
 
 3. Even with 8GB ram, it's recommended to have swap enabled on the server
 
@@ -48,7 +48,7 @@ Ok, now that we're done creating the swap file and made sure we have at least 30
 
 ## Ports opened by blockbook
 
-Blockbook creates several ports for Qtum when running, those ports are: 
+Blockbook creates several ports for Evo when running, those ports are: 
 
 | blockbook internal port | blockbook public port | backend rpc port | backend service ports (zmq) |
 | ----------------------- | --------------------- | ---------------- | --------------------------- |
@@ -58,26 +58,26 @@ To be able to access blockbook externally, we need to make port 9188 accessible 
 
 ## Setting up nginx web server for blockbook
 
-Blockbook has a web UI with information about the qtum blockchain, just like on https://blockbook.qtum.info
+Blockbook has a web UI with information about the evo blockchain, just like on https://blockbook.coinevo.tech
 
 SSL cert needed, if we don't have one, we can just create one with letsencrypt but we won't go into details in this doc.
 
-Here's the Nginx config I'm using for blockbook.qtum.info
+Here's the Nginx config I'm using for blockbook.coinevo.tech
 
 
     server {
         listen 80;
         listen 443 ssl http2;
-          ssl_certificate /etc/letsencrypt/live/blockbook.qtum.info/fullchain.pem; # managed by Certbot
-        ssl_certificate_key /etc/letsencrypt/live/blockbook.qtum.info/privkey.pem; # managed by Certbot
+          ssl_certificate /etc/letsencrypt/live/blockbook.coinevo.tech/fullchain.pem; # managed by Certbot
+        ssl_certificate_key /etc/letsencrypt/live/blockbook.coinevo.tech/privkey.pem; # managed by Certbot
         include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
         ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
         
-        server_name blockbook.qtum.info;
+        server_name blockbook.coinevo.tech;
     
     # force https-redirects
     if ($scheme = http) {
-        return 301 https://blockbook.qtum.info$request_uri;
+        return 301 https://blockbook.coinevo.tech$request_uri;
     }
     
     location / {

@@ -1,17 +1,17 @@
 # Comandos
 
-La billetera Qtum Core tiene un amplio conjunto de comandos que brindan un control integral de la billetera y las transacciones de blockchain. Hay dos conjuntos de comandos que se pueden usar con las billeteras Qtum Core:
+La billetera Evo Core tiene un amplio conjunto de comandos que brindan un control integral de la billetera y las transacciones de blockchain. Hay dos conjuntos de comandos que se pueden usar con las billeteras Evo Core:
 
 - Los comandos de la consola se dan a una billetera que ya se está ejecutando.
 - Los comandos de inicio se utilizan al iniciar una billetera.
 
-Este manual se enfoca en los comandos de la consola que se dan a una billetera que se está ejecutando y se pueden enviar usando RPC (Llamadas de procedimiento remoto) o en la línea de comandos a la billetera del servidor qtumd o se pueden entregar a la GUI de escritorio qtum-qt (Interfaz gráfica de usuario ) usando la línea de comando de la consola de la ventana de depuración (consulte la Figura 1).
+Este manual se enfoca en los comandos de la consola que se dan a una billetera que se está ejecutando y se pueden enviar usando RPC (Llamadas de procedimiento remoto) o en la línea de comandos a la billetera del servidor evod o se pueden entregar a la GUI de escritorio evo-qt (Interfaz gráfica de usuario ) usando la línea de comando de la consola de la ventana de depuración (consulte la Figura 1).
 
-![2019-1 Mac Debug Window with Prompt](https://i.imgur.com/K0uCLVr.jpg) Figura 1. La consola qtum-qt
+![2019-1 Mac Debug Window with Prompt](https://i.imgur.com/K0uCLVr.jpg) Figura 1. La consola evo-qt
 
 Tenga en cuenta el mensaje de advertencia en rojo en la Figura 1 y tenga cuidado al usar los comandos de clave privada (`dumpprivkey` y` dumpwallet`) con las billeteras Mainnet.
 
-Para la billetera del servidor qtumd, los comandos de la consola se proporcionan mediante la aplicación de interfaz de línea de comandos qtum-cli en el indicador de línea de comandos del sistema (consulte la Figura 2).
+Para la billetera del servidor evod, los comandos de la consola se proporcionan mediante la aplicación de interfaz de línea de comandos evo-cli en el indicador de línea de comandos del sistema (consulte la Figura 2).
 
 ![2019-2 Command Line Win](https://i.imgur.com/m1xp3ng.jpg) Figura 2. Indicador de línea de comando del sistema
 
@@ -21,17 +21,17 @@ Siempre puede obtener una lista de los comandos de consola actuales utilizando e
 
 ## Comandos de consola :hammer_and_wrench:
 
-Los comandos de la consola se entregan a una billetera Qtum Core en ejecución y proporcionan información y control adicionales. Los comandos de la consola y son necesarios para operar la billetera del servidor qtumd, que es una billetera "sin cabeza" sin interfaz gráfica de usuario.
+Los comandos de la consola se entregan a una billetera Evo Core en ejecución y proporcionan información y control adicionales. Los comandos de la consola y son necesarios para operar la billetera del servidor evod, que es una billetera "sin cabeza" sin interfaz gráfica de usuario.
 
 Hay 136 comandos de consola con algunas buenas referencias para el 112 heredado de bitcoin. Hay 13 comandos "ocultos" que utilizan los desarrolladores y que no aparecerán en la lista de "ayuda".
 
 Los comandos pueden tener parámetros obligatorios u opcionales y los parámetros más numerosos se ingresan en formato JSON (JavaScript Object Notation) con comillas dobles escapadas (\ ") como se muestra a continuación.
 
-Los parámetros comunes para estos comandos son direcciones Qtum, hashes de bloque, direcciones de contrato, etc. Algunos de los comandos tendrán un parámetro opcional "minconf" (confirmaciones mínimas) que le permite obtener una respuesta para una transacción o bloque que tenga al menos eso Número de confirmaciones.
+Los parámetros comunes para estos comandos son direcciones Evo, hashes de bloque, direcciones de contrato, etc. Algunos de los comandos tendrán un parámetro opcional "minconf" (confirmaciones mínimas) que le permite obtener una respuesta para una transacción o bloque que tenga al menos eso Número de confirmaciones.
 
-La referencia de la cadena de consulta de bitcoin API http://chainquery.com/bitcoin-api explica los parámetros y da ejemplos con respuestas para los comandos heredados de bitcoin. La reverencia API de consulta de cadena de bitcoin proporciona 67 comandos, de los cuales 2 no están en Qtum (`Estimación prioritaria`,` getgenerate`) y dos (`gettransaction`,` walletpassphrase`) tienen un parámetro adicional para Qtum. Ver también https://bitcoin.org/en/developer-reference#remote-procedure-calls-rpcs.
+La referencia de la cadena de consulta de bitcoin API http://chainquery.com/bitcoin-api explica los parámetros y da ejemplos con respuestas para los comandos heredados de bitcoin. La reverencia API de consulta de cadena de bitcoin proporciona 67 comandos, de los cuales 2 no están en Evo (`Estimación prioritaria`,` getgenerate`) y dos (`gettransaction`,` walletpassphrase`) tienen un parámetro adicional para Evo. Ver también https://bitcoin.org/en/developer-reference#remote-procedure-calls-rpcs.
 
-Las interfaces avanzadas para la billetera Qtum Core (nodo completo) pueden usar estos "comandos de consola" como RPC (Llamadas de procedimiento remoto) a través de una conexión de puerto dedicada al nodo. Para construir una billetera activa de intercambio o un nodo de servidor para una DAPP (aplicación distribuida) móvil, puede usar RPC, que siguen estos mismos comandos de consola. El nodo cliente ofrece una interfaz JSON-RPC a través de sockets HTTP para realizar diversas funciones operativas y administrar el nodo local.
+Las interfaces avanzadas para la billetera Evo Core (nodo completo) pueden usar estos "comandos de consola" como RPC (Llamadas de procedimiento remoto) a través de una conexión de puerto dedicada al nodo. Para construir una billetera activa de intercambio o un nodo de servidor para una DAPP (aplicación distribuida) móvil, puede usar RPC, que siguen estos mismos comandos de consola. El nodo cliente ofrece una interfaz JSON-RPC a través de sockets HTTP para realizar diversas funciones operativas y administrar el nodo local.
 
 Un comentario rápido sobre "cuentas". Las cuentas eran una forma desafortunada de Bitcoin para rastrear los saldos de lo que realmente son valores basados en transacciones UTXO, y las "cuentas" están en desuso y se eliminarán gradualmente en la versión 0.18.
 
@@ -47,19 +47,19 @@ Aquí hay algunos grupos de comandos que son útiles para diversas tareas:
 
 Los comandos de inicio ofrecen opciones adicionales de control y recuperación al iniciar la billetera. Por ejemplo, puede usar comandos de inicio para varios tipos de técnicas de recuperación de blockchain, registro de depuración adicional o controles adicionales. Si va a utilizar estos comandos de inicio, asegúrese de tener una buena copia de seguridad del archivo wallet.dat.
 
-Vea los comandos de inicio en la billetera qtum-qt con Ayuda - Opciones de línea de comandos:
+Vea los comandos de inicio en la billetera evo-qt con Ayuda - Opciones de línea de comandos:
 
 ![2019-4 Startup Commands Win](https://i.imgur.com/CryGF13.jpg) Figura 4. Comandos de inicio
 
-y en la línea de comando con "qtumd -?":
+y en la línea de comando con "evod -?":
 
 ![2019-5 Startup Commands Command Line Win](https://i.imgur.com/KCmxFaC.jpg) Figura 5. Comandos de inicio desde la línea de comandos
 
 ## Comandos de consola A - Z
 
-Para estos comandos de consola documentados a continuación, se proporcionan respuestas para los parámetros predeterminados (Qtum versión 0.16 - invierno 2018/2019). Los comandos marcados como DEPRECATED no deben usarse porque se eliminarán y reemplazarán en futuras versiones de la billetera, por ejemplo, los comandos que usan "cuenta" se eliminarán en la versión 0.18.
+Para estos comandos de consola documentados a continuación, se proporcionan respuestas para los parámetros predeterminados (Evo versión 0.16 - invierno 2018/2019). Los comandos marcados como DEPRECATED no deben usarse porque se eliminarán y reemplazarán en futuras versiones de la billetera, por ejemplo, los comandos que usan "cuenta" se eliminarán en la versión 0.18.
 
-El uso del comando "help \" le dará información completa sobre el comando y los parámetros relevantes, formateados de manera que pueda copiarlos y pegarlos (reemplazando las direcciones, ID de transacciones, etc., según sea necesario). El siguiente formato muestra el comando con parámetros seguidos de la respuesta, en algunos casos, los parámetros o las respuestas se truncan con el término "\". Donde se indique, algunos comandos solo funcionan con la red regtest (Prueba de regresión). Muchos comandos devolverán "nulo" para qtum-qt y no devolverán nada para los sistemas de línea de comandos.
+El uso del comando "help \" le dará información completa sobre el comando y los parámetros relevantes, formateados de manera que pueda copiarlos y pegarlos (reemplazando las direcciones, ID de transacciones, etc., según sea necesario). El siguiente formato muestra el comando con parámetros seguidos de la respuesta, en algunos casos, los parámetros o las respuestas se truncan con el término "\". Donde se indique, algunos comandos solo funcionan con la red regtest (Prueba de regresión). Muchos comandos devolverán "nulo" para evo-qt y no devolverán nada para los sistemas de línea de comandos.
 
 ### abandontransaction "txid"
 
@@ -76,14 +76,14 @@ Transaction not eligible for abandonment (code -5)
 Detiene una nueva exploración de billetera activada por un comando como `importprivkey`. Este comando puede emitirse abriendo una segunda ventana de línea de comando (donde se escanea la primera ventana), en cuyo caso el comando detendrá el escaneo y devolverá "verdadero".
 
 ```
-qtum-cli abortrescan
+evo-cli abortrescan
 
 true
 ```
 
 ### addmultisigaddress nrequired ["key",...] ( "account" "address_type" )
 
-Agregue una dirección de múltiples firmas a la billetera para que pueda recibir y enviar desde esa dirección. Ejecute el comando en cada máquina que firmará y haga una copia de seguridad del archivo wallet.dat. La dirección puede ser una dirección Qtum o una clave pública codificada en hexadecimal. Use `importaddress` para agregar la dirección multigrado en cada billetera de firma.
+Agregue una dirección de múltiples firmas a la billetera para que pueda recibir y enviar desde esa dirección. Ejecute el comando en cada máquina que firmará y haga una copia de seguridad del archivo wallet.dat. La dirección puede ser una dirección Evo o una clave pública codificada en hexadecimal. Use `importaddress` para agregar la dirección multigrado en cada billetera de firma.
 
 Esta funcionalidad solo está diseñada para usarse con direcciones que no sean de vigilancia. Consulte `importaddress` para ver solo el soporte de la dirección p2sh. El uso de la cuenta está DEPRECADO). Ver también `validateaddress`.
 
@@ -98,7 +98,7 @@ addmultisigaddress 2 "[\"QgdaD9b3ppKowoC45EZMtepjjBfnvEe6m\",\"QFmr8vY29reHj73XS
 
 ### addnode "nodo" "agregar | eliminar | onetry"
 
-Intenta agregar un nodo con una dirección IP conocida. Este comando es útil para nuevas billeteras que tienen problemas para hacer conexiones entre pares. Aquí hay algunas buenas direcciones IP para agregar, puede poner estos comandos uno tras otro, luego la billetera intentará durante unos minutos establecer una conexión entre pares. Qtumd no devuelve nada:
+Intenta agregar un nodo con una dirección IP conocida. Este comando es útil para nuevas billeteras que tienen problemas para hacer conexiones entre pares. Aquí hay algunas buenas direcciones IP para agregar, puede poner estos comandos uno tras otro, luego la billetera intentará durante unos minutos establecer una conexión entre pares. Evod no devuelve nada:
 
 ```
 addnode 35.200.159.68:3888 add
@@ -108,7 +108,7 @@ addnode 35.200.130.53:3888 add
 addnode 35.192.54.161:3888 add
 ```
 
-Qtum-qt devuelve "nulo" después de cada uno (ver Figura 6).
+Evo-qt devuelve "nulo" después de cada uno (ver Figura 6).
 
 ![2019-6 addnode Mac](https://i.imgur.com/RjRkiP8.jpg) Figura 6. Ingresando el comando addnode
 
@@ -116,7 +116,7 @@ Qtum-qt devuelve "nulo" después de cada uno (ver Figura 6).
 
 Comando oculto OBSOLETO. Este comando era una forma de generar una dirección SegWit a partir de una dirección heredada existente, generalmente una dirección P2SH-P2WPKH: secuencia de comandos Pay-to-Witness-Public-Key-Hash (P2WPKH) incrustada en una secuencia Pay-to-Script-Hash (P2SH) ) habla a. Este comando está deshabilitado principalmente en la versión 0.16 y se eliminará en la versión 0.17. En su lugar, use el comando `getnewaddress` con el tipo de dirección" p2sh-segwit "o" bech32 ".
 
-Ejecute v 0.16 qtumd con `-deprecatedrpc = addwitnessaddress` para ejecutar el comando:
+Ejecute v 0.16 evod con `-deprecatedrpc = addwitnessaddress` para ejecutar el comando:
 
 ```
 addwitnessaddress QkSc3wcAJ59Nk4X9mvd258ycVxJ7XWhp9
@@ -126,7 +126,7 @@ MHa57hGwD48SZQjh23MZbq24tFwTu7Q3c
 
 ### backupwallet "destino"
 
-El destino puede ser un nombre de archivo o ruta con un nombre de archivo. La billetera debe estar completamente descifrada (no solo para replantear) para que este comando funcione. qtum-qt devolverá "nulo", qtumd no devolverá nada. En Windows:
+El destino puede ser un nombre de archivo o ruta con un nombre de archivo. La billetera debe estar completamente descifrada (no solo para replantear) para que este comando funcione. evo-qt devolverá "nulo", evod no devolverá nada. En Windows:
 
 ```
 backupwallet "C:\Users\<username>\Desktop\Backups\backup2018-10-21.dat"
@@ -163,7 +163,7 @@ POR VENIR.
 
 ### clearbanned
 
-Borre todas las IP de nodos prohibidos. Qtum-qt devuelve "nulo", qtumd no responde.
+Borre todas las IP de nodos prohibidos. Evo-qt devuelve "nulo", evod no responde.
 
 ```
 clearbanned
@@ -265,7 +265,7 @@ decodescript 52460396bc49812bad50949fbc0bbd44e95bf32a5695519b3ff267a5d93cba3bd16
 
 ### disconnectnode "[dirección]" [nodeid]
 
-Desconecta un par (nodo) utilizando la dirección IP o el número de nodo. Qtum-qt devolverá "nulo", qtumd no devolverá nada.
+Desconecta un par (nodo) utilizando la dirección IP o el número de nodo. Evo-qt devolverá "nulo", evod no devolverá nada.
 
 ```
 disconnectnode "35.198.0.76:3888"
@@ -300,7 +300,7 @@ dumpwallet "C:\Users\<username>\Desktop\Backups\dump 2018-10-30.txt"
 Archivo:
 
 ```
-  Wallet dump created by Qtum v0.16.1.0-0806c12c4-dirty
+  Wallet dump created by Evo v0.16.1.0-0806c12c4-dirty
   * Created on 2018-10-31T01:56:32Z
   * Best block at time of backup was 241161 (b11d5169d66d39cbcd848e2ea3f9adfcee1c22af945f100aec9e762d88609e2e),
     mined on 2018-10-31T01:55:28Z
@@ -323,7 +323,7 @@ dumpwallet /Users/<USERNAME>/Desktop/dump_2018-12-15.txt
 Archivo:
 
 ```
-  Wallet dump created by Qtum v0.16.2.0-47a30461d-dirty
+  Wallet dump created by Evo v0.16.2.0-47a30461d-dirty
   * Created on 2018-12-16T02:22:59Z
   * Best block at time of backup was 148510 
 (ca8a9457a69882b395bf56671e3661e148d3aca4a7b6c77398804229e7fb58f4),
@@ -346,7 +346,7 @@ encryptwallet "you should always use a long and strong passphrase"
 
 Comando oculto Simplemente repita los argumentos de entrada. Este comando es para probar.
 
-La diferencia entre `echo` y` echojson` es que `echojson` tiene habilitada la conversión de argumentos en la tabla del lado del cliente en qtum-cli y la GUI. No hay diferencia del lado del servidor. Aquí hacemos eco de los parámetros utilizados para configurar una dirección multisig.
+La diferencia entre `echo` y` echojson` es que `echojson` tiene habilitada la conversión de argumentos en la tabla del lado del cliente en evo-cli y la GUI. No hay diferencia del lado del servidor. Aquí hacemos eco de los parámetros utilizados para configurar una dirección multisig.
 
 ```
 echo "[\"qghwDvb1pyJoqoAD2ESMTevvvjUfNvReDn\",\"qfKr7vXdmroHi61XUUHedXvgV2mDx9Kudb\"]"
@@ -360,7 +360,7 @@ echo "[\"qghwDvb1pyJoqoAD2ESMTevvvjUfNvReDn\",\"qfKr7vXdmroHi61XUUHedXvgV2mDx9Ku
 
 Comando oculto Simplemente repita los argumentos de entrada. Este comando es para probar.
 
-La diferencia entre `echo` y` echojson` es que `echojson` tiene habilitada la conversión de argumentos en la tabla del lado del cliente en qtum-cli y la GUI. No hay diferencia del lado del servidor. Aquí hacemos eco de los parámetros utilizados para configurar una dirección multisig.
+La diferencia entre `echo` y` echojson` es que `echojson` tiene habilitada la conversión de argumentos en la tabla del lado del cliente en evo-cli y la GUI. No hay diferencia del lado del servidor. Aquí hacemos eco de los parámetros utilizados para configurar una dirección multisig.
 
 ```
 echojson
@@ -517,7 +517,7 @@ docker exec myapp qcli generate 600
 
 ### dirección de nblocks de generatetoaddress (maxtries)
 
-Mina hasta nblocks inmediatamente a una dirección específica. Utilizado con la prueba de regresión "regtest" prueba privada blockchain. Aquí generamos 10 bloques de génesis en la prueba con 20,000 Test QTUM cada uno, más un bloque inicial, y `listaddressgroupings` muestra el resultado:
+Mina hasta nblocks inmediatamente a una dirección específica. Utilizado con la prueba de regresión "regtest" prueba privada blockchain. Aquí generamos 10 bloques de génesis en la prueba con 20,000 Test EVO cada uno, más un bloque inicial, y `listaddressgroupings` muestra el resultado:
 
 ```
 PS C:\Users\Test> docker exec myapp qcli generatetoaddress 10 "qNe5aDdubCGRaTp7vDYL4BASjzVH7c7Yc"
@@ -558,7 +558,7 @@ My trading Acct 101
 
 ### getaccountaddress "cuenta"
 
-OBSOLETO. Devuelve la dirección actual de Qtum para una cuenta. Use la cuenta nula "" para la dirección predeterminada.
+OBSOLETO. Devuelve la dirección actual de Evo para una cuenta. Use la cuenta nula "" para la dirección predeterminada.
 
 ```
 getaccountaddress "My trading Acct 101"
@@ -640,7 +640,7 @@ getaddressesbyaccount "MyAccount1"
 
 ### getbalance ( "cuenta" minconf include_watchonly )
 
-Obtenga el saldo en QTUM para una billetera.
+Obtenga el saldo en EVO para una billetera.
 
 ```
 getbalance
@@ -700,7 +700,7 @@ getblock a18adc4fb204fe1818c30e3003fa8c8bf1833692d6df7dbb66d1569d27b18f8e
 
 ### getblockchaininfo
 
-Devuelve información sobre la blockchain. Aquí "bloques" es igual a "encabezados", por lo que esta billetera se sincroniza con los últimos bloques. "moneysupply" proporciona el QTUM total creado (bloques de génesis + todas las recompensas de bloque). "size_on_disk" proporciona el tamaño de almacenamiento local para bloques.
+Devuelve información sobre la blockchain. Aquí "bloques" es igual a "encabezados", por lo que esta billetera se sincroniza con los últimos bloques. "moneysupply" proporciona el EVO total creado (bloques de génesis + todas las recompensas de bloque). "size_on_disk" proporciona el tamaño de almacenamiento local para bloques.
 
 ```
 getblockchaininfo
@@ -959,10 +959,10 @@ Ver `fromhexaddress` para convertir una dirección hexadecimal a base58 pubkeyha
 
 ### conseguir información
 
-Comando oculto DEPERCADO Las interfaces de línea de comandos (pero no la billetera GUI qtum-qt) pueden invocar este comando usando `-getinfo`. La billetera a continuación tiene 8 conexiones entre pares y está desbloqueada durante mucho tiempo ("desbloqueado hasta" es el tiempo de época de Unix en segundos). Use `getpeerinfo` para verificar el reloj de la computadora en comparación con" timeoffset "para otros pares en la red.
+Comando oculto DEPERCADO Las interfaces de línea de comandos (pero no la billetera GUI evo-qt) pueden invocar este comando usando `-getinfo`. La billetera a continuación tiene 8 conexiones entre pares y está desbloqueada durante mucho tiempo ("desbloqueado hasta" es el tiempo de época de Unix en segundos). Use `getpeerinfo` para verificar el reloj de la computadora en comparación con" timeoffset "para otros pares en la red.
 
 ```
-qtum-cli -getinfo
+evo-cli -getinfo
 
 {
   "version": 160200,
@@ -1136,7 +1136,7 @@ getnettotals
 
 ### getnetworkhashps ( nblocks height )
 
-OBSOLETO. Devuelve un valor de hash de red relacionado con la dificultad de minería de bloques, que no es relevante para Qtum Proof of Stake, para el cual el hash de red por segundo es el número total de nodos dividido por 16 segundos.
+OBSOLETO. Devuelve un valor de hash de red relacionado con la dificultad de minería de bloques, que no es relevante para Evo Proof of Stake, para el cual el hash de red por segundo es el número total de nodos dividido por 16 segundos.
 
 ```
 getnetworkhashps
@@ -1193,7 +1193,7 @@ getnetworkinfo
 
 ### getnewaddress ("cuenta" "tipo_dirección")
 
-Obtenga una nueva dirección de recepción, con los tipos "legacy", "p2sh-segwit" o "bech32". Las direcciones heredadas de Qtum Mainnet comienzan con una "Q", y las direcciones SegWit comenzarán con una "M" para p2sh-segwit y "qc1" para bech32. Las direcciones heredadas de Qtum Testnet comienzan con una "q", y las direcciones SegWit comenzarán con una "m" para p2sh-segwit y "tq1" para bech32. Aquí tenemos una nueva dirección Mainnet SegWit bech32:
+Obtenga una nueva dirección de recepción, con los tipos "legacy", "p2sh-segwit" o "bech32". Las direcciones heredadas de Evo Mainnet comienzan con una "Q", y las direcciones SegWit comenzarán con una "M" para p2sh-segwit y "qc1" para bech32. Las direcciones heredadas de Evo Testnet comienzan con una "q", y las direcciones SegWit comenzarán con una "m" para p2sh-segwit y "tq1" para bech32. Aquí tenemos una nueva dirección Mainnet SegWit bech32:
 
 ```
 getnewaddress "" "bech32"
@@ -1416,7 +1416,7 @@ getrawtransaction cbd113e947d5c1b3fccae149d0d16c82e3bfe05c4f2c204c8bc65ae0697bbd
 }
 ```
 
-La transacción anterior tiene una entrada UTXO "vin" que proporciona la transacción anterior a gastar y dos salidas "vout". La primera salida "vout" envía 300.685401 a una dirección de recepción, la segunda envía 11769.78668720 QTUM a una dirección de cambio. La diferencia de valor entre las entradas y salidas es la tarifa de transacción.
+La transacción anterior tiene una entrada UTXO "vin" que proporciona la transacción anterior a gastar y dos salidas "vout". La primera salida "vout" envía 300.685401 a una dirección de recepción, la segunda envía 11769.78668720 EVO a una dirección de cambio. La diferencia de valor entre las entradas y salidas es la tarifa de transacción.
 
 ### getreceivedbyaccount "cuenta" (minconf)
 
@@ -1449,7 +1449,7 @@ Devuelve información relacionada con el staking.
 - "currentblocktx" da el número de transacciones en un bloque extraído por la billetera
 - "dificultad" proporciona la dificultad objetivo de PoS para el bloque actual
 - "intervalo de búsqueda" muestra el tiempo en segundos desde que la billetera comenzó a acumularse o el tiempo desde la recompensa de bloque más reciente de la billetera, aquí un día y un minuto
-- "peso" da el peso de la billetera en Satoshis, mueve el punto decimal ocho dígitos hacia la izquierda para dar estos pesos en unidades, aquí el peso de la billetera es 148 QTUM y el peso de la red es 12.23 millones
+- "peso" da el peso de la billetera en Satoshis, mueve el punto decimal ocho dígitos hacia la izquierda para dar estos pesos en unidades, aquí el peso de la billetera es 148 EVO y el peso de la red es 12.23 millones
 - "netstakeweight" da el peso estimado de la red
 - "tiempo esperado" da una estimación del tiempo promedio esperado para una recompensa en bloque en segundos, aquí 4.59 meses
 
@@ -1493,7 +1493,7 @@ getstorage 6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7
 
 ### getsubsidy [nTarget]
 
-Devuelve el subsidio (recompensa de bloque) para la altura de bloque especificada. Aquí vemos el primer bloque que tendrá una recompensa de bloque de 2.0 QTUM.
+Devuelve el subsidio (recompensa de bloque) para la altura de bloque especificada. Aquí vemos el primer bloque que tendrá una recompensa de bloque de 2.0 EVO.
 
 ```
 getsubsidy 990501
@@ -1645,7 +1645,7 @@ gettxoutsetinfo
 
 ### getunconfirmedbalance
 
-Obtenga el saldo no confirmado de la billetera, que es el monto de las transacciones recibidas por la billetera que aún no se han publicado en bloques. Aquí la billetera recibió 7.0 QTUM que no se han confirmado en un bloque:
+Obtenga el saldo no confirmado de la billetera, que es el monto de las transacciones recibidas por la billetera que aún no se han publicado en bloques. Aquí la billetera recibió 7.0 EVO que no se han confirmado en un bloque:
 
 ```
 getunconfirmedbalance
@@ -1659,7 +1659,7 @@ Devuelve información sobre la billetera:
 
 - "walletname": el nombre del archivo wallet.dat cargado actualmente
 - "walletversion" - no la versión del cliente de software, use `getnetworkinfo` para verificar esto
-- "balance" - saldo en QTUM
+- "balance" - saldo en EVO
 - "stake": cualquier saldo actualmente comprometido con una stake
 - "unconfirmed_balance": cualquier saldo que no se haya publicado en los siguientes bloques
 - "immature_balance": cualquier saldo de base de monedas (Prueba de trabajo) que no tiene 500 confirmaciones, visto solo para la repetición del registro.
@@ -1668,7 +1668,7 @@ Devuelve información sobre la billetera:
 - "keypoolsize": cuántas claves nuevas se generan previamente
 - "keypoolsize_hd_internal": cuántas claves nuevas se generan previamente para uso interno (se utilizan para cambiar direcciones)
 - "unlocked_until": el tiempo de época de Unix en segundos que la billetera está desbloqueada, o 0 si la billetera está bloqueada, este campo se omite para las billeteras no encriptadas.
-- "paytxfee" - la tarifa de transacción en QTUM por 1,000 bytes
+- "paytxfee" - la tarifa de transacción en EVO por 1,000 bytes
 - "hdmasterkeyid": un hash 160 de la clave pública maestra determinista jerárquica (HD), este campo se omite si HD no está habilitado
 
 ```
@@ -1708,7 +1708,7 @@ getblockcount
 
 ### importaddress "address" ( "label" rescan p2sh )
 
-Agrega una dirección Qtum de 34 caracteres o una dirección de clave pública de 66 caracteres hexadecimales que se puede ver como si estuviera en su billetera pero no se puede usar para gastar. La billetera se volverá a explorar después de ingresar este comando y se debe hacer una copia de seguridad después de agregar direcciones. Qtum-qt devuelve "nulo" y muestra el saldo "Solo observación", qtumd no devuelve nada.
+Agrega una dirección Evo de 34 caracteres o una dirección de clave pública de 66 caracteres hexadecimales que se puede ver como si estuviera en su billetera pero no se puede usar para gastar. La billetera se volverá a explorar después de ingresar este comando y se debe hacer una copia de seguridad después de agregar direcciones. Evo-qt devuelve "nulo" y muestra el saldo "Solo observación", evod no devuelve nada.
 
 ```
 importaddress QaL29jcCZ39pWcA334dA4BN3peVhnc42D
@@ -1737,9 +1737,9 @@ importmulti(Ö)
 ]
 ```
 
-### importprivkey "qtumprivkey" ( "label" ) ( rescan )
+### importprivkey "evoprivkey" ( "label" ) ( rescan )
 
-Agrega una clave privada WIF a su billetera, por ejemplo, tal como la devuelve dumpprivkey o de otra billetera Qtum. La billetera debe estar desbloqueada y requiere una nueva copia de seguridad de la billetera después. La billetera volverá a escanear durante unos minutos para agregar saldo a la nueva dirección y devolverá "nulo" si tiene éxito.
+Agrega una clave privada WIF a su billetera, por ejemplo, tal como la devuelve dumpprivkey o de otra billetera Evo. La billetera debe estar desbloqueada y requiere una nueva copia de seguridad de la billetera después. La billetera volverá a escanear durante unos minutos para agregar saldo a la nueva dirección y devolverá "nulo" si tiene éxito.
 
 ```
 importprivkey cThA5YBGQggmpjSsBFLT1NXR18Fk16YBNd1kCVoERjbQ4d4TRMFf
@@ -1755,7 +1755,7 @@ Ejemplo POR VENIR.
 
 ### importpubkey "pubkey" ( "label" rescan )
 
-"Agrega una clave pública que se puede ver como si estuviera en su billetera pero no se puede usar para gastarla. La clave pública tiene 66 caracteres hexadecimales, y se puede obtener usando el comando` validateaddress`. Después de ingresar este comando, la billetera reescaneado durante unos minutos, qtum-qt devuelve "nulo" y qtumd no devuelve nada. Se debe hacer una copia de seguridad de la billetera después de importar una clave pública.
+"Agrega una clave pública que se puede ver como si estuviera en su billetera pero no se puede usar para gastarla. La clave pública tiene 66 caracteres hexadecimales, y se puede obtener usando el comando` validateaddress`. Después de ingresar este comando, la billetera reescaneado durante unos minutos, evo-qt devuelve "nulo" y evod no devuelve nada. Se debe hacer una copia de seguridad de la billetera después de importar una clave pública.
 
 ```
 importpubkey 0381dc63bc14d32743a7741dc6a2993b8384dc3aa848332194bc851ff2a371b827
@@ -1765,7 +1765,7 @@ null
 
 ### importwallet "filename"
 
-Importa claves desde una descarga de archivo de billetera (ver `dumpwallet`). Requiere una nueva copia de seguridad de la billetera después de este comando. Use la ruta completa de descarga de archivo. Qtum-qt mostrará un estado de "Importando" por un tiempo, luego "Escaneando" mientras vuelve a escanear la blockchain. Este comando puede tardar cinco minutos o más en regresar, y puede parecer que la billetera se congela durante este tiempo.
+Importa claves desde una descarga de archivo de billetera (ver `dumpwallet`). Requiere una nueva copia de seguridad de la billetera después de este comando. Use la ruta completa de descarga de archivo. Evo-qt mostrará un estado de "Importando" por un tiempo, luego "Escaneando" mientras vuelve a escanear la blockchain. Este comando puede tardar cinco minutos o más en regresar, y puede parecer que la billetera se congela durante este tiempo.
 
 En una PC con la descarga de archivo en una carpeta "Copias de seguridad" en el escritorio:
 
@@ -1787,7 +1787,7 @@ null
 
 ### keypoolrefill ( newsize )
 
-Rellena el conjunto de claves con nuevas claves privadas, con un tamaño predeterminado de 100. El tamaño normal del conjunto de claves es 1,000 y la billetera llena de manera oportunista el conjunto de claves a medida que se usan las direcciones, por lo que este comando debe usar un tamaño de 1,100, etc. significativo. La billetera debe estar desbloqueada. qtum-qt devuelve "nulo", qtumd no devuelve nada.
+Rellena el conjunto de claves con nuevas claves privadas, con un tamaño predeterminado de 100. El tamaño normal del conjunto de claves es 1,000 y la billetera llena de manera oportunista el conjunto de claves a medida que se usan las direcciones, por lo que este comando debe usar un tamaño de 1,100, etc. significativo. La billetera debe estar desbloqueada. evo-qt devuelve "nulo", evod no devuelve nada.
 
 ```
 keypoolrefill 1100
@@ -1797,7 +1797,7 @@ null
 
 ### listaccounts ( minconf include_watchonly)
 
-OBSOLETO. Devuelve información sobre nombres de cuentas y saldos de cuentas. Da el saldo en Satoshis (QTUM x 0.00000001), incluida la cuenta predeterminada no definida.
+OBSOLETO. Devuelve información sobre nombres de cuentas y saldos de cuentas. Da el saldo en Satoshis (EVO x 0.00000001), incluida la cuenta predeterminada no definida.
 
 Esta "cuenta" fue un intento de rastrear manualmente los saldos de bitcoin que se eliminarán con la versión 0.17, porque no funciona bien, por ejemplo, devolviendo valores negativos:
 
@@ -2100,7 +2100,7 @@ listwallets
 
 Actualiza la lista de salidas temporalmente inutilizables. Bloquee temporalmente (desbloqueo = falso como se muestra a continuación) o desbloquee (desbloqueo = verdadero) las salidas de transacción especificadas. Si no se especifican transacciones al desbloquear, se desbloquean todas las transacciones bloqueadas actuales.
 
-Una salida de transacción bloqueada no se elegirá mediante la selección automática de monedas al gastar QTUM.
+Una salida de transacción bloqueada no se elegirá mediante la selección automática de monedas al gastar EVO.
 
 Los bloqueos se almacenan solo en la memoria. Las billeteras se inician con cero salidas bloqueadas y la lista de salidas bloqueadas siempre se borra (en virtud de la salida del proceso) cuando una billetera se detiene o falla. Vea también la llamada `listunspent`.
 
@@ -2170,7 +2170,7 @@ null
 
 ### preciousblock "blockhash"
 
-Prioriza un bloque con un tiempo anterior para bloques a la misma altura. Utilizado en situaciones de horquilla dura. Ver también `invalidateblock`. qtum-qt devuelve "nulo" si tiene éxito, qtumd no devuelve nada si tiene éxito.
+Prioriza un bloque con un tiempo anterior para bloques a la misma altura. Utilizado en situaciones de horquilla dura. Ver también `invalidateblock`. evo-qt devuelve "nulo" si tiene éxito, evod no devuelve nada si tiene éxito.
 
 ```
 preciousblock 854d57da75ba7550aebe83c1cdf539ac685d735684b7c40cfd639582abf43b
@@ -2180,7 +2180,7 @@ null
 
 ### prioritisetransaction
 
-Acepta la transacción en bloques minados con una prioridad más alta (o más baja). En realidad, no se paga una tarifa más alta, el algoritmo para seleccionar transacciones en un bloque (que está tratando de maximizar las tarifas) considera que la transacción ha pagado una tarifa más alta. Qtum-qt y qtumd devuelven "verdadero":
+Acepta la transacción en bloques minados con una prioridad más alta (o más baja). En realidad, no se paga una tarifa más alta, el algoritmo para seleccionar transacciones en un bloque (que está tratando de maximizar las tarifas) considera que la transacción ha pagado una tarifa más alta. Evo-qt y evod devuelven "verdadero":
 
 ```
 prioritisetransaction "01b347eb32bca5cde81444f6a6d4311f02ae3f3da25394e0f144fca525218dd" 0.0 10000
@@ -2193,7 +2193,7 @@ true
 Pode la blockchain hasta un bloque determinado. La poda elimina las transacciones gastadas para reducir el tamaño de almacenamiento de la blockchain. Devuelve el último bloque purgado. La billetera debe iniciarse en modo de poda con espacio de trabajo en disco reservado, al menos 550 MB, aquí con 2 GB de espacio de trabajo:
 
 ```
-qtum-qt.exe -prune=2000
+evo-qt.exe -prune=2000
 ```
 
 Entonces puedes dar el comando
@@ -2218,7 +2218,7 @@ null
 
 ### removeprunedfunds "txid"
 
-Elimina la transacción especificada de la billetera. Destinado a su uso con billeteras purgadas y como acompañante de `importfunedfunds`. Esto afectará los saldos de billetera. Qtum-cli devuelve "nulo".
+Elimina la transacción especificada de la billetera. Destinado a su uso con billeteras purgadas y como acompañante de `importfunedfunds`. Esto afectará los saldos de billetera. Evo-cli devuelve "nulo".
 
 ```
 removeprunedfunds "535e2bf90fda10c8c8186c4c73ac2861cb19312507b9e4552e78a6148030f19f"
@@ -2267,7 +2267,7 @@ reservebalance true 50
 
 ### savemempool
 
-Escribe el grupo de memoria en el disco en el archivo mempool.dat. Qtum-qt devuelve "nulo", qtumd no tiene respuesta.
+Escribe el grupo de memoria en el disco en el archivo mempool.dat. Evo-qt devuelve "nulo", evod no tiene respuesta.
 
 ```
 savemempool
@@ -2334,7 +2334,7 @@ searchlogs 274690 274700
 
 ### sendfrom "fromaccount" "toaddress" amount ( minconf "comment" "comment_to" )
 
-DEPRECATED (use `sendtoaddress`). Enviar una cantidad a una dirección Qtum, requiere que la billetera esté desbloqueada. La "cuenta" es para notación, no controla la fuente de UTXO. Si tiene éxito, devuelve la identificación de la transacción.
+DEPRECATED (use `sendtoaddress`). Enviar una cantidad a una dirección Evo, requiere que la billetera esté desbloqueada. La "cuenta" es para notación, no controla la fuente de UTXO. Si tiene éxito, devuelve la identificación de la transacción.
 
 ```
 sendfrom "" QcEz4erq5gH6sa3ujWsqpZW4869MwrQf5 1.0
@@ -2344,7 +2344,7 @@ sendfrom "" QcEz4erq5gH6sa3ujWsqpZW4869MwrQf5 1.0
 
 ### sendmany "fromaccount" {"address":amount,...} ( minconf "comment" ["address",...] replaceable conf_target "estimate_mode")
 
-Enviar a múltiples direcciones, requiere que la billetera esté desbloqueada. Las cantidades son de coma flotante en QTUM. No ponga espacios en blanco entre los parámetros. Si tiene éxito, devuelve una única ID de transacción que contiene todas las salidas. Aquí enviamos a dos direcciones diferentes:
+Enviar a múltiples direcciones, requiere que la billetera esté desbloqueada. Las cantidades son de coma flotante en EVO. No ponga espacios en blanco entre los parámetros. Si tiene éxito, devuelve una única ID de transacción que contiene todas las salidas. Aquí enviamos a dos direcciones diferentes:
 
 ```
 sendmany "" "{\"QcEz4erq5gH6sa3ujWsqpZW4869MwrQf5\":0.5,\"QM5yJs3v3u9vAVE5XseFa9g63ke6Ld9Wp\":0.77}"
@@ -2354,7 +2354,7 @@ sendmany "" "{\"QcEz4erq5gH6sa3ujWsqpZW4869MwrQf5\":0.5,\"QM5yJs3v3u9vAVE5XseFa9
 
 ### sendmanywithdupes "fromaccount" {"address":amount,...} ( minconf "comment" ["address",...] )
 
-Enviar a múltiples direcciones, requiere que la billetera esté desbloqueada. Las cantidades son de coma flotante en QTUM. No ponga espacios en blanco entre los parámetros. Si tiene éxito, devuelve una única ID de transacción que contiene todas las salidas. Aquí enviamos a dos direcciones diferentes:
+Enviar a múltiples direcciones, requiere que la billetera esté desbloqueada. Las cantidades son de coma flotante en EVO. No ponga espacios en blanco entre los parámetros. Si tiene éxito, devuelve una única ID de transacción que contiene todas las salidas. Aquí enviamos a dos direcciones diferentes:
 
 ```
 sendmanywithdupes "" "{\"QFKw7VXsm23Hi71KUU5dXvpV3mDc9Au29\":200.0,\"QFKw7VXsm23Hi71KUU5dXvpV3mDc9Au29\":250.0}"
@@ -2390,10 +2390,10 @@ Argumentos:
 
 1. "contractaddress" (cadena, requerida) La dirección del contrato que recibirá los fondos y los datos
 2. datos "datahex" (cadena, necesarios) para enviar
-3. "monto" (numérico o cadena, opcional) El monto en QTUM para enviar, predeterminado: 0
+3. "monto" (numérico o cadena, opcional) El monto en EVO para enviar, predeterminado: 0
 4. gasLimit (numérico o cadena, opcional) gasLimit, predeterminado: 250000, máx .: 40000000
-5. gasPrice (numérico o cadena, opcional) gasPrice QTUM precio por unidad de gas, predeterminado: 0.0000004, min: 0.0000004
-6. "senderaddress" (cadena, opcional) La dirección Qtum que se utilizará como remitente
+5. gasPrice (numérico o cadena, opcional) gasPrice EVO precio por unidad de gas, predeterminado: 0.0000004, min: 0.0000004
+6. "senderaddress" (cadena, opcional) La dirección Evo que se utilizará como remitente
 7. "broadcast" (bool, opcional, default = true) Si se transmite la transacción o no
 8. "changeToSender" (bool, opcional, predeterminado = verdadero) Devuelve el cambio al remitente
 
@@ -2411,7 +2411,7 @@ sendtocontract "0bf3bca874ddf209dae6863743d749d83bfded4" "53e62baf"
 
 ### setaccount "address" "account"
 
-OBSOLETO. Asigna y nombre de cuenta a la dirección dada. Qtum-qt devolverá "nulo" si tiene éxito.
+OBSOLETO. Asigna y nombre de cuenta a la dirección dada. Evo-qt devolverá "nulo" si tiene éxito.
 
 ```
 setaccount "QJv3YhWxG6EC2cpqZM5E3fjGzXYgakezm" "My New Account"
@@ -2461,7 +2461,7 @@ false
 
 ### settxfee amount
 
-Establezca la tarifa de transacción por kilobyte del mensaje de transacción. Sobrescribe el parámetro paytxfee visto en `getwalletinfo`. La tarifa mínima predeterminada por 1,000 bytes es 0.004 QTUM. Devuelve verdadero si tiene éxito.
+Establezca la tarifa de transacción por kilobyte del mensaje de transacción. Sobrescribe el parámetro paytxfee visto en `getwalletinfo`. La tarifa mínima predeterminada por 1,000 bytes es 0.004 EVO. Devuelve verdadero si tiene éxito.
 
 ```
 settxfee 0.01
@@ -2531,7 +2531,7 @@ Ejemplo POR VENIR.
 
 ### syncwithvalidationinterfacequeue
 
-Comando oculto Espera a que se completen todas las filas de validación asincrónicas (para blockchain, mempool, etc.). Para uso de los desarrolladores. Qtum-qt devuelve "nulo", qtumd no devuelve nada.
+Comando oculto Espera a que se completen todas las filas de validación asincrónicas (para blockchain, mempool, etc.). Para uso de los desarrolladores. Evo-qt devuelve "nulo", evod no devuelve nada.
 
 ```
 syncwithvalidationinterfacequeue
@@ -2615,10 +2615,10 @@ verifytxoutproof 00000020a8/<snip/>d38abf491d
 
 ### waitforblock (timeout)
 
-Comando oculto Se usa para monitorear cuando la recarga de blockchain ha alcanzado un bloque determinado. Para interfaces de línea de comandos como qtumd (no para la billetera GUI qtum-qt), el comando regresa después de cargar el bloque dado. Este ejemplo espera el bloque Mainnet 150,000:
+Comando oculto Se usa para monitorear cuando la recarga de blockchain ha alcanzado un bloque determinado. Para interfaces de línea de comandos como evod (no para la billetera GUI evo-qt), el comando regresa después de cargar el bloque dado. Este ejemplo espera el bloque Mainnet 150,000:
 
 ```
-qtum-cli waitforblock ae4699ac0a8f4d1170767167fd3b0639312850ce33dcb55a0afd0f5c1a88406f
+evo-cli waitforblock ae4699ac0a8f4d1170767167fd3b0639312850ce33dcb55a0afd0f5c1a88406f
 
 {
   "hash": "ae4699ac0a8f4d1170767167fd3b0639312850ce33dcb55a0afd0f5c1a88406f",
@@ -2628,7 +2628,7 @@ qtum-cli waitforblock ae4699ac0a8f4d1170767167fd3b0639312850ce33dcb55a0afd0f5c1a
 
 ### waitforblockheight (timeout)
 
-Comando oculto Espera (al menos) la altura del bloque y devuelve la altura y el blockhash de la punta actual (bloque más alto). Devuelve el bloque actual en el tiempo de espera o la salida. El tiempo de espera se da en milisegundos, 0 o el valor predeterminado es sin tiempo de espera. Este comando solo funciona desde la línea de comando (no con la billetera qtum-qt GUI) y se usa para el desarrollo.
+Comando oculto Espera (al menos) la altura del bloque y devuelve la altura y el blockhash de la punta actual (bloque más alto). Devuelve el bloque actual en el tiempo de espera o la salida. El tiempo de espera se da en milisegundos, 0 o el valor predeterminado es sin tiempo de espera. Este comando solo funciona desde la línea de comando (no con la billetera evo-qt GUI) y se usa para el desarrollo.
 
 En Docker regtest:
 
@@ -2641,10 +2641,10 @@ docker exec myapp qcli waitforblockheight 7210
 }
 ```
 
-En Mainnet con qtumd:
+En Mainnet con evod:
 
 ```
-qtum-cli waitforblockheight 281985
+evo-cli waitforblockheight 281985
 
 {
   "hash": "44f6a6909b255f9932e28322174c6eec201790d84e7d4f9c201c92594914d240",
@@ -2671,7 +2671,7 @@ Ejemplo POR VENIR.
 
 ### waitfornewblock (timeout)
 
-Comando oculto Espera un nuevo bloque y devuelve el blockhash y la altura. Devuelve el bloque actual en el tiempo de espera o la salida. Este comando funciona solo en la línea de comando (no con la billetera GUI qtum-qt) y se utiliza para el desarrollo. El parámetro de tiempo de espera se da en milisegundos y 0 indica que no hay tiempo de espera.
+Comando oculto Espera un nuevo bloque y devuelve el blockhash y la altura. Devuelve el bloque actual en el tiempo de espera o la salida. Este comando funciona solo en la línea de comando (no con la billetera GUI evo-qt) y se utiliza para el desarrollo. El parámetro de tiempo de espera se da en milisegundos y 0 indica que no hay tiempo de espera.
 
 En Docker con regtest:
 
@@ -2684,10 +2684,10 @@ waitfornewblock
 }
 ```
 
-En Mainnet con qtumd:
+En Mainnet con evod:
 
 ```
-qtum-cli waitfornewblock
+evo-cli waitfornewblock
 
 {
   "hash": "b4caac261c4f5386076bbb07e0dc94b92fb67ca740b8a5d7b49cddcaffd6f103",
@@ -2705,7 +2705,7 @@ walletlock
 null
 ```
 
-qtum-cli no devuelve ninguna respuesta, pero puede verificar con `getwalletinfo` para" unlocked_until ": 0 y verificar el icono del candado en qtum-qt.
+evo-cli no devuelve ninguna respuesta, pero puede verificar con `getwalletinfo` para" unlocked_until ": 0 y verificar el icono del candado en evo-qt.
 
 ### walletpassphrase "passphrase" timeout ( true )
 
@@ -2723,11 +2723,11 @@ Este comando desbloqueará la billetera durante 10 minutos:
 walletpassphrase "you should always use a long and strong passphrase" 99999999 true
 ```
 
-La billetera qtum-qt mostrará el estado de bloqueo con el icono del candado y la consola devolverá "nulo". qtum-cli no devuelve ningún estado, pero puede verificar el estado de desbloqueo con `getwalletinfo` para" unlocked_until ":
+La billetera evo-qt mostrará el estado de bloqueo con el icono del candado y la consola devolverá "nulo". evo-cli no devuelve ningún estado, pero puede verificar el estado de desbloqueo con `getwalletinfo` para" unlocked_until ":
 
 ### walletpassphrasechange "oldpassphrase" "newpassphrase"
 
-Cambia la frase de contraseña de la billetera de "oldpassphrase" a "newpassphrase", qtum-qt devuelve "null", qtumd no devuelve nada.
+Cambia la frase de contraseña de la billetera de "oldpassphrase" a "newpassphrase", evo-qt devuelve "null", evod no devuelve nada.
 
 ```
 walletpassphrasechange "you should always use a long and strong passphrase" "please use a strong and long passphrase"
@@ -2738,4 +2738,4 @@ null
 \```
 
 [
-](https://docs.qtum.site/en/Adding-Nodes/)
+](https://docs.coinevo.tech/en/Adding-Nodes/)

@@ -1,18 +1,18 @@
-# How to run a Qtum Lightning network node
+# How to run a Evo Lightning network node
 
-Qtum has now its own implementation of the lightning network, it uses the eclair client. Currently, this is only supported on testnet, let's check how to set it up and run our very own lightning network client!. 
+Evo has now its own implementation of the lightning network, it uses the eclair client. Currently, this is only supported on testnet, let's check how to set it up and run our very own lightning network client!. 
 
 it is recommended to run **Debian 10 (buster)** as it has all the library versions we need
 
-# Install Qtum Core
+# Install Evo Core
 
-Let's go ahead and install Qtum on our Debian 10, the easy way is to use the Qtum Debian repository:
+Let's go ahead and install Evo on our Debian 10, the easy way is to use the Evo Debian repository:
 
-## Enable the Qtum repository
+## Enable the Evo repository
 
 #### Installing dirmngr and apt-transport-https
 
-These two packages are needed to enable the Qtum repository on Debian, let's install them:
+These two packages are needed to enable the Evo repository on Debian, let's install them:
 
 `apt install -y apt-transport-https dirmngr`
 
@@ -20,27 +20,27 @@ These two packages are needed to enable the Qtum repository on Debian, let's ins
 
 `sudo su` - Sudo to root first
 
-`echo "deb https://repo.qtum.info/apt/debian/ buster main" >> /etc/apt/sources.list.d/qtum.list`
+`echo "deb https://repo.coinevo.tech/apt/debian/ buster main" >> /etc/apt/sources.list.d/evo.list`
 
-## Add Qtum key
+## Add Evo key
 
-Before installing, we need to add the Qtum apt key
+Before installing, we need to add the Evo apt key
 
 `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BF5B197D`
 
-### Refreshing APT sources and installing Qtum
+### Refreshing APT sources and installing Evo
 
-`sudo apt update && sudo apt install qtum`
+`sudo apt update && sudo apt install evo`
 
-Qtum should be installed now, let's continue
+Evo should be installed now, let's continue
 
-## Create Qtum configuration file
+## Create Evo configuration file
 
-We need to create the .qtum folder manually, also, we will create the configuration file inside of that folder, here's how:
+We need to create the .evo folder manually, also, we will create the configuration file inside of that folder, here's how:
 
-`mkdir ~/.qtum`
+`mkdir ~/.evo`
 
-`nano ~./qtum/qtum.conf` 
+`nano ~./evo/evo.conf` 
 
 This will create a text file using the **nano** editor, copy/paste the following inside that file:
 
@@ -58,31 +58,31 @@ zmqpubrawblock=tcp://127.0.0.1:29000
 
 zmqpubrawtx=tcp://127.0.0.1:29000
 
-# Install Qtum Eclair - Lightning client
+# Install Evo Eclair - Lightning client
 
 Let's install some dependencies to prepare for the lightning client:
 
 ## **Install JDK and Maven**
 
-Qtum Eclair is developed using the Scala language. To run Qtum Eclair, you must first install the JDK, and OpenJDK 11 or above is recommended.
+Evo Eclair is developed using the Scala language. To run Evo Eclair, you must first install the JDK, and OpenJDK 11 or above is recommended.
 
 > apt-get install default-jdk
 > 
 > apt install maven
 
-## **Build Qtum Eclair**
+## **Build Evo Eclair**
 
-Now that we have every dependency installed, it's time to build the Eclair lightning client for Qtum. Again, inside our terminal we type:
+Now that we have every dependency installed, it's time to build the Eclair lightning client for Evo. Again, inside our terminal we type:
 
-- `git clone https://github.com/qtumproject/lightning-demo.git`
+- `git clone https://github.com/coinevo/lightning-demo.git`
 - `cd lightning-demo`
 - `mvn install -DskipTests`
 
-You should see something like this, if there's no errors, we can proceed with creating the configuration file and launch Qtum Eclair now.
+You should see something like this, if there's no errors, we can proceed with creating the configuration file and launch Evo Eclair now.
 
-## **Run Qtum Eclair**
+## **Run Evo Eclair**
 
-Create and edit the configuration file ~/.qtum-eclair/eclair.conf as follows:
+Create and edit the configuration file ~/.evo-eclair/eclair.conf as follows:
 
 eclair {  
  chain = "testnet" // "mainnet" for mainnet, "testnet" for testnet, "regtest" for regtest  
@@ -95,7 +95,7 @@ eclair {
  enabled = false  
  binding-ip = "127.0.0.1"  
  port = 8080  
- password = "qtum-eclair"  
+ password = "evo-eclair"  
  use-old-api = false  
  }
 
@@ -122,14 +122,14 @@ default-feerates {
  }  
  min-feerate = 400  
  smooth-feerate-window = 6 // 1 = no smoothing  
- node-alias = "qtum-eclair"  
+ node-alias = "evo-eclair"  
  node-color = "49daaa"  
  global-features = ""  
  local-features = "8a"  
  override-features = []  
  channel-flags = 1  
  dust-limit-satoshis = 72800  
- max-htlc-value-in-flight-msat = 500000000000 // 5 QTUM  
+ max-htlc-value-in-flight-msat = 500000000000 // 5 EVO  
  htlc-minimum-msat = 1  
  max-accepted-htlcs = 30  
  reserve-to-funding-ratio = 0.01  
@@ -149,7 +149,7 @@ default-feerates {
  auto-reconnect = true  
  payment-handler = "local"  
  payment-request-expiry = 1 hour  
- min-funding-satoshis = 1000000 // 0.01 Qtum  
+ min-funding-satoshis = 1000000 // 0.01 Evo  
  max-payment-attempts = 5  
  autoprobe-count = 0
 
@@ -186,9 +186,9 @@ eclair {
  }  
 }
 
-**PLEASE NOTE** if you modified the rpcuser and rpcpassword on qtum.conf, please modify this config file accordingly .
+**PLEASE NOTE** if you modified the rpcuser and rpcpassword on evo.conf, please modify this config file accordingly .
 
-# Launch Qtum Eclair lightning client
+# Launch Evo Eclair lightning client
 
 Start the client with the command **java -jar ./eclair-node-gui/target/lightning-capsule.jar**
 
@@ -198,7 +198,7 @@ You should see the eclair desktop client as on the screenshot below:![](1.png)
 
 ![](2.png)
 
-Right-click the lower left corner of the local Qtum Eclair client and select “Copy URI” to get its node address (public key).
+Right-click the lower left corner of the local Evo Eclair client and select “Copy URI” to get its node address (public key).
 
 ![](3.png)
 
@@ -206,7 +206,7 @@ Click the “Channel” button in the upper left corner and select “Open Chann
 
 ![](4.png)
 
-In the pop-up page, fill in the URI of the channel partner, and the capacity of the channel, which is set to 10 QTUM as an example, this will be the maximum capacity for this channel, this means, you can only transact up to 10 QTUM.
+In the pop-up page, fill in the URI of the channel partner, and the capacity of the channel, which is set to 10 EVO as an example, this will be the maximum capacity for this channel, this means, you can only transact up to 10 EVO.
 
  Click “Connect” to create the channel. At this point, you need to wait for 6 blocks to confirm the transaction and the channel will be created successfully.
 
@@ -218,7 +218,7 @@ Once the channel is set up, you can use the Lightning Network for micropayments.
 
 ![](7.png)
 
-Click the “Channel” button in the upper left corner, select “Receive Payment”, fill in the receipt amount in the pop-up page, click the “Generate” button to get your own receipt address. Here we choose a very small amount of 1 Satoshi, which is equivalent to 0.00000001 QTUM. Such a small transferred amount is unimaginable without using a lightning network.
+Click the “Channel” button in the upper left corner, select “Receive Payment”, fill in the receipt amount in the pop-up page, click the “Generate” button to get your own receipt address. Here we choose a very small amount of 1 Satoshi, which is equivalent to 0.00000001 EVO. Such a small transferred amount is unimaginable without using a lightning network.
 
 ![](8.png)
 
@@ -236,4 +236,4 @@ Click the “Close” button to close the channel.
 
 ![](10.png)
 
-Once closed, the remaining QTUM in the channel will be refunded to the origin Qtum Core wallet.
+Once closed, the remaining EVO in the channel will be refunded to the origin Evo Core wallet.
