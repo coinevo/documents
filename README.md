@@ -1,7 +1,7 @@
 # evo documents
 
 ```
-# npm install gitbook-cli -g
+#  npm install gitbook-cli -g
 yarn global add gitbook-cli
 ```
 
